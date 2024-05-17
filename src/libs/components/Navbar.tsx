@@ -1,17 +1,20 @@
 import { Button, HStack, Heading, Link } from "@chakra-ui/react";
+import { darkColors } from "./BaseProvider";
 
 const Navbar: React.FC = () => {
   return (
     <HStack>
       <HStack>
-        <Link>Home</Link>
-        <Link>About</Link>
-        <Link>Testimonials</Link>
-        <Link>Contact</Link>
+        <Button variant="link">Home</Button>
+        <Button variant="link">About</Button>
+        <Button variant="link">Testimonials</Button>
+        <Button variant="link">Contact</Button>
       </HStack>
       <Heading>MUNSHEE</Heading>
-      <Button>Log In</Button>
-      <Button>Sign Up</Button>
+      <Button variant="link">Log In</Button>
+      <Button variant="outline" color={darkColors.primary[50]}>
+        Sign Up
+      </Button>
     </HStack>
   );
 };
