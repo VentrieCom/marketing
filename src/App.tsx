@@ -1,10 +1,14 @@
-
+import { VStack } from "@chakra-ui/react";
 import Navbar from "./libs/components/Navbar";
+import WelcomeScreen from "./libs/components/overrides/WelcomeSceen";
 
 function App() {
   return (
-    <>  
-      <Navbar />
+    <>
+      <VStack w={"full"}>
+        <Navbar />
+        <WelcomeScreen />
+      </VStack>
     </>
   );
 }
