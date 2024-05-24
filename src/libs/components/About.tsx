@@ -11,6 +11,9 @@ import OurClient from "./OurClient";
 import Testimonials from "./Testimonials";
 import Subscribe from "./Subscribe";
 import Footer from "./Footer";
+// import FAQ from "./FAQ";
+import FAQs from "./FAQs";
+import QueriesForm from "./QueriesForm";
 
 const About: React.FC = () => {
   return (
@@ -44,6 +47,8 @@ const About: React.FC = () => {
       </HStack>
       <OurClient />
       <Testimonials />
+      <FAQs />
+      <QueriesForm />
       <Subscribe />
       <Footer />
     </Card>

@@ -1,4 +1,4 @@
-import { Card, HStack, Text, Image } from "@chakra-ui/react";
+import { Card, HStack, Text, Image, Button } from "@chakra-ui/react";
 import Ellipse from "./../../assets/Ellipse 2008.png";
 
 const Subscribe = () => {
@@ -25,7 +25,14 @@ const Subscribe = () => {
           >
             Subscribe to get updated
           </Text>
-          {/* Add button */}
+          {/* TODO : Align it properly */}
+          <Button
+            variant={"outline"}
+            color={"secondary.800"}
+            borderColor={"secondary.800"}
+          >
+            Get Started
+          </Button>
         </HStack>
         <Text
           w={"50%"}

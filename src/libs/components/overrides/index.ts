@@ -1,4 +1,5 @@
 import Link from "./Link";
 import Button from "./Button";
+import Accordion from "./Accordian";
 
-export { Link, Button }
+export { Accordion, Link, Button }
