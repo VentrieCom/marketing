@@ -9,7 +9,8 @@ import AttendenceSec from "./AttendenceSec";
 import AttendenceText from "./AttendenceText";
 import OurClient from "./OurClient";
 import Testimonials from "./Testimonials";
-import FAQs from "./FAQs";
+import Subscribe from "./Subscribe";
+import Footer from "./Footer";
 
 const About: React.FC = () => {
   return (
@@ -43,7 +44,8 @@ const About: React.FC = () => {
       </HStack>
       <OurClient />
       <Testimonials />
-      <FAQs />
+      <Subscribe />
+      <Footer />
     </Card>
   );
 };
