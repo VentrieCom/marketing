@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import * as Controls from "./overrides";
 
 export const darkColors = {
   primary: {
@@ -7,18 +8,6 @@ export const darkColors = {
     200: "#D0E1E9",
     300: "#BBD1DC",
     900: "#3F4048",
-  },
-  secondary: {
-    50: "#ffffff",
-    100: "#707e80",
-    200: "#6f7d7f",
-    300: "#4d6170",
-    400: "#2c3b46",
-    500: "#283943",
-    600: "#202f36",
-    700: "#1a262e",
-    800: "#131e22",
-    900: "#0f161b",
   },
   whiteAlpha: {
     100: "#5e6264",
@@ -49,6 +38,18 @@ export const darkColors = {
     warning: "#f3a74f",
     info: "#4baae3",
   },
+  secondary: {
+    50: "#ffffff",
+    100: "#707e80",
+    200: "#6f7d7f",
+    300: "#4d6170",
+    400: "#2c3b46",
+    500: "#283943",
+    600: "#202f36",
+    700: "#1a262e",
+    800: "#131e22",
+    900: "#0f161b",
+  },
 };
 
 export const BaseTheme = extendTheme({
@@ -56,6 +57,7 @@ export const BaseTheme = extendTheme({
     initialColorMode: "dark",
     useSystemColorMode: true,
   },
+  colors: darkColors,
   textStyles: {
     widerSubHeading: {
       // you can also use responsive styles
@@ -78,6 +80,7 @@ export const BaseTheme = extendTheme({
     mono: "monospace",
   },
   components: {
+    ...Controls,
     Text: {
       sizes: {
         h1: {

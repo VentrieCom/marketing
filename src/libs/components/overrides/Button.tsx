@@ -65,6 +65,7 @@ const Button = defineStyleConfig({
     },
     link: {
       fontFamily: "heading",
+      color: "secondary.200",
     },
   },
   defaultProps: {
