@@ -1,10 +1,9 @@
-
-import Navbar from "./libs/components/Navbar";
+import About from "./libs/components/About";
 
 function App() {
   return (
-    <>  
-      <Navbar />
+    <>
+      <About />
     </>
   );
 }
