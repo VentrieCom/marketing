@@ -26,7 +26,17 @@ const Footer = () => {
             </Text>
             <HStack as={FormControl} flex={1} align="start">
               <HStack dir="row">
-                <Input type="email" placeholder="Email Address" size={"lg"} />
+                <Input
+                  type="email"
+                  size={"lg"}
+                  borderWidth={2}
+                  placeholder="Email Address"
+                  bgColor={"secondary.600"}
+                  borderRadius={"var(--chakra-radii-xl)"}
+                  _placeholder={{
+                    color: "primary.100",
+                  }}
+                />
                 <Button px={8}>Register</Button>
               </HStack>
             </HStack>

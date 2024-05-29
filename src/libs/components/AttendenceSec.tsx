@@ -11,7 +11,7 @@ const AttendenceSec = () => {
         bgColor={"#38d87d"}
         ml={40}
         marginTop={"170px"}
-      ></Box>
+      />
       <Img
         pos="relative"
         top={"90px"}

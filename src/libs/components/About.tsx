@@ -19,14 +19,18 @@ const About: React.FC = () => {
   return (
     <Card bgColor={"#0f161b"} w={"100%"} h={"100%"}>
       <HStack w={"100%"} justifyContent={"space-between"}>
-        <Image src={Ellipe} w={"150px"} mt={20} />
+        <Image
+          src={Ellipe}
+          w={"150px"}
+          // mt={20}
+        />
         <HStack>
           <Text
             textAlign={"center"}
-            w={"100%"}
+            w={"full"}
             fontFamily={"roboto-slab"}
             fontSize={"60px"}
-            marginTop={"210px"}
+            fontWeight={600}
           >
             About Us
           </Text>
@@ -41,7 +45,7 @@ const About: React.FC = () => {
         <StockText />
         <StockSec />
       </HStack>
-      <HStack w={"100%"} justifyContent={"space-between"} spacing={20} py={60}>
+      <HStack w={"100%"} justifyContent={"space-between"} spacing={20} py={40}>
         <AttendenceSec />
         <AttendenceText />
       </HStack>
