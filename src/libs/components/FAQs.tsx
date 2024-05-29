@@ -27,11 +27,12 @@ const FAQs = () => {
       bgColor={"#0f161b"}
     >
       <Text
-        fontSize={60}
-        fontWeight={400}
+        fontSize={"6xl"}
+        fontWeight={600}
         fontFamily={"roboto-slab"}
         textAlign={"center"}
         mt={10}
+        mb={14}
       >
         FAQ's
       </Text>

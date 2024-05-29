@@ -10,13 +10,16 @@ const Navbar: React.FC = () => {
           <Button variant="link">Testimonials</Button>
           <Button variant="link">Contact</Button>
         </HStack>
-        <Heading>MUNSHEE</Heading>
+        <Heading pos={"relative"} right={32}>
+          MUNSHEE
+        </Heading>
         <HStack spacing={8}>
           <Button variant="link">Log In</Button>
           <Button
             variant="solid"
             color={"secondary.900"}
             px={10}
+            boxShadow={"rgba(15, 22, 27, 0.2) 0px 8px 24px"}
           >
             Sign Up
           </Button>
@@ -27,4 +30,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-// w={`calc(100% - 120px)`}

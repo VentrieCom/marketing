@@ -1,4 +1,4 @@
-import { EmailIcon, SunIcon } from "@chakra-ui/icons";
+import { EmailIcon, PhoneIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Heading,
   VStack,
@@ -6,12 +6,13 @@ import {
   HStack,
   Flex,
   FormControl,
-  FormLabel,
   Input,
   FormErrorMessage,
   Textarea,
   Button,
   Box,
+  InputGroup,
+  InputLeftElement,
 } from "@chakra-ui/react";
 
 const QueriesForm: React.FC = () => {
@@ -30,31 +31,86 @@ const QueriesForm: React.FC = () => {
         <VStack w={"50%"}>
           <Box w="100%">
             <form>
+              <HStack spacing={5}>
+                <FormControl mb={8}>
+                  <Input
+                    type="text"
+                    size="lg"
+                    h={"60px"}
+                    fontSize={"28px"}
+                    placeholder="First Name"
+                    color="blue.300"
+                  />
+                  <FormErrorMessage>Enter First Name</FormErrorMessage>
+                </FormControl>
+                <FormControl mb={8}>
+                  <Input
+                    type="text"
+                    size={"lg"}
+                    h={"60px"}
+                    fontSize={"28px"}
+                    placeholder="Last Name"
+                    color={"blue.300"}
+                  />
+                  <FormErrorMessage>Enter Last Name</FormErrorMessage>
+                </FormControl>
+              </HStack>
+
               <FormControl mb={8}>
-                <FormLabel fontSize={24}>Full Name</FormLabel>
-                <Input variant={"flushed"} type="text" />
-                <FormErrorMessage>Enter Full Name</FormErrorMessage>
-              </FormControl>
-              <FormControl mb={8}>
-                <FormLabel fontSize={24}>Email</FormLabel>
-                <Input variant={"flushed"} type="email" isRequired />
+                <InputGroup>
+                  <InputLeftElement pointerEvents="none">
+                    <EmailIcon
+                      boxSize={6}
+                      mt={5}
+                      ml={3}
+                      color={"secondary.300"}
+                    />
+                  </InputLeftElement>
+                  <Input
+                    type="email"
+                    size="lg"
+                    h={"60px"}
+                    fontSize={"28px"}
+                    placeholder="Your Email"
+                    color={"blue.300"}
+                    isRequired
+                  />
+                </InputGroup>
                 <FormErrorMessage>Enter Correct Name</FormErrorMessage>
               </FormControl>
               <FormControl mb={8}>
-                <FormLabel fontSize={24}>Phone</FormLabel>
-                <Input variant={"flushed"} type="phone" />
+                <InputGroup>
+                  <InputLeftElement>
+                    <PhoneIcon
+                      boxSize={5}
+                      mt={5}
+                      ml={3}
+                      color={"secondary.300"}
+                    />
+                  </InputLeftElement>
+                  <Input
+                    type="phone"
+                    size={"lg"}
+                    h={"60px"}
+                    fontSize={"28px"}
+                    placeholder="Phone Number"
+                    color={"blue.300"}
+                  />
+                </InputGroup>
                 <FormErrorMessage>Enter Correct Number</FormErrorMessage>
               </FormControl>
+
               <FormControl mb={16}>
-                <FormLabel fontSize={24}>How Can we help you?</FormLabel>
-                <Textarea variant={"flushed"} />
+                <Textarea
+                  size={"lg"}
+                  h={"120px"}
+                  fontSize={"28px"}
+                  color={"blue.300"}
+                  placeholder="How can we help?"
+                />
                 <FormErrorMessage>Enter your Message</FormErrorMessage>
               </FormControl>
-              <Button
-                rightIcon={<EmailIcon />}
-                type="submit"
-                size={"lg"}
-              >
+              <Button rightIcon={<EmailIcon />} type="submit" size={"lg"}>
                 Send Message
               </Button>
             </form>
