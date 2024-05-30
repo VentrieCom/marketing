@@ -2,18 +2,19 @@ import { Button, VStack, Text } from "@chakra-ui/react";
 
 const StockText: React.FC = () => {
   return (
-    <VStack w={"full"} ml={"6%"} mr={"5%"} alignItems={"flex-start"}>
+    <VStack w={"full"} ml={"2%"} alignItems={"flex-start"}>
       <Text
         fontSize={40}
         fontWeight={700}
         fontFamily={"Roboto-Slab"}
         align={"start"}
         justifyContent={"start"}
+        ml={40}
       >
         Stocks
       </Text>
       <Text
-        w={"50%"}
+        w={"60%"}
         fontSize={20}
         fontWeight={400}
         fontFamily={"Poppins"}
@@ -26,7 +27,7 @@ const StockText: React.FC = () => {
         ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit sed
         odio. Blandit.
       </Text>
-      <Button w={"140px"} mt={8}>
+      <Button w={"140px"} mt={5} textAlign={"center"} ml={40}>
         Learn More
       </Button>
     </VStack>

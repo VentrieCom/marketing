@@ -41,7 +41,7 @@ const OurClient = () => {
         Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
         sed odio. Blandit.
       </Text>
-      <HStack flexWrap={"wrap"} w={"90%"}>
+      <HStack flexWrap={"wrap"} w={"90%"} mt={5}>
         <Image src={Justuno} h={"180px"} flex={1} />
         <Image src={Tekyz} h={"180px"} flex={1} />
         <Image src={Photo} h={"180px"} flex={1} />

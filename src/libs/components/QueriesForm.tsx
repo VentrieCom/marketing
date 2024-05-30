@@ -54,7 +54,7 @@ const QueriesForm: React.FC = () => {
         </Text>
       </VStack>
       <HStack w={"80%"} spacing={20}>
-        <VStack w={"50%"}>
+        <VStack w={"50%"} mb={10}>
           <Box w="100%">
             <HStack>
               <Input
@@ -64,6 +64,7 @@ const QueriesForm: React.FC = () => {
                 border={"2px solid #2C3B46"}
                 style={{ paddingLeft: "20px" }}
                 sx={customPlaceholderStyle}
+                color={"blue.300"}
               />
               <Input
                 placeholder="Surname"
@@ -72,6 +73,7 @@ const QueriesForm: React.FC = () => {
                 border={"2px solid #2C3B46"}
                 style={{ paddingLeft: "20px" }}
                 sx={customPlaceholderStyle}
+                color={"blue.300"}
               />
             </HStack>
             <VStack py={5} spacing={5}>
@@ -85,6 +87,7 @@ const QueriesForm: React.FC = () => {
                   py={10}
                   border={"2px solid #2C3B46"}
                   sx={customPlaceholderStyle}
+                  color={"blue.300"}
                 />
               </InputGroup>
 
@@ -102,6 +105,7 @@ const QueriesForm: React.FC = () => {
                   py={10}
                   border={"2px solid #2C3B46"}
                   sx={customPlaceholderStyle}
+                  color={"blue.300"}
                 />
               </InputGroup>
               <Textarea
@@ -110,6 +114,7 @@ const QueriesForm: React.FC = () => {
                 border={"2px solid #2C3B46"}
                 style={{ paddingLeft: "20px" }}
                 sx={customPlaceholderStyle}
+                color={"blue.300"}
               />
             </VStack>
             <Button

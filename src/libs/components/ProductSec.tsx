@@ -7,7 +7,7 @@ const ProductSec = () => {
       <Box
         pos="absolute"
         w={"400px"}
-        h={"600px"}
+        h={"570px"}
         bgColor={"#38d87d"}
         ml={40}
         marginTop={"170px"}

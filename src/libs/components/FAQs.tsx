@@ -63,7 +63,7 @@ const FAQs = () => {
                     border:
                       selected === index
                         ? "3px solid #38db7d"
-                        : "3px solid #2C3B46",
+                        : "3px solid #1A262D",
                     borderRadius: "var(--chakra-radii-xl)",
                     backgroundColor: "#202f36",
                     marginBottom: "30px",

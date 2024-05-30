@@ -38,15 +38,15 @@ const About: React.FC = () => {
         </HStack>
         <Image src={Groups} w={"150px"} marginBottom={"200px"} />
       </HStack>
-      <HStack w={"100%"} justifyContent={"space-between"} spacing={20}>
+      <HStack w={"100%"} justifyContent={"space-between"} spacing={10}>
         <ProductSec />
         <ProductText />
       </HStack>
-      <HStack w={"100%"} justifyContent={"space-between"} spacing={20} py={60}>
+      <HStack w={"100%"} justifyContent={"space-between"} spacing={10} py={60}>
         <StockText />
         <StockSec />
       </HStack>
-      <HStack w={"100%"} justifyContent={"space-between"} spacing={20} py={40}>
+      <HStack w={"100%"} justifyContent={"space-between"} spacing={10} py={30}>
         <AttendenceSec />
         <AttendenceText />
       </HStack>
