@@ -24,9 +24,10 @@ const About: React.FC = () => {
           <Text
             textAlign={"center"}
             w={"100%"}
-            fontFamily={"roboto-slab"}
+            fontFamily={"Roboto-Slab"}
             fontSize={"60px"}
             marginTop={"210px"}
+            fontWeight={700}
           >
             About Us
           </Text>
@@ -41,7 +42,7 @@ const About: React.FC = () => {
         <StockText />
         <StockSec />
       </HStack>
-      <HStack w={"100%"} justifyContent={"space-between"} spacing={20} py={60}>
+      <HStack w={"100%"} justifyContent={"space-between"} spacing={20} py={40}>
         <AttendenceSec />
         <AttendenceText />
       </HStack>

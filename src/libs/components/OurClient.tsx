@@ -24,8 +24,8 @@ const OurClient = () => {
       </HStack>
       <Text
         fontSize={60}
-        fontWeight={400}
-        fontFamily={"roboto-slab"}
+        fontWeight={700}
+        fontFamily={"Roboto-Slab"}
         textAlign={"center"}
       >
         Our Client

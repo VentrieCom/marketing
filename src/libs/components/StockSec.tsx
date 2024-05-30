@@ -7,12 +7,12 @@ const StockSec = () => {
       <Box
         pos="absolute"
         w={"400px"}
-        h={"650px"}
+        h={"600px"}
         bgColor={"#38d87d"}
         ml={"18%"}
         marginTop={"170px"}
       ></Box>
-      <Img pos="relative" top={"90px"} right={20} src={StockImg} w={"900px"} />
+      <Img pos="relative" top={"85px"} right={20} src={StockImg} w={"900px"} />
     </HStack>
   );
 };

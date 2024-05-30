@@ -15,8 +15,11 @@ import {
 
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
+import { useState } from "react";
 
 const FAQs = () => {
+  const [selected, setSelected] = useState(-1);
+
   return (
     <Card
       w={"100%"}
@@ -28,11 +31,11 @@ const FAQs = () => {
     >
       <Text
         fontSize={60}
-        fontWeight={400}
-        fontFamily={"roboto-slab"}
+        fontWeight={700}
+        fontFamily={"Roboto-Slab"}
         textAlign={"center"}
         mt={10}
-        // py={10}
+        py={20}
       >
         FAQ's
       </Text>
@@ -41,6 +44,7 @@ const FAQs = () => {
         pos={"absolute"}
         display={"inline-block"}
         left={0}
+        mt={80}
       >
         <Image
           src={EllipseGreen}
@@ -52,16 +56,76 @@ const FAQs = () => {
       <HStack borderRadius={"20px"}>
         <Box w={"800px"}>
           <Accordion allowToggle={true} zIndex={100}>
-            <AccordionItem
+            {[1, 1, 1, 1].map((_, index) => {
+              return (
+                <AccordionItem
+                  style={{
+                    border:
+                      selected === index
+                        ? "3px solid #38db7d"
+                        : "3px solid #2C3B46",
+                    borderRadius: "var(--chakra-radii-xl)",
+                    backgroundColor: "#202f36",
+                    marginBottom: "30px",
+                    cursor: "pointer",
+                  }}
+                >
+                  {({ isExpanded }) => (
+                    <Card onClick={() => setSelected(index)}>
+                      <Flex textAlign={"left"} w={"full"}>
+                        <AccordionButton>
+                          <Center boxSize={14} mr={8}>
+                            {isExpanded ? (
+                              <MinusIcon boxSize={6} color={"blue.300"} />
+                            ) : (
+                              <AddIcon boxSize={6} color={"blue.300"} />
+                            )}
+                          </Center>
+                          <Heading
+                            alignContent={"center"}
+                            borderRadius={20}
+                            fontSize={20}
+                            fontWeight={400}
+                            fontFamily={"Poppins"}
+                          >
+                            Lorem, ipsum dolor sit amet consectetur?
+                          </Heading>
+                        </AccordionButton>
+                      </Flex>
+                      <AccordionPanel pb={4}>
+                        <Flex>
+                          <Box w={"230px"} />
+                          <Text
+                            fontSize={16}
+                            fontWeight={400}
+                            fontStyle={"Poppins"}
+                            mr={20}
+                          >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Voluptas explicabo dolorum beatae? Numquam
+                            adipisci itaque magnam distinctio dolor facere, amet
+                            enim! Eos fugit atque culpa dignissimos hic ullam,
+                            et minima.
+                          </Text>
+                        </Flex>
+                      </AccordionPanel>
+                    </Card>
+                  )}
+                </AccordionItem>
+              );
+            })}
+
+            {/* <AccordionItem
               style={{
-                border: "3px solid #38db7d",
+                border: selected ? "3px solid #38db7d" : "3px solid #2C3B46",
                 borderRadius: "var(--chakra-radii-xl)",
                 backgroundColor: "#202f36",
                 marginBottom: "30px",
+                cursor: "pointer",
               }}
-            >
-              {({ isExpanded }) => (
-                <>
+            > */}
+            {/* {({ isExpanded }) => (
+                <Card onClick={SelectedColor}>
                   <Flex textAlign={"left"} w={"full"}>
                     <AccordionButton>
                       <Center boxSize={14} mr={8}>
@@ -74,8 +138,9 @@ const FAQs = () => {
                       <Heading
                         alignContent={"center"}
                         borderRadius={20}
-                        fontSize={24}
-                        fontWeight={"light"}
+                        fontSize={20}
+                        fontWeight={400}
+                        fontFamily={"Poppins"}
                       >
                         Lorem, ipsum dolor sit amet consectetur?
                       </Heading>
@@ -84,7 +149,12 @@ const FAQs = () => {
                   <AccordionPanel pb={4}>
                     <Flex>
                       <Box w={"230px"} />
-                      <Text>
+                      <Text
+                        fontSize={16}
+                        fontWeight={400}
+                        fontStyle={"Poppins"}
+                        mr={20}
+                      >
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Voluptas explicabo dolorum beatae? Numquam adipisci
                         itaque magnam distinctio dolor facere, amet enim! Eos
@@ -92,19 +162,19 @@ const FAQs = () => {
                       </Text>
                     </Flex>
                   </AccordionPanel>
-                </>
-              )}
-            </AccordionItem>
-            <AccordionItem
+                </Card>
+              )} */}
+            {/* </AccordionItem> */}
+            {/* <AccordionItem
               style={{
-                border: "3px solid #38db7d",
+                border: selected ? "3px solid #38db7d" : "3px solid #2C3B46",
                 borderRadius: "var(--chakra-radii-xl)",
                 backgroundColor: "#202f36",
                 marginBottom: "30px",
               }}
             >
               {({ isExpanded }) => (
-                <>
+                <Card onClick={SelectedColor}>
                   <Flex textAlign={"left"} w={"full"}>
                     <AccordionButton>
                       <Center boxSize={14} mr={8}>
@@ -117,8 +187,9 @@ const FAQs = () => {
                       <Heading
                         alignContent={"center"}
                         borderRadius={20}
-                        fontSize={24}
-                        fontWeight={"light"}
+                        fontSize={20}
+                        fontWeight={400}
+                        fontFamily={"Poppins"}
                       >
                         Lorem, ipsum dolor sit amet consectetur?
                       </Heading>
@@ -127,7 +198,12 @@ const FAQs = () => {
                   <AccordionPanel pb={4}>
                     <Flex>
                       <Box w={"230px"} />
-                      <Text>
+                      <Text
+                        fontSize={16}
+                        fontWeight={400}
+                        fontStyle={"Poppins"}
+                        mr={20}
+                      >
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Voluptas explicabo dolorum beatae? Numquam adipisci
                         itaque magnam distinctio dolor facere, amet enim! Eos
@@ -135,19 +211,19 @@ const FAQs = () => {
                       </Text>
                     </Flex>
                   </AccordionPanel>
-                </>
+                </Card>
               )}
-            </AccordionItem>
-            <AccordionItem
+            </AccordionItem> */}
+            {/* <AccordionItem
               style={{
-                border: "3px solid #38db7d",
+                border: selected ? "3px solid #38db7d" : "3px solid #2C3B46",
                 borderRadius: "var(--chakra-radii-xl)",
                 backgroundColor: "#202f36",
                 marginBottom: "30px",
               }}
             >
               {({ isExpanded }) => (
-                <>
+                <Card onClick={SelectedColor}>
                   <Flex textAlign={"left"} w={"full"}>
                     <AccordionButton>
                       <Center boxSize={14} mr={8}>
@@ -160,65 +236,29 @@ const FAQs = () => {
                       <Heading
                         alignContent={"center"}
                         borderRadius={20}
-                        fontSize={24}
-                        fontWeight={"light"}
+                        fontSize={20}
+                        fontWeight={400}
+                        fontFamily={"Poppins"}
                       >
                         Lorem, ipsum dolor sit amet consectetur?
                       </Heading>
                     </AccordionButton>
                   </Flex>
-                  <AccordionPanel pb={4}>
-                    <Flex>
-                      <Box w={"230px"} />
-                      <Text>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptas explicabo dolorum beatae? Numquam adipisci
-                        itaque magnam distinctio dolor facere, amet enim! Eos
-                        fugit atque culpa dignissimos hic ullam, et minima.
-                      </Text>
-                    </Flex>
-                  </AccordionPanel>
-                </>
-              )}
-            </AccordionItem>
-            <AccordionItem
-              style={{
-                border: "3px solid #38db7d",
-                borderRadius: "var(--chakra-radii-xl)",
-                backgroundColor: "#202f36",
-                marginBottom: "30px",
-              }}
-            >
-              {({ isExpanded }) => (
-                <>
-                  <Flex textAlign={"left"} w={"full"}>
-                    <AccordionButton>
-                      <Center boxSize={14} mr={8}>
-                        {isExpanded ? (
-                          <MinusIcon boxSize={6} color={"blue.300"} />
-                        ) : (
-                          <AddIcon boxSize={6} color={"blue.300"} />
-                        )}
-                      </Center>
-                      <Heading
-                        alignContent={"center"}
-                        borderRadius={20}
-                        fontSize={24}
-                        fontWeight={"light"}
-                      >
-                        Lorem, ipsum dolor sit amet consectetur?
-                      </Heading>
-                    </AccordionButton>
-                  </Flex>
-                  <AccordionPanel pb={4}>
+                  <AccordionPanel
+                    pb={4}
+                    fontSize={16}
+                    fontWeight={400}
+                    fontStyle={"Poppins"}
+                    ml={"90px"}
+                  >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </AccordionPanel>
-                </>
+                </Card>
               )}
-            </AccordionItem>
+            </AccordionItem> */}
           </Accordion>
         </Box>
       </HStack>

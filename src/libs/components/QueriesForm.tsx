@@ -36,10 +36,20 @@ const QueriesForm: React.FC = () => {
         <Image src={EllipseGreen} w={"150px"} />
       </HStack>
       <VStack my={10}>
-        <Heading fontFamily={"roboto-slab"} size={"2xl"} mb={3}>
+        <Heading
+          fontFamily={"Roboto-Slab"}
+          fontWeight={700}
+          fontSize={60}
+          mb={2}
+        >
           Got a question or a few?
         </Heading>
-        <Text color={"secondary.200"} fontSize={24}>
+        <Text
+          color={"secondary.200"}
+          fontSize={25}
+          fontFamily={"Poppins"}
+          fontWeight={400}
+        >
           If you have any question, drop us a note. Fill out the below form and
           we will get it.
         </Text>
@@ -125,9 +135,11 @@ const QueriesForm: React.FC = () => {
           >
             <HStack mb={2}>
               <SunIcon boxSize={8} mr={4} />
-              <Text fontWeight={"semibold"}>Support and Maintenance</Text>
+              <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
+                Support and Maintenance
+              </Text>
             </HStack>
-            <Text>
+            <Text fontSize={18} fontWeight={400} fontFamily={"Poppins"}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
               aspernatur voluptate mollitia similique ex totam. Laudantium
               explicabo quaerat sint sequi natus atque quae ut id, in dicta,
@@ -142,9 +154,11 @@ const QueriesForm: React.FC = () => {
           >
             <HStack mb={2}>
               <SunIcon boxSize={8} mr={4} />
-              <Text fontWeight={"semibold"}>24/7 Chat Support</Text>
+              <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
+                24/7 Chat Support
+              </Text>
             </HStack>
-            <Text>
+            <Text fontSize={18} fontWeight={400} fontFamily={"Poppins"}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
               aspernatur voluptate mollitia similique ex totam. Laudantium
               explicabo quaerat sint sequi natus atque quae ut id, in dicta,
@@ -159,9 +173,11 @@ const QueriesForm: React.FC = () => {
           >
             <HStack mb={2}>
               <SunIcon boxSize={8} mr={4} />
-              <Text fontWeight={"semibold"}>Support and Maintenance</Text>
+              <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
+                Support and Maintenance
+              </Text>
             </HStack>
-            <Text>
+            <Text fontSize={18} fontWeight={400} fontFamily={"Poppins"}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
               aspernatur voluptate mollitia similique ex totam. Laudantium
               explicabo quaerat sint sequi natus atque quae ut id, in dicta,

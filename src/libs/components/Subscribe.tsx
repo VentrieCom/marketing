@@ -18,7 +18,7 @@ const Subscribe = () => {
           <Text
             ml={20}
             fontSize={60}
-            fontFamily={"roboto-slab"}
+            fontFamily={"Roboto-Slab"}
             fontWeight={700}
             color={"#0F161B"}
             mt={10}
@@ -32,6 +32,10 @@ const Subscribe = () => {
               color={"secondary.800"}
               borderColor={"secondary.800"}
               px={10}
+              fontSize={20}
+              fontWeight={600}
+              fontFamily={"Poppins"}
+              onClick={() => {}}
             >
               Get Started
             </Button>
@@ -39,16 +43,17 @@ const Subscribe = () => {
         </HStack>
         <Text
           w={"50%"}
-          fontSize={18}
+          fontSize={20}
           fontFamily={"Poppins"}
           py={10}
           ml={20}
+          fontWeight={400}
           color={"#0F161B"}
         >
           Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
-          sed odio. Blandit. Lorem ipsum dolor sit amet consectetur. Imperdiet
-          laoreet odio eu elit sed odio. Blandit. Lorem ipsum dolor sit amet
-          consectetur.{" "}
+          sed odio. Blandit. Lorem ipsum dolor sit amet consectetur Imperdiet
+          laoreet odio eu elit sed odio. Blandit Lorem ipsum dolor sit amet
+          consectetur. Lorem ipsum dolor sit amet consectetur{" "}
         </Text>
         <HStack w={"100%"} justifyContent={"end"}>
           <Image

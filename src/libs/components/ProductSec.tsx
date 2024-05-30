@@ -7,14 +7,14 @@ const ProductSec = () => {
       <Box
         pos="absolute"
         w={"400px"}
-        h={"650px"}
+        h={"600px"}
         bgColor={"#38d87d"}
         ml={40}
         marginTop={"170px"}
       ></Box>
       <Img
         pos="relative"
-        top={"90px"}
+        top={"85px"}
         left={"80px"}
         src={ProductGrid}
         w={"900px"}
