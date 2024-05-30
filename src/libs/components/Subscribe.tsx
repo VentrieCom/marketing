@@ -21,20 +21,23 @@ const Subscribe = () => {
             fontWeight={700}
             color={"#0F161B"}
             mt={10}
+            ml={20}
           >
             Subscribe to get updated
           </Text>
           {/* TODO : Align it properly */}
-          <HStack mr={10} mt={6}>
+          <HStack mr={10} mt={3}>
             <Button
               variant={"outline"}
               color={"secondary.800"}
               borderColor={"secondary.800"}
               px={10}
+              py={"25px"}
               fontSize={20}
               fontWeight={600}
               fontFamily={"Poppins"}
               onClick={() => {}}
+              mr={40}
             >
               Get Started
             </Button>
@@ -59,7 +62,7 @@ const Subscribe = () => {
             src={Ellipse}
             w={"100px"}
             transform={"rotate(270deg)"}
-            mt={"-148px"}
+            mt={"-155px"}
             mr={20}
           />
         </HStack>

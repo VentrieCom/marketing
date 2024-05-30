@@ -46,7 +46,13 @@ const Testimonials = () => {
         mt={10}
       >
         {[1, 1, 1, 1].map(() => (
-          <Card w={"100%"} h={"200px"} bgColor={"#2c3b46"} borderRadius={15}>
+          <Card
+            w={"100%"}
+            h={"200px"}
+            bgColor={"#2c3b46"}
+            borderRadius={15}
+            px={2}
+          >
             <Text
               w={"100%"}
               fontSize={20}
@@ -62,10 +68,10 @@ const Testimonials = () => {
             </Text>
             <HStack mt={2}>
               <Avatar
-                size="xl"
+                size="lg"
                 name="Kola Tioluwani"
                 src="https://bit.ly/code-beast"
-                mt={1}
+                ml={5}
                 color={"#D9D9D9"}
               />
               <VStack spacing={0}>
