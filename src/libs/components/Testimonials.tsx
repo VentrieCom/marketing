@@ -1,7 +1,6 @@
 import {
   Avatar,
   Card,
-  Grid,
   HStack,
   SimpleGrid,
   Text,
@@ -38,7 +37,14 @@ const Testimonials = () => {
         sed odio. Blandit.
       </Text>
 
-      <SimpleGrid w="full" spacing={7} columns={2} px={250} mt={10}>
+      <SimpleGrid
+        w="full"
+        spacing={7}
+        // bgColor={"rebeccapurple"}
+        columns={2}
+        px={250}
+        mt={10}
+      >
         {[1, 1, 1, 1].map(() => (
           <Card w={"100%"} h={"200px"} bgColor={"#2c3b46"} borderRadius={15}>
             <Text
@@ -52,14 +58,13 @@ const Testimonials = () => {
               Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu
               elit sed odio. Blandit. Lorem ipsum dolor sit amet consectetur.
               Imperdiet laoreet odio eu elit sed odio. Blandit. Lorem ipsum
-              dolor sit amet consectetur.{" "}
+              dolor sit amet consectetur.
             </Text>
-            <HStack>
+            <HStack mt={2}>
               <Avatar
-                size="lg"
+                size="xl"
                 name="Kola Tioluwani"
                 src="https://bit.ly/code-beast"
-                ml={4}
                 mt={1}
                 color={"#D9D9D9"}
               />

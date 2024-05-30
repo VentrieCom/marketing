@@ -1,8 +1,8 @@
-import { Stack, Text } from "@chakra-ui/react";
+import { Button, Text, VStack } from "@chakra-ui/react";
 
-const ProductText = () => {
+const ProductText: React.FC = () => {
   return (
-    <Stack w={"100%"}>
+    <VStack w={"full"} ml={"6%"} mr={"5%"} alignItems={"flex-start"}>
       <Text
         fontSize={40}
         fontWeight={700}
@@ -26,9 +26,12 @@ const ProductText = () => {
         laoreet odio eu elit sed odio. Blandit. Lorem ipsum dolor sit amet
         consectetur. Imperdiet laoreet odio eu elit sed odio. Blandit. Lorem
         ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit sed
-        odio. Blandit.{" "}
+        odio. Blandit.
       </Text>
-    </Stack>
+      <Button w={"140px"} mt={8}>
+        Learn More
+      </Button>
+    </VStack>
   );
 };
 

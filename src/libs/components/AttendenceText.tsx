@@ -1,15 +1,14 @@
-import { Stack, Text } from "@chakra-ui/react";
+import { VStack, Button, Text } from "@chakra-ui/react";
 
-const AttendenceText = () => {
+const AttendenceText: React.FC = () => {
   return (
-    <Stack w={"100%"}>
+    <VStack w={"full"} ml={"6%"} mr={"5%"} alignItems={"flex-start"}>
       <Text
         fontSize={40}
         fontWeight={700}
         fontFamily={"Roboto-Slab"}
         align={"start"}
         justifyContent={"start"}
-        ml={40}
       >
         Attendance
       </Text>
@@ -25,9 +24,12 @@ const AttendenceText = () => {
         laoreet odio eu elit sed odio. Blandit. Lorem ipsum dolor sit amet
         consectetur. Imperdiet laoreet odio eu elit sed odio. Blandit. Lorem
         ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit sed
-        odio. Blandit.{" "}
+        odio. Blandit.
       </Text>
-    </Stack>
+      <Button w={"140px"} mt={8}>
+        Learn More
+      </Button>
+    </VStack>
   );
 };
 

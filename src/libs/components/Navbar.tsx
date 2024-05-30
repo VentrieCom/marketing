@@ -74,4 +74,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-// w={`calc(100% - 120px)`}

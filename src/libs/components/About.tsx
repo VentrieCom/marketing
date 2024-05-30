@@ -19,7 +19,11 @@ const About: React.FC = () => {
   return (
     <Card bgColor={"#0f161b"} w={"100%"} h={"100%"} pt={290}>
       <HStack w={"100%"} justifyContent={"space-between"}>
-        <Image src={Ellipe} w={"150px"} mt={20} />
+        <Image
+          src={Ellipe}
+          w={"150px"}
+          // mt={20}
+        />
         <HStack>
           <Text
             textAlign={"center"}

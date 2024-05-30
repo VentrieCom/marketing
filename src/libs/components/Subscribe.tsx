@@ -1,14 +1,12 @@
-import { Card, HStack, Text, Image, Button } from "@chakra-ui/react";
+import { Card, HStack, Text, Image, Button, Flex } from "@chakra-ui/react";
 import Ellipse from "./../../assets/Ellipse 2008.png";
 
 const Subscribe = () => {
   return (
-    <Card
-      w={"100%"}
-      display="flex"
-      flexDirection="column"
+    <Flex
+      w={"full"}
       alignItems="center"
-      py={10}
+      py={4}
       bgColor={"#0f161b"}
       px={"10%"}
       mt={40}
@@ -16,7 +14,8 @@ const Subscribe = () => {
       <Card w={"100%"} h={"300px"} borderRadius={5} bgColor={"#38db7d"}>
         <HStack w={"100%"} justifyContent={"space-between"}>
           <Text
-            ml={20}
+            flex={1}
+            // ml={20}
             fontSize={60}
             fontFamily={"Roboto-Slab"}
             fontWeight={700}
@@ -55,7 +54,7 @@ const Subscribe = () => {
           laoreet odio eu elit sed odio. Blandit Lorem ipsum dolor sit amet
           consectetur. Lorem ipsum dolor sit amet consectetur{" "}
         </Text>
-        <HStack w={"100%"} justifyContent={"end"}>
+        <HStack w={"full"} justifyContent={"end"}>
           <Image
             src={Ellipse}
             w={"100px"}
@@ -65,7 +64,7 @@ const Subscribe = () => {
           />
         </HStack>
       </Card>
-    </Card>
+    </Flex>
   );
 };
 

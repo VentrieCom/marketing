@@ -19,7 +19,6 @@ import {
   Image,
 } from "@chakra-ui/react";
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
-import Vector4055 from "./../../assets/Vector 4055.png";
 
 const customPlaceholderStyle = {
   fontSize: "25px",

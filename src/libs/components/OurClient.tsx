@@ -12,7 +12,7 @@ import Ellipse from "./../../assets/Ellipse 2008.png";
 const OurClient = () => {
   return (
     <Card
-      w={"100%"}
+      w={"full"}
       display="flex"
       flexDirection="column"
       alignItems="center"
@@ -28,7 +28,7 @@ const OurClient = () => {
         fontFamily={"Roboto-Slab"}
         textAlign={"center"}
       >
-        Our Client
+        Our Clients
       </Text>
       <Text
         textAlign={"center"}
@@ -41,20 +41,23 @@ const OurClient = () => {
         Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
         sed odio. Blandit.
       </Text>
-      <HStack spacing={10} my={10}>
-        <Image src={Justuno} w={"250px"} h={"100px"} />
-        <Image src={Tekyz} w={"250px"} h={"100px"} />
-        <Image src={Photo} w={"250px"} h={"100px"} />
-        <Image src={Encast} w={"250px"} h={"100px"} />
-      </HStack>
-      <HStack spacing={10}>
-        <Image src={VV360} w={"250px"} h={"100px"} />
-        <Image src={HireExpert} w={"250px"} h={"100px"} />
-        <Image src={GreenMedicine} w={"250px"} h={"100px"} />
-        <Image src={Amplify} w={"250px"} h={"100px"} />
+      <HStack flexWrap={"wrap"} w={"90%"}>
+        <Image src={Justuno} h={"180px"} flex={1} />
+        <Image src={Tekyz} h={"180px"} flex={1} />
+        <Image src={Photo} h={"180px"} flex={1} />
+        <Image src={Encast} h={"180px"} flex={1} />
+        <Image src={VV360} h={"180px"} flex={1} />
+        <Image src={HireExpert} h={"180px"} flex={1} />
+        <Image src={GreenMedicine} h={"180px"} flex={1} />
+        <Image src={Amplify} h={"180px"} flex={1} />
       </HStack>
     </Card>
   );
 };
 
 export default OurClient;
+{
+  /* </HStack>
+      <HStack spacing={10}> */
+}
+// w={"300px"}
