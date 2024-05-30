@@ -4,15 +4,23 @@ const ProductText: React.FC = () => {
   return (
     <VStack w={"full"} ml={"6%"} mr={"5%"} alignItems={"flex-start"}>
       <Text
-        fontSize={60}
-        fontWeight={600}
-        fontFamily={"roboto-slab"}
+        fontSize={40}
+        fontWeight={700}
+        fontFamily={"Roboto-Slab"}
         align={"start"}
         justifyContent={"start"}
+        ml={40}
+        py={5}
       >
         Products
       </Text>
-      <Text fontSize={22} textAlign={"justify"}>
+      <Text
+        w={"60%"}
+        fontSize={20}
+        ml={40}
+        fontFamily={"Poppins"}
+        fontWeight={400}
+      >
         Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
         sed odio. Blandit. Lorem ipsum dolor sit amet consectetur. Imperdiet
         laoreet odio eu elit sed odio. Blandit. Lorem ipsum dolor sit amet

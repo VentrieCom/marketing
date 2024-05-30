@@ -23,9 +23,9 @@ const OurClient = () => {
         <Image src={Ellipse} w={"150px"} transform={"rotate(180deg)"} />
       </HStack>
       <Text
-        fontSize={"6xl"}
-        fontWeight={600}
-        fontFamily={"roboto-slab"}
+        fontSize={60}
+        fontWeight={700}
+        fontFamily={"Roboto-Slab"}
         textAlign={"center"}
       >
         Our Clients

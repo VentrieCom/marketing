@@ -1,7 +1,6 @@
 import {
   Avatar,
   Card,
-  Grid,
   HStack,
   SimpleGrid,
   Text,
@@ -19,9 +18,9 @@ const Testimonials = () => {
       bgColor={"#0f161b"}
     >
       <Text
-        fontSize={"6xl"}
-        fontWeight={600}
-        fontFamily={"roboto-slab"}
+        fontSize={60}
+        fontWeight={700}
+        fontFamily={"Roboto-Slab"}
         textAlign={"center"}
       >
         Testimonials
@@ -47,16 +46,15 @@ const Testimonials = () => {
         mt={10}
       >
         {[1, 1, 1, 1].map(() => (
-          <Card
-            w={"100%"}
-            flex={1}
-            p={5}
-            px={6}
-            bgColor={"#2c3b46"}
-            borderRadius={15}
-          >
-            {/* px={5} py={3} */}
-            <Text w={"100%"} fontSize={20} fontFamily={"Poppins"}>
+          <Card w={"100%"} h={"200px"} bgColor={"#2c3b46"} borderRadius={15}>
+            <Text
+              w={"100%"}
+              fontSize={20}
+              fontFamily={"Poppins"}
+              fontWeight={400}
+              px={5}
+              py={3}
+            >
               Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu
               elit sed odio. Blandit. Lorem ipsum dolor sit amet consectetur.
               Imperdiet laoreet odio eu elit sed odio. Blandit. Lorem ipsum
@@ -68,16 +66,17 @@ const Testimonials = () => {
                 name="Kola Tioluwani"
                 src="https://bit.ly/code-beast"
                 mt={1}
+                color={"#D9D9D9"}
               />
               <VStack spacing={0}>
-                <Text fontFamily={"Poppins"} fontWeight={600} fontSize={20}>
+                <Text fontFamily={"Poppins"} fontWeight={600} fontSize={24}>
                   Najam Memon
                 </Text>
                 <Text
                   fontFamily={"Poppins"}
                   fontWeight={400}
                   fontSize={15}
-                  mr={"60px"}
+                  mr={"80px"}
                   px={1}
                 >
                   Demo Card

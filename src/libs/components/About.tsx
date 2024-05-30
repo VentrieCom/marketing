@@ -17,7 +17,7 @@ import QueriesForm from "./QueriesForm";
 
 const About: React.FC = () => {
   return (
-    <Card bgColor={"#0f161b"} w={"100%"} h={"100%"}>
+    <Card bgColor={"#0f161b"} w={"100%"} h={"100%"} pt={290}>
       <HStack w={"100%"} justifyContent={"space-between"}>
         <Image
           src={Ellipe}
@@ -27,10 +27,11 @@ const About: React.FC = () => {
         <HStack>
           <Text
             textAlign={"center"}
-            w={"full"}
-            fontFamily={"roboto-slab"}
+            w={"100%"}
+            fontFamily={"Roboto-Slab"}
             fontSize={"60px"}
-            fontWeight={600}
+            marginTop={"210px"}
+            fontWeight={700}
           >
             About Us
           </Text>

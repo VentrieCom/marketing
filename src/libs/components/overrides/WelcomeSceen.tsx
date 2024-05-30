@@ -31,11 +31,7 @@ const WelcomeScreen: React.FC = () => {
         <UnlockIcon boxSize="20px" color="secondary.200" />
         <StarIcon boxSize="20px" color="secondary.200" />
       </Flex>
-      <HStack
-        position="relative"
-        w="90%"
-        minH="65vh"
-      >
+      <HStack position="relative" w="90%" minH="65vh">
         <Image
           src={Stocks}
           w="600px"
