@@ -19,6 +19,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
+import BulbIcon from "./../../assets/streamline_ai-technology-spark.png";
 
 const customPlaceholderStyle = {
   fontSize: "25px",
@@ -138,7 +139,7 @@ const QueriesForm: React.FC = () => {
             borderRadius="var(--chakra-radii-xl)"
           >
             <HStack mb={2}>
-              <SunIcon boxSize={8} mr={4} />
+              <Image src={BulbIcon} w={"30px"} h={"25px"} />
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 Support and Maintenance
               </Text>
@@ -157,7 +158,7 @@ const QueriesForm: React.FC = () => {
             borderRadius="var(--chakra-radii-xl)"
           >
             <HStack mb={2}>
-              <SunIcon boxSize={8} mr={4} />
+              <Image src={BulbIcon} w={"30px"} h={"25px"} />
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 24/7 Chat Support
               </Text>
@@ -176,7 +177,8 @@ const QueriesForm: React.FC = () => {
             borderRadius="var(--chakra-radii-xl)"
           >
             <HStack mb={2}>
-              <SunIcon boxSize={8} mr={4} />
+              <Image src={BulbIcon} w={"30px"} h={"25px"} />
+
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 Support and Maintenance
               </Text>
