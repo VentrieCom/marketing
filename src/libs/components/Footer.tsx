@@ -12,49 +12,43 @@ import {
 const Footer = () => {
   return (
     <>
-      <VStack my={16}>
-        <HStack w={"80%"} flex={1} spacing={12}>
-          <VStack flex={1.3} align="start" spacing={6}>
+      <VStack py={20}>
+        <HStack w={"90%"} flex={1} spacing={1} justifyContent={"space-around"}>
+          <VStack px={20} align="start" spacing={6}>
             <Text fontWeight={"bold"} fontSize={26}>
-              MUNSEE
+              MUNSHEE
             </Text>
-            <Text textAlign={"justify"}>
+            <Text w={"400px"}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
               maiores rem eveniet veritatis nihil veniam! Labore doloremque
               optio veritatis autem modi fugit rem incidunt, sint molestiae,
               magnam accusantium dolores! Consequatur.
             </Text>
-            <HStack as={FormControl} flex={1} align="start">
+            <HStack as={FormControl} flex={1}>
               <HStack dir="row">
                 <Input type="email" placeholder="Email Address" size={"lg"} />
                 <Button px={8}>Register</Button>
               </HStack>
             </HStack>
           </VStack>
-          <VStack flex={1} align="start" spacing={5}>
-            <Text fontSize={28} pb={5}>
-              Categories
-            </Text>
+          <VStack px={20} align="start" spacing={5}>
+            <Text fontSize={28}>Categories</Text>
             <Link>Web / Mobile Application</Link>
             <Link>Warehouse/ Logistics</Link>
             <Link>Marketing</Link>
             <Link>Employee Managment</Link>
             <Link>Auditing</Link>
           </VStack>
-          <VStack flex={1} align="start" spacing={5}>
-            <Text fontSize={28} pb={5}>
-              About
-            </Text>
+          <VStack px={20} align="start" spacing={5}>
+            <Text fontSize={28}>About</Text>
             <Link>About US</Link>
             <Link>Partnerships</Link>
             <Link>Finance Experts</Link>
             <Link>Project Managment</Link>
             <Link>The Team</Link>
           </VStack>
-          <VStack flex={1} align="start" spacing={5}>
-            <Text fontSize={28} pb={5}>
-              Follow Us
-            </Text>
+          <VStack px={20} align="start" spacing={5} mt={-10}>
+            <Text fontSize={28}>Follow Us</Text>
             <Link>Facebook</Link>
             <Link>Twitter</Link>
             <Link>Instagram</Link>

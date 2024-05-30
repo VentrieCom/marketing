@@ -6,10 +6,10 @@ import About from "./libs/components/About";
 function App() {
   return (
     <>
-      {/* <VStack w={"full"}> */}
-      <Navbar />
-      {/* <WelcomeScreen /> */}
-      {/* </VStack> */}
+      <VStack w={"full"}>
+        <Navbar />
+        <WelcomeScreen />
+      </VStack>
       <About />
     </>
   );

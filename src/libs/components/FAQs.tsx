@@ -13,7 +13,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 
-import Ellipse from "./../../assets/Ellipse 2008.png";
+import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
 const FAQs = () => {
@@ -32,6 +32,7 @@ const FAQs = () => {
         fontFamily={"roboto-slab"}
         textAlign={"center"}
         mt={10}
+        // py={10}
       >
         FAQ's
       </Text>
@@ -41,7 +42,12 @@ const FAQs = () => {
         display={"inline-block"}
         left={0}
       >
-        <Image src={Ellipse} w={"150px"} pos={"relative"} />
+        <Image
+          src={EllipseGreen}
+          w={"150px"}
+          pos={"relative"}
+          transform={"rotate(180deg)"}
+        />
       </HStack>
       <HStack borderRadius={"20px"}>
         <Box w={"800px"}>

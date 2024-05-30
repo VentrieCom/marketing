@@ -1,28 +1,28 @@
-import { Button, HStack, Heading, VStack } from "@chakra-ui/react";
+import { Button, HStack, Text } from "@chakra-ui/react";
 
 const Navbar: React.FC = () => {
   return (
-    <VStack w={"full"}>
-      <HStack w={`calc(100% - 180px)`} justifyContent={"space-between"} mt={4}>
-        <HStack spacing={5}>
-          <Button variant="link">Home</Button>
-          <Button variant="link">About</Button>
-          <Button variant="link">Testimonials</Button>
-          <Button variant="link">Contact</Button>
-        </HStack>
-        <Heading>MUNSHEE</Heading>
-        <HStack spacing={8}>
-          <Button variant="link">Log In</Button>
-          <Button
-            variant="solid"
-            color={"secondary.900"}
-            px={10}
-          >
-            Sign Up
-          </Button>
+    <HStack w={`calc(100% - 180px)`} justifyContent={"space-between"} mt={3}>
+      <HStack spacing={10}>
+        <Button variant="link">Home</Button>
+        <Button variant="link">About</Button>
+        <Button variant="link">Testimonials</Button>
+        <Button variant="link">Contact</Button>
+        <HStack ml={40}>
+          <Text fontSize={50} fontFamily={"jost"} fontWeight={600}>
+            MUNSHEE
+          </Text>
+          <HStack ml={"400px"}>
+            <Button variant="link" px={4}>
+              Log In
+            </Button>
+            <Button variant="solid" color={"secondary.900"} px={10}>
+              Sign Up
+            </Button>
+          </HStack>
         </HStack>
       </HStack>
-    </VStack>
+    </HStack>
   );
 };
 

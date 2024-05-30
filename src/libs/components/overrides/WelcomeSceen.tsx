@@ -1,22 +1,38 @@
-import { Box, HStack, Heading, Image, Text, VStack } from "@chakra-ui/react";
-
-import Attendance from "../../../assets/Images/Attendance.png";
-import Product from "../../../assets/Images/Product grid view.png";
-import Stocks from "../../../assets/Images/Stocks.png";
+import { Box, Text, VStack, Image } from "@chakra-ui/react";
+import ProductImg from "./../../../assets/Product grid view3.png";
 
 const WelcomeScreen: React.FC = () => {
   return (
     <VStack>
-      <Heading>Munshee Desktop Application</Heading>
-      <Text>
+      <Text
+        fontSize={60}
+        fontWeight={700}
+        fontFamily={"roboto-slab"}
+        textAlign={"center"}
+        mt={8}
+        w={"500px"}
+        lineHeight={"60px"}
+      >
+        Munshee Desktop Application
+      </Text>
+      <Text
+        w={"800px"}
+        textAlign={"center"}
+        fontSize={25}
+        fontWeight={400}
+        fontFamily={"poppins"}
+        mt={8}
+      >
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
         exercitationem id aliquam quae consequatur.
       </Text>
-      {/* <Box position={"relative"}>
-        <Image src={Attendance} alt="stocks screen" w={"800px"} />
-        <Image src={Product} alt="products screen"  />
-        <Image src={Stocks} alt="leaves screen" w={"800px"} />
-      </Box> */}
+      <Image
+        src={ProductImg}
+        alt="stocks screen"
+        w={"100%"}
+        mb={-410}
+        zIndex={1000}
+      />
     </VStack>
   );
 };

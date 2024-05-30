@@ -14,7 +14,7 @@ const Subscribe = () => {
       mt={40}
     >
       <Card w={"100%"} h={"300px"} borderRadius={5} bgColor={"#38db7d"}>
-        <HStack>
+        <HStack w={"100%"} justifyContent={"space-between"}>
           <Text
             ml={20}
             fontSize={60}
@@ -26,13 +26,16 @@ const Subscribe = () => {
             Subscribe to get updated
           </Text>
           {/* TODO : Align it properly */}
-          <Button
-            variant={"outline"}
-            color={"secondary.800"}
-            borderColor={"secondary.800"}
-          >
-            Get Started
-          </Button>
+          <HStack mr={10} mt={6}>
+            <Button
+              variant={"outline"}
+              color={"secondary.800"}
+              borderColor={"secondary.800"}
+              px={10}
+            >
+              Get Started
+            </Button>
+          </HStack>
         </HStack>
         <Text
           w={"50%"}
