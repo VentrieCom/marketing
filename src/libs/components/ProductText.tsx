@@ -1,12 +1,14 @@
 import { Button, Text, VStack } from "@chakra-ui/react";
 
 const ProductText: React.FC = () => {
+  // ml={"6%"}
+  // ml={40}
   return (
     <VStack
-      w={"100%"}
-      ml={"6%"}
+      w={{ md: "full", lg: "40%", "2xl": "40%" }}
+      mt={{ base: 24, sm: 32, md: 24, lg: -4, xl: -8 }}
       alignItems={"flex-start"}
-      justify={"space-between"}
+      spacing={{ base: 2, sm: 2, md: 4, lg: 4, xl: 4, "2xl": 10 }}
     >
       <Text
         fontSize={40}
@@ -14,14 +16,12 @@ const ProductText: React.FC = () => {
         fontFamily={"Roboto-Slab"}
         align={"start"}
         justifyContent={"start"}
-        ml={40}
       >
         Products
       </Text>
       <Text
-        w={"60%"}
-        fontSize={20}
-        ml={40}
+        textAlign={"justify"}
+        fontSize={{ xl: 20, "2xl": 24 }}
         fontFamily={"Poppins"}
         fontWeight={400}
       >
@@ -32,7 +32,11 @@ const ProductText: React.FC = () => {
         ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit sed
         odio. Blandit.
       </Text>
-      <Button w={"140px"} mt={5} textAlign={"center"} ml={40}>
+      <Button
+        w={"140px"}
+        mt={{ base: 8, sm: 6, md: 2, lg: 2, xl: 5 }}
+        textAlign={"center"}
+      >
         Learn More
       </Button>
     </VStack>
@@ -40,3 +44,4 @@ const ProductText: React.FC = () => {
 };
 
 export default ProductText;
+// ml={40}
