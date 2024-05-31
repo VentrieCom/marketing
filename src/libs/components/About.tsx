@@ -1,4 +1,4 @@
-import { Card, HStack, Image, Text, Stack } from "@chakra-ui/react";
+import { VStack, HStack, Image, Text, Stack } from "@chakra-ui/react";
 import Ellipe from "./../../assets/Ellipse 2008.png";
 import Groups from "./../../assets/Group 6867.png";
 import ProductSec from "./ProductSec";
@@ -17,8 +17,8 @@ import QueriesForm from "./QueriesForm";
 
 const About: React.FC = () => {
   return (
-    <Card bgColor={"secondary.900"} w={"full"} h={"full"}>
-      <HStack w={"100%"} justifyContent={"space-between"}>
+    <VStack bgColor={"secondary.900"} w={"full"} h={"full"}>
+      <HStack w={"full"} justifyContent={"space-between"} mb={28}>
         <Image
           src={Ellipe}
           w={{
@@ -45,7 +45,14 @@ const About: React.FC = () => {
       </HStack>
       {/* TODO : make ...Sec & ...Text Responsive */}
       <Stack
-        w={"full"}
+        w={{
+          base: "calc(100vw - 100px)",
+          sm: "calc(100vw - 100px)",
+          md: "calc(100vw - 100px)",
+          xl: "calc(100vw - 200px)",
+          "2xl": "calc(100vw - 200px)",
+        }}
+        // bgColor={"rebeccapurple"}
         direction={{
           base: "column",
           sm: "column",
@@ -54,12 +61,19 @@ const About: React.FC = () => {
           "2xl": "row",
         }}
         justifyContent={"space-between"}
+        spacing={{ md: 10, lg: 14, xl: 20 }}
       >
         <ProductSec />
         <ProductText />
       </Stack>
       <Stack
-        w={"full"}
+        w={{
+          base: "calc(100vw - 100px)",
+          sm: "calc(100vw - 100px)",
+          md: "calc(100vw - 100px)",
+          xl: "calc(100vw - 200px)",
+          "2xl": "calc(100vw - 200px)",
+        }}
         direction={{
           base: "column",
           sm: "column",
@@ -68,13 +82,21 @@ const About: React.FC = () => {
           "2xl": "row",
         }}
         justifyContent={"space-between"}
-        py={60}
+        mt={{ sm: 32, md: 36, lg: 36 }}
+        spacing={{ md: 10, lg: 14, xl: 20 }}
       >
         <StockText />
         <StockSec />
       </Stack>
       <Stack
-        w={"full"}
+        w={{
+          base: "calc(100vw - 100px)",
+          sm: "calc(100vw - 100px)",
+          md: "calc(100vw - 100px)",
+          xl: "calc(100vw - 200px)",
+          "2xl": "calc(100vw - 200px)",
+        }}
+        // bgColor={"rebeccapurple"}
         direction={{
           base: "column",
           sm: "column",
@@ -83,7 +105,8 @@ const About: React.FC = () => {
           "2xl": "row",
         }}
         justifyContent={"space-between"}
-        py={30}
+        spacing={{ md: 10, lg: 14, xl: 20 }}
+        mt={{ base: 44 }}
       >
         <AttendenceSec />
         <AttendenceText />
@@ -94,7 +117,7 @@ const About: React.FC = () => {
       <QueriesForm />
       <Subscribe />
       <Footer />
-    </Card>
+    </VStack>
   );
 };
 

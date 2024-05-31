@@ -1,4 +1,4 @@
-import { Button, HStack, Text, VStack } from "@chakra-ui/react";
+import { Button, HStack, Text } from "@chakra-ui/react";
 
 const Navbar: React.FC = () => {
   return (
