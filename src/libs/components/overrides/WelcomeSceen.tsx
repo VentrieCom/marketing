@@ -4,6 +4,9 @@ import Attendance from "../../../assets/Images/Attendance.png";
 import Product from "../../../assets/Images/Product grid view.png";
 import Stocks from "../../../assets/Images/Stocks.png";
 import { RepeatClockIcon, StarIcon, UnlockIcon } from "@chakra-ui/icons";
+import About from "../About";
+import Testimonials from "../Testimonials";
+import Footer from "../Footer";
 
 const WelcomeScreen: React.FC = () => {
   return (
@@ -61,6 +64,9 @@ const WelcomeScreen: React.FC = () => {
           zIndex={2}
         />
       </HStack>
+      <About />
+      <Testimonials />
+      <Footer />
     </VStack>
   );
 };

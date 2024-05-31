@@ -1,6 +1,8 @@
 import { Button, HStack, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <HStack w={`calc(100% - 180px)`} justifyContent={"space-between"} mt={3}>
       <HStack px={20} w={"100%"} justifyContent={"space-between"}>
@@ -10,6 +12,7 @@ const Navbar: React.FC = () => {
           fontFamily={"Roboto slab"}
           fontWeight={400}
           color={"#6F7D7F"}
+          onClick={() => navigate("*")}
         >
           Home
         </Button>
@@ -19,6 +22,7 @@ const Navbar: React.FC = () => {
           fontFamily={"Roboto slab"}
           fontWeight={400}
           color={"#6F7D7F"}
+          onClick={() => navigate("about")}
         >
           About
         </Button>
@@ -28,6 +32,7 @@ const Navbar: React.FC = () => {
           fontFamily={"Roboto slab"}
           fontWeight={400}
           color={"#6F7D7F"}
+          onClick={() => navigate("testimonials")}
         >
           Testimonials
         </Button>
@@ -37,6 +42,7 @@ const Navbar: React.FC = () => {
           fontFamily={"Roboto slab"}
           fontWeight={400}
           color={"#6F7D7F"}
+          onClick={() => navigate("footer")}
         >
           Contact
         </Button>
