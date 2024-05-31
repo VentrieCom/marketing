@@ -1,4 +1,4 @@
-import { Card, HStack, Image, Text } from "@chakra-ui/react";
+import { Card, HStack, Image, Text, Stack } from "@chakra-ui/react";
 import Ellipe from "./../../assets/Ellipse 2008.png";
 import Groups from "./../../assets/Group 6867.png";
 import ProductSec from "./ProductSec";
@@ -17,20 +17,25 @@ import QueriesForm from "./QueriesForm";
 
 const About: React.FC = () => {
   return (
-    <Card bgColor={"#0f161b"} w={"100%"} h={"100%"} pt={290}>
+    <Card bgColor={"secondary.900"} w={"full"} h={"full"}>
       <HStack w={"100%"} justifyContent={"space-between"}>
         <Image
           src={Ellipe}
-          w={"150px"}
-          // mt={20}
+          w={{
+            sm: "100px",
+            md: "100px",
+            lg: "100px",
+            xl: "120px",
+            "2xl": "150px",
+          }}
         />
         <HStack>
           <Text
             textAlign={"center"}
-            w={"100%"}
+            w={"full"}
             fontFamily={"Roboto-Slab"}
-            fontSize={"60px"}
-            marginTop={"210px"}
+            fontSize={{ sm: 42, md: 48, lg: 48, "2xl": 58 }}
+            mt={{ md: 0, lg: "10px", "2xl": "60px" }}
             fontWeight={700}
           >
             About Us
@@ -38,18 +43,51 @@ const About: React.FC = () => {
         </HStack>
         <Image src={Groups} w={"150px"} marginBottom={"200px"} />
       </HStack>
-      <HStack w={"100%"} justifyContent={"space-between"} spacing={10}>
+      {/* TODO : make ...Sec & ...Text Responsive */}
+      <Stack
+        w={"full"}
+        direction={{
+          base: "column",
+          sm: "column",
+          md: "column",
+          lg: "row",
+          "2xl": "row",
+        }}
+        justifyContent={"space-between"}
+      >
         <ProductSec />
         <ProductText />
-      </HStack>
-      <HStack w={"100%"} justifyContent={"space-between"} spacing={10} py={60}>
+      </Stack>
+      <Stack
+        w={"full"}
+        direction={{
+          base: "column",
+          sm: "column",
+          md: "column",
+          lg: "row",
+          "2xl": "row",
+        }}
+        justifyContent={"space-between"}
+        py={60}
+      >
         <StockText />
         <StockSec />
-      </HStack>
-      <HStack w={"100%"} justifyContent={"space-between"} spacing={10} py={30}>
+      </Stack>
+      <Stack
+        w={"full"}
+        direction={{
+          base: "column",
+          sm: "column",
+          md: "column",
+          lg: "row",
+          "2xl": "row",
+        }}
+        justifyContent={"space-between"}
+        py={30}
+      >
         <AttendenceSec />
         <AttendenceText />
-      </HStack>
+      </Stack>
       <OurClient />
       <Testimonials />
       <FAQs />
