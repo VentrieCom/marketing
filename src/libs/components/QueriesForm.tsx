@@ -1,9 +1,4 @@
-import {
-  ArrowForwardIcon,
-  EmailIcon,
-  PhoneIcon,
-  SunIcon,
-} from "@chakra-ui/icons";
+import { ArrowForwardIcon, EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import {
   Heading,
   VStack,
@@ -20,16 +15,40 @@ import {
 } from "@chakra-ui/react";
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 import BulbIcon from "./../../assets/streamline_ai-technology-spark.png";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const customPlaceholderStyle = {
   fontSize: "25px",
   "::placeholder": {
-    fontSize: "20px", // Adjust the size as needed
-    color: "gray.500", // Optional: adjust the color if needed
+    fontSize: "20px",
+    color: "gray.500",
   },
 };
 
 const QueriesForm: React.FC = () => {
+  const form: any = useRef();
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_w0egw75",
+        "template_wajqz9i",
+        form.current,
+        "yn6idBxRBXrYjNWpk"
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <VStack>
       <HStack w={"100%"} justifyContent={"end"} mb={-55}>
@@ -54,84 +73,92 @@ const QueriesForm: React.FC = () => {
           we will get it.
         </Text>
       </VStack>
-      <HStack w={"80%"} spacing={20}>
-        <VStack w={"50%"} mb={10}>
-          <Box w="100%">
-            <HStack>
-              <Input
-                placeholder="Name"
-                py={10}
-                w={"600px"}
-                border={"2px solid #2C3B46"}
-                style={{ paddingLeft: "20px" }}
-                sx={customPlaceholderStyle}
-                color={"blue.300"}
-              />
-              <Input
-                placeholder="Surname"
-                py={10}
-                w={"600px"}
-                border={"2px solid #2C3B46"}
-                style={{ paddingLeft: "20px" }}
-                sx={customPlaceholderStyle}
-                color={"blue.300"}
-              />
-            </HStack>
-            <VStack py={5} spacing={5}>
-              <InputGroup>
-                <InputLeftElement pointerEvents="none" mt={6}>
-                  <EmailIcon color="gray.700" fontSize={"1.3em"} ml={2} />
-                </InputLeftElement>
+      <HStack w={"100%"}>
+        <form ref={form} id="sendEmail" onSubmit={sendEmail}>
+          <VStack w={"60%"} mb={10}>
+            <Box w="100%" ml={40}>
+              <HStack>
                 <Input
-                  type="tel"
-                  placeholder="Your Email"
+                  placeholder="Name"
                   py={10}
+                  w={"600px"}
                   border={"2px solid #2C3B46"}
+                  style={{ paddingLeft: "20px" }}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
+                  name="user_name"
                 />
-              </InputGroup>
+                <Input
+                  placeholder="Surname"
+                  py={10}
+                  w={"600px"}
+                  border={"2px solid #2C3B46"}
+                  style={{ paddingLeft: "20px" }}
+                  sx={customPlaceholderStyle}
+                  color={"blue.300"}
+                  name="user_surname"
+                />
+              </HStack>
+              <VStack py={5} spacing={5}>
+                <InputGroup>
+                  <InputLeftElement pointerEvents="none" mt={6}>
+                    <EmailIcon color="gray.700" fontSize={"1.3em"} ml={2} />
+                  </InputLeftElement>
+                  <Input
+                    type="tel"
+                    placeholder="Your Email"
+                    py={10}
+                    border={"2px solid #2C3B46"}
+                    sx={customPlaceholderStyle}
+                    color={"blue.300"}
+                    name="user_email"
+                  />
+                </InputGroup>
 
-              <InputGroup>
-                <InputLeftElement
-                  pointerEvents="none"
-                  color="gray.700"
-                  fontSize="1.3em"
-                  mt={5}
-                >
-                  <PhoneIcon color="gray.700" ml={2} />
-                </InputLeftElement>
-                <Input
-                  placeholder="Phone Number"
-                  py={10}
+                <InputGroup>
+                  <InputLeftElement
+                    pointerEvents="none"
+                    color="gray.700"
+                    fontSize="1.3em"
+                    mt={5}
+                  >
+                    <PhoneIcon color="gray.700" ml={2} />
+                  </InputLeftElement>
+                  <Input
+                    placeholder="Phone Number"
+                    py={10}
+                    border={"2px solid #2C3B46"}
+                    sx={customPlaceholderStyle}
+                    color={"blue.300"}
+                    name="user_phone"
+                  />
+                </InputGroup>
+                <Textarea
+                  placeholder="How can we help?"
+                  size="lg"
                   border={"2px solid #2C3B46"}
+                  style={{ paddingLeft: "20px" }}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
+                  name="description"
                 />
-              </InputGroup>
-              <Textarea
-                placeholder="How can we help?"
-                size="lg"
-                border={"2px solid #2C3B46"}
-                style={{ paddingLeft: "20px" }}
-                sx={customPlaceholderStyle}
-                color={"blue.300"}
-              />
-            </VStack>
-            <Button
-              rightIcon={<ArrowForwardIcon ml={3} color={"secondary.400"} />}
-              type="submit"
-              size={"lg"}
-              px={10}
-              fontWeight={400}
-              fontFamily={"poppins"}
-              letterSpacing={2}
-            >
-              Send Message
-            </Button>
-          </Box>
-        </VStack>
-        <VStack w={"50%"} spacing={6}>
+              </VStack>
+              <Button
+                rightIcon={<ArrowForwardIcon ml={3} color={"secondary.400"} />}
+                type="submit"
+                size={"lg"}
+                px={10}
+                fontWeight={400}
+                fontFamily={"poppins"}
+                letterSpacing={2}
+                form={"sendEmail"}
+              >
+                Send Message
+              </Button>
+            </Box>
+          </VStack>
+        </form>
+        <VStack w={"50%"}>
           <Flex
             bgColor={"secondary.400"}
             p={5}
