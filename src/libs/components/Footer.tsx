@@ -8,8 +8,31 @@ import {
   Link,
   Center,
 } from "@chakra-ui/react";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const Footer = () => {
+  const form: any = useRef();
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_w0egw75",
+        "template_wajqz9i",
+        form.current,
+        "yn6idBxRBXrYjNWpk"
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
   return (
     <>
       <VStack py={20}>
@@ -31,15 +54,26 @@ const Footer = () => {
             </Text>
             <HStack as={FormControl} flex={1}>
               <HStack dir="row">
-                <Input type="email" placeholder="Email Address" size={"lg"} />
-                <Button
-                  px={10}
-                  fontSize={16}
-                  fontWeight={600}
-                  fontFamily={"Poppins"}
-                >
-                  Register
-                </Button>
+                <form ref={form} id="sendEmail" onSubmit={sendEmail}>
+                  <HStack>
+                    <Input
+                      placeholder="Email Address"
+                      size={"lg"}
+                      name="user_email"
+                    />
+
+                    <Button
+                      px={10}
+                      fontSize={16}
+                      fontWeight={600}
+                      fontFamily={"Poppins"}
+                      form={"sendEmail"}
+                      type="submit"
+                    >
+                      Register
+                    </Button>
+                  </HStack>
+                </form>
               </HStack>
             </HStack>
           </VStack>
