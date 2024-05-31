@@ -30,8 +30,6 @@ const QueriesForm: React.FC = () => {
   const form: any = useRef();
 
   const sendEmail = (e: any) => {
-    e.preventDefault();
-
     emailjs
       .sendForm(
         "service_w0egw75",
