@@ -1,9 +1,4 @@
-import {
-  ArrowForwardIcon,
-  EmailIcon,
-  PhoneIcon,
-  SunIcon,
-} from "@chakra-ui/icons";
+import { ArrowForwardIcon, EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import {
   Heading,
   VStack,
@@ -21,6 +16,9 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
+import BulbIcon from "./../../assets/streamline_ai-technology-spark.png";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const customPlaceholderStyle = {
   borderRadius: {
@@ -37,6 +35,26 @@ const customPlaceholderStyle = {
 };
 
 const QueriesForm: React.FC = () => {
+  const form: any = useRef();
+
+  const sendEmail = (e: any) => {
+    emailjs
+      .sendForm(
+        "service_w0egw75",
+        "template_wajqz9i",
+        form.current,
+        "yn6idBxRBXrYjNWpk"
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     // bgColor={"rebeccapurple"}
     <VStack>
@@ -142,8 +160,10 @@ const QueriesForm: React.FC = () => {
                   placeholder="Your Email"
                   py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
+                  style={{ paddingLeft: "20px" }}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
+                  name="user_name"
                 />
               </InputGroup>
               <InputGroup>
@@ -159,8 +179,10 @@ const QueriesForm: React.FC = () => {
                   placeholder="Phone Number"
                   py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
+                  style={{ paddingLeft: "20px" }}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
+                  name="description"
                 />
               </InputGroup>
               <Textarea
@@ -194,8 +216,8 @@ const QueriesForm: React.FC = () => {
             flexDir={"column"}
             borderRadius="var(--chakra-radii-2xl)"
           >
-            <HStack mb={2} borderRadius="var(--chakra-radii-3xl)">
-              <SunIcon boxSize={8} mr={4} />
+            <HStack mb={2}  borderRadius="var(--chakra-radii-3xl)">
+              <Image src={BulbIcon} w={"30px"} h={"25px"} />
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 Support and Maintenance
               </Text>
@@ -218,7 +240,7 @@ const QueriesForm: React.FC = () => {
             borderRadius="var(--chakra-radii-3xl)"
           >
             <HStack mb={2}>
-              <SunIcon boxSize={8} mr={4} />
+              <Image src={BulbIcon} w={"30px"} h={"25px"} />
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 24/7 Chat Support
               </Text>
@@ -241,7 +263,8 @@ const QueriesForm: React.FC = () => {
             borderRadius="var(--chakra-radii-3xl)"
           >
             <HStack mb={2}>
-              <SunIcon boxSize={8} mr={4} />
+              <Image src={BulbIcon} w={"30px"} h={"25px"} />
+
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 Support and Maintenance
               </Text>
@@ -264,34 +287,3 @@ const QueriesForm: React.FC = () => {
 };
 
 export default QueriesForm;
-{
-  /* <Stack
-w={{
-  base: "calc(100vw - 50px)",
-  sm: "calc(100vw - 100px)",
-  md: "calc(100vw - 200px)",
-  lg: "calc(100vw - 200px)",
-  "2xl": "calc(100vw - 200px)",
-}}
-direction={{
-  base: "column",
-  sm: "column",
-  md: "column",
-  lg: "row",
-  xl: "row",
-  "2xl": "row",
-}}
->
-{/* w={"50%"} mb={10} 
-
-
-</Stack> */
-}
-{
-  /* <Box h={"100px"} w={"full"} bgColor={"rebeccapurple"}>
-          ALB
-        </Box>
-        <Box h={"100px"} w={"full"} bgColor={"rebeccapurple"}>
-          ALB
-        </Box> */
-}
