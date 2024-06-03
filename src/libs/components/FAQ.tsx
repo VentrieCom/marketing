@@ -15,7 +15,8 @@ const FAQ: React.FC = () => {
   const [show, setShow] = useState<boolean>(false);
   return (
     <VStack>
-      <Heading fontSize={34} fontFamily={"roboto-slab"} mb={45}>
+      {/* mb={45} */}
+      <Heading fontSize={34} fontFamily={"roboto-slab"} >
         FAQ's
       </Heading>
       <VStack w={"800px"}>

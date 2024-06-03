@@ -17,7 +17,13 @@ import QueriesForm from "./QueriesForm";
 
 const About: React.FC = () => {
   return (
-    <VStack bgColor={"secondary.900"} w={"full"} h={"full"}>
+    <VStack
+      bgColor={"secondary.900"}
+      w={"full"}
+      // h={"full"}
+      // overflowX={"hidden"}
+      // overflow={"clip"}
+    >
       <HStack w={"full"} justifyContent={"space-between"} mb={28}>
         <Image
           src={Ellipe}
@@ -43,7 +49,6 @@ const About: React.FC = () => {
         </HStack>
         <Image src={Groups} w={"150px"} marginBottom={"200px"} />
       </HStack>
-      {/* TODO : make ...Sec & ...Text Responsive */}
       <Stack
         w={{
           base: "calc(100vw - 100px)",
