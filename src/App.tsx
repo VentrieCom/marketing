@@ -14,11 +14,10 @@ function App() {
         bgSize="contain"
         bgColor={"secondary.900"}
       > */}
-        {/* <Navbar /> */}
-        <WelcomeScreen />
-
+      {/* <Navbar /> */}
+      <WelcomeScreen />
       <About />
-    // </>
+    </>
   );
 }
 

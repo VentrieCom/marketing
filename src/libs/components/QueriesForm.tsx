@@ -17,50 +17,104 @@ import {
   Textarea,
   Button,
   Image,
+  Stack,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 
 const customPlaceholderStyle = {
-  fontSize: "25px",
+  borderRadius: {
+    base: "var(--chakra-radii-lg)",
+    sm: "var(--chakra-radii-lg)",
+    md: "var(--chakra-radii-lg)",
+    lg: "var(--chakra-radii-lg)",
+  },
+  fontSize: { base: 18, sm: 20, md: 22 },
   "::placeholder": {
-    fontSize: "20px", // Adjust the size as needed
+    fontSize: { base: 18, sm: 22 }, // Adjust the size as needed
     color: "gray.500", // Optional: adjust the color if needed
   },
 };
 
 const QueriesForm: React.FC = () => {
   return (
+    // bgColor={"rebeccapurple"}
     <VStack>
-      <HStack w={"100%"} justifyContent={"end"} mb={-55}>
-        <Image src={EllipseGreen} w={"150px"} />
+      <HStack
+        pos={"absolute"}
+        zIndex={1}
+        // bgColor={"rebeccapurple"}
+        right={0}
+        mt={{ base: -12, sm: 18, md: -20 }}
+      >
+        <Image
+          src={EllipseGreen}
+          w={{
+            base: "100px",
+            sm: "100px",
+            md: "110px",
+            lg: "130px",
+            "2xl": "150px",
+          }}
+        />
       </HStack>
-      <VStack my={10}>
+      <VStack
+        mt={44}
+        mb={20}
+        w={{
+          base: `calc(100vw - 100px)`,
+          md: `100vw`,
+          lg: `100vw`,
+          "2xl": `100vw`,
+        }}
+      >
         <Heading
+          textAlign={"center"}
           fontFamily={"Roboto-Slab"}
           fontWeight={700}
-          fontSize={60}
-          mb={2}
+          fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}
+          mb={{ base: 4, md: 2, lg: 3, xl: 4, "2xl": 5 }}
         >
           Got a question or a few?
         </Heading>
         <Text
+          textAlign={"center"}
           color={"secondary.200"}
-          fontSize={25}
+          fontSize={{ base: 20, sm: 22, md: "25px", xl: 24 }}
           fontFamily={"Poppins"}
           fontWeight={400}
+          w={{ base: "80%", sm: "80%", md: "60%", lg: "70%" }}
         >
           If you have any question, drop us a note. Fill out the below form and
           we will get it.
         </Text>
       </VStack>
-      <HStack w={"80%"} spacing={20}>
-        <VStack w={"50%"} mb={10}>
-          <Box w="100%">
-            <HStack>
+      <SimpleGrid
+        spacing={8}
+        w={{
+          base: "calc(100vw - 50px)",
+          sm: "calc(100vw - 100px)",
+          md: "calc(100vw - 200px)",
+          lg: "calc(100vw - 200px)",
+          "2xl": "calc(100vw - 200px)",
+        }}
+        columns={{ base: 1, sm: 1, md: 1, lg: 2, xl: 2, "2xl": 2 }}
+      >
+        <VStack>
+          <Box w="full" mb={{ sm: 10 }}>
+            <Stack
+              spacing={5}
+              direction={{
+                base: "column",
+                sm: "row",
+                md: "row",
+                lg: "column",
+                xl: "row",
+              }}
+            >
               <Input
                 placeholder="Name"
-                py={10}
-                w={"600px"}
+                py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                 border={"2px solid #2C3B46"}
                 style={{ paddingLeft: "20px" }}
                 sx={customPlaceholderStyle}
@@ -68,51 +122,54 @@ const QueriesForm: React.FC = () => {
               />
               <Input
                 placeholder="Surname"
-                py={10}
-                w={"600px"}
+                py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                 border={"2px solid #2C3B46"}
                 style={{ paddingLeft: "20px" }}
                 sx={customPlaceholderStyle}
                 color={"blue.300"}
               />
-            </HStack>
+            </Stack>
             <VStack py={5} spacing={5}>
               <InputGroup>
-                <InputLeftElement pointerEvents="none" mt={6}>
+                <InputLeftElement
+                  pointerEvents="none"
+                  mt={{ base: 1, sm: 2, md: 2, lg: 6 }}
+                >
                   <EmailIcon color="gray.700" fontSize={"1.3em"} ml={2} />
                 </InputLeftElement>
                 <Input
                   type="tel"
                   placeholder="Your Email"
-                  py={10}
+                  py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
                 />
               </InputGroup>
-
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
                   color="gray.700"
                   fontSize="1.3em"
-                  mt={5}
+                  mt={{ base: 1, sm: 2, md: 2, lg: 6 }}
                 >
                   <PhoneIcon color="gray.700" ml={2} />
                 </InputLeftElement>
                 <Input
                   placeholder="Phone Number"
-                  py={10}
+                  py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
                 />
               </InputGroup>
               <Textarea
+                h={{ base: "100px", md: "180px" }}
                 placeholder="How can we help?"
                 size="lg"
                 border={"2px solid #2C3B46"}
-                style={{ paddingLeft: "20px" }}
+                // style={{ paddingLeft: "20px" }}
+                py={{ base: 6, sm: 7, md: 6, lg: 8, xl: 10 }}
                 sx={customPlaceholderStyle}
                 color={"blue.300"}
               />
@@ -121,8 +178,8 @@ const QueriesForm: React.FC = () => {
               rightIcon={<ArrowForwardIcon ml={3} color={"secondary.400"} />}
               type="submit"
               size={"lg"}
-              px={10}
-              fontWeight={400}
+              px={{ base: 6, sm: 6 }}
+              py={{ base: 4, sm: 6 }}
               fontFamily={"poppins"}
               letterSpacing={2}
             >
@@ -130,20 +187,24 @@ const QueriesForm: React.FC = () => {
             </Button>
           </Box>
         </VStack>
-        <VStack w={"50%"} spacing={6}>
+        <VStack spacing={4}>
           <Flex
             bgColor={"secondary.400"}
             p={5}
             flexDir={"column"}
-            borderRadius="var(--chakra-radii-xl)"
+            borderRadius="var(--chakra-radii-2xl)"
           >
-            <HStack mb={2}>
+            <HStack mb={2} borderRadius="var(--chakra-radii-3xl)">
               <SunIcon boxSize={8} mr={4} />
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 Support and Maintenance
               </Text>
             </HStack>
-            <Text fontSize={18} fontWeight={400} fontFamily={"Poppins"}>
+            <Text
+              fontSize={{ sm: 16, lg: 18 }}
+              fontWeight={400}
+              fontFamily={"Poppins"}
+            >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
               aspernatur voluptate mollitia similique ex totam. Laudantium
               explicabo quaerat sint sequi natus atque quae ut id, in dicta,
@@ -154,7 +215,7 @@ const QueriesForm: React.FC = () => {
             bgColor={"secondary.400"}
             p={5}
             flexDir={"column"}
-            borderRadius="var(--chakra-radii-xl)"
+            borderRadius="var(--chakra-radii-3xl)"
           >
             <HStack mb={2}>
               <SunIcon boxSize={8} mr={4} />
@@ -162,7 +223,11 @@ const QueriesForm: React.FC = () => {
                 24/7 Chat Support
               </Text>
             </HStack>
-            <Text fontSize={18} fontWeight={400} fontFamily={"Poppins"}>
+            <Text
+              fontSize={{ sm: 16, lg: 18 }}
+              fontWeight={400}
+              fontFamily={"Poppins"}
+            >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
               aspernatur voluptate mollitia similique ex totam. Laudantium
               explicabo quaerat sint sequi natus atque quae ut id, in dicta,
@@ -173,7 +238,7 @@ const QueriesForm: React.FC = () => {
             bgColor={"secondary.400"}
             p={5}
             flexDir={"column"}
-            borderRadius="var(--chakra-radii-xl)"
+            borderRadius="var(--chakra-radii-3xl)"
           >
             <HStack mb={2}>
               <SunIcon boxSize={8} mr={4} />
@@ -181,7 +246,11 @@ const QueriesForm: React.FC = () => {
                 Support and Maintenance
               </Text>
             </HStack>
-            <Text fontSize={18} fontWeight={400} fontFamily={"Poppins"}>
+            <Text
+              fontSize={{ sm: 16, lg: 18 }}
+              fontWeight={400}
+              fontFamily={"Poppins"}
+            >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
               aspernatur voluptate mollitia similique ex totam. Laudantium
               explicabo quaerat sint sequi natus atque quae ut id, in dicta,
@@ -189,9 +258,40 @@ const QueriesForm: React.FC = () => {
             </Text>
           </Flex>
         </VStack>
-      </HStack>
+      </SimpleGrid>
     </VStack>
   );
 };
 
 export default QueriesForm;
+{
+  /* <Stack
+w={{
+  base: "calc(100vw - 50px)",
+  sm: "calc(100vw - 100px)",
+  md: "calc(100vw - 200px)",
+  lg: "calc(100vw - 200px)",
+  "2xl": "calc(100vw - 200px)",
+}}
+direction={{
+  base: "column",
+  sm: "column",
+  md: "column",
+  lg: "row",
+  xl: "row",
+  "2xl": "row",
+}}
+>
+{/* w={"50%"} mb={10} 
+
+
+</Stack> */
+}
+{
+  /* <Box h={"100px"} w={"full"} bgColor={"rebeccapurple"}>
+          ALB
+        </Box>
+        <Box h={"100px"} w={"full"} bgColor={"rebeccapurple"}>
+          ALB
+        </Box> */
+}

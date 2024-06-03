@@ -5,16 +5,39 @@ import {
   FormControl,
   Input,
   Button,
+  Box,
+  Stack,
   Link,
   Center,
 } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
-    <>
-      <VStack py={20}>
-        <HStack w={"90%"} flex={1} spacing={1} justifyContent={"space-around"}>
-          <VStack px={20} align="start" spacing={6}>
+    <Box w={"full"}>
+      <VStack>
+        <Stack
+          py={{ base: 12, "2xl": 22 }}
+          direction={{
+            base: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            "2xl": "row",
+          }}
+          
+          // flex={1}
+          w={{
+            base: "calc(100vw - 50px)",
+            sm: "calc(100vw - 100px)",
+            md: "calc(100vw - 200px)",
+            lg: "calc(100vw - 200px)",
+            "2xl": "calc(100vw - 200px)",
+          }}
+          // spacing={1}
+          justifyContent={"space-evenly"}
+        >
+          {/* px={20}spacing={6} */}
+          <VStack  align="start" >
             <Text fontWeight={600} fontSize={40} fontFamily={"Jost"}>
               MUNSHEE
             </Text>
@@ -100,7 +123,7 @@ const Footer = () => {
               LinkedIn
             </Link>
           </VStack>
-        </HStack>
+        </Stack>
       </VStack>
       <Center bgColor={"blue.300"} py={4}>
         <Text
@@ -112,7 +135,7 @@ const Footer = () => {
           Copyright @ 2024 All rights reserved Munshee
         </Text>
       </Center>
-    </>
+    </Box>
   );
 };
 
