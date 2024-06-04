@@ -3,19 +3,36 @@ import ProductGrid from "./../../assets/Product grid view.png";
 
 const AttendenceSec = () => {
   return (
-    <HStack w={"100%"} justifyContent={"space-between"}>
+    <HStack
+      w={{ sm: "full", xl: "60%" }}
+      
+      justifyContent={"space-between"}
+    >
       <Box
         pos="absolute"
-        w={"400px"}
-        h={"600px"}
+        w={{
+          base: "33%",
+          sm: "40%",
+          md: "38%",
+          lg: "25%",
+          xl: "26%",
+          "2xl": "22.7%",
+        }}
+        h={{
+          base: "2%",
+          sm: "4.0%",
+          md: "5.8%",
+          lg: "5.2%",
+          xl: "6.75%",
+          "2xl": "7.5%",
+        }}
         bgColor={"#38d87d"}
-        ml={40}
-        marginTop={"170px"}
+        ml={{ base: "5%", md: "7%", lg: "4.3%", xl: "3%", "2xl": "3.9%" }}
       />
       <Img
         pos="relative"
-        top={"85px"}
-        left={"80px"}
+        // top={"85px"}
+        // left={"80px"}
         src={ProductGrid}
         w={"900px"}
       />

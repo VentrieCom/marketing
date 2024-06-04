@@ -9,16 +9,16 @@ import {
 
 const Testimonials = () => {
   return (
-    <Card
-      w={"100%"}
+    <VStack
+      w={"full"}
       display="flex"
       flexDirection="column"
       alignItems="center"
-      py={10}
+      my={{ sm: 20, md: 24, lg: 20, "2xl": 28 }}
       bgColor={"#0f161b"}
     >
       <Text
-        fontSize={60}
+        fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}
         fontWeight={700}
         fontFamily={"Roboto-Slab"}
         textAlign={"center"}
@@ -27,32 +27,30 @@ const Testimonials = () => {
       </Text>
       <Text
         textAlign={"center"}
-        fontSize={20}
+        my={{ base: 2, sm: 4, md: 8, lg: 18 }}
+        fontSize={{ base: 14, sm: 18, md: 20, lg: 22 }}
+        w={{ base: "75%", sm: "75%", md: "75%", lg: "60%", "2xl": "35%" }}
         fontFamily={"Poppins"}
         fontWeight={400}
-        w={"500px"}
-        mt={4}
       >
         Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
         sed odio. Blandit.
       </Text>
 
       <SimpleGrid
-        w="full"
-        spacing={7}
-        // bgColor={"rebeccapurple"}
-        columns={2}
-        px={250}
-        mt={10}
+      w={{
+        base: "calc(100vw - 50px)",
+        sm: "calc(100vw - 100px)",
+        md: "calc(100vw - 200px)",
+        lg: "calc(100vw - 200px)",
+        "2xl": "calc(100vw - 200px)",
+      }}
+        spacing={{ base: 4, sm: 5, md: 5, lg: 7 }}
+        columns={{ base: 1, sm: 1, md: 1, lg: 2, "2xl": 2 }}
+        mt={{ base: 18, sm: 20, md: 22, lg: 10 }}
       >
         {[1, 1, 1, 1].map(() => (
-          <Card
-            w={"100%"}
-            h={"200px"}
-            bgColor={"#2c3b46"}
-            borderRadius={15}
-            px={2}
-          >
+          <Card w={"full"} bgColor={"#2c3b46"} borderRadius={15} px={2} py={6}>
             <Text
               w={"100%"}
               fontSize={20}
@@ -92,8 +90,9 @@ const Testimonials = () => {
           </Card>
         ))}
       </SimpleGrid>
-    </Card>
+    </VStack>
   );
 };
 
 export default Testimonials;
+// px={250}
