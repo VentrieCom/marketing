@@ -44,7 +44,11 @@ const Navbar: React.FC = () => {
       <Text fontSize={40} fontFamily={"jost"} fontWeight={600}>
         MUNSHEE
       </Text>
-      <HStack bgColor={"rosybrown"}>
+      <HStack
+        bgColor={"rosybrown"}
+        // display={"none"}
+        // display={{ base: "none", sm: "none", md: "flex" }}
+      >
         <Button
           variant="link"
           px={4}

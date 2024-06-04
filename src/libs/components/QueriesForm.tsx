@@ -56,8 +56,7 @@ const QueriesForm: React.FC = () => {
   };
 
   return (
-    // bgColor={"rebeccapurple"}
-    <VStack>
+    <VStack w={"full"}>
       <HStack
         pos={"absolute"}
         zIndex={1}
@@ -80,10 +79,11 @@ const QueriesForm: React.FC = () => {
         mt={44}
         mb={20}
         w={{
-          base: `calc(100vw - 100px)`,
-          md: `100vw`,
-          lg: `100vw`,
-          "2xl": `100vw`,
+          base: "calc(100vw - 50px)",
+          sm: "calc(100vw - 100px)",
+          md: "calc(100vw - 200px)",
+          lg: "calc(100vw - 200px)",
+          "2xl": "calc(100vw - 200px)",
         }}
       >
         <Heading
@@ -264,7 +264,6 @@ const QueriesForm: React.FC = () => {
           >
             <HStack mb={2}>
               <Image src={BulbIcon} w={"30px"} h={"25px"} />
-
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 Support and Maintenance
               </Text>

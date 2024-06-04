@@ -4,8 +4,15 @@ import {
   Flex,
   HStack,
   Image,
+  Drawer,
   Text,
   VStack,
+  useDisclosure,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerBody,
+  Stack,
 } from "@chakra-ui/react";
 
 import Attendance from "../../../assets/Images/Attendance.png";
@@ -18,15 +25,18 @@ import {
   StarIcon,
   UnlockIcon,
 } from "@chakra-ui/icons";
+import React from "react";
 const WelcomeScreen: React.FC = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const hamburgerRef = React.useRef("null");
   return (
     <Box
       bgImage={`url(${WelcomeBG})`}
-      bgPosition={"top"}
+      bgPosition={{ sm: "top", md: "top" }}
       bgRepeat="no-repeat"
       bgSize={{
         base: "cover",
-        sm: "contain",
+        sm: "cover",
         md: "cover",
         lg: "100vw auto",
         "2xl": "contain",
@@ -54,10 +64,101 @@ const WelcomeScreen: React.FC = () => {
               md: "space-between",
             }}
           >
+            {/* TODO : CORRECT THESE TSX ERRORS  */}
             <HamburgerIcon
+              ref={hamburgerRef}
+              cursor={"pointer"}
+              onClick={onOpen}
               boxSize={{ base: 6, sm: 6, md: 6, lg: 8 }}
               display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
             />
+            <Drawer
+              isOpen={isOpen}
+              placement="left"
+              size={"full"}
+              onClose={onClose}
+              finalFocusRef={hamburgerRef}
+            >
+              <DrawerOverlay />
+              <DrawerContent>
+                <DrawerCloseButton />
+                <DrawerBody>
+                  <Stack mt={10} spacing={4}>
+                    <Button
+                      _hover={{ bgColor: "" }}
+                      variant="link"
+                      fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
+                      fontFamily={"Roboto slab"}
+                      fontWeight={400}
+                      color={"#6F7D7F"}
+                    >
+                      Home
+                    </Button>
+                    <Button
+                      variant="link"
+                      fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
+                      fontFamily={"Roboto slab"}
+                      fontWeight={400}
+                      color={"#6F7D7F"}
+                    >
+                      About
+                    </Button>
+                    <Button
+                      variant="link"
+                      fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
+                      fontFamily={"Roboto slab"}
+                      fontWeight={400}
+                      color={"#6F7D7F"}
+                    >
+                      Testimonials
+                    </Button>
+                    <Button
+                      variant="link"
+                      fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
+                      fontFamily={"Roboto slab"}
+                      fontWeight={400}
+                      color={"#6F7D7F"}
+                    >
+                      Contact
+                    </Button>
+                    <Button
+                      variant="link"
+                      display={{
+                        base: "flex",
+                        sm: "none",
+                        md: "none",
+                        lg: "none",
+                        xl: "none",
+                        "2xl": "none",
+                      }}
+                      fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
+                      fontFamily={"Roboto slab"}
+                      fontWeight={400}
+                      color={"#6F7D7F"}
+                    >
+                      Login
+                    </Button>
+                    <Button
+                      variant="link"
+                      display={{
+                        base: "flex",
+                        sm: "none",
+                        md: "none",
+                        lg: "none",
+                        xl: "none",
+                        "2xl": "none",
+                      }}
+                      fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
+                      fontFamily={"Roboto slab"}
+                      fontWeight={400}
+                      color={"#6F7D7F"}
+                    >
+                      Sign Up
+                    </Button>
+                  </Stack>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
             <HStack
               spacing={{ base: 0, lg: 3, xl: 4, "2xl": 6 }}
               display={{
@@ -109,11 +210,12 @@ const WelcomeScreen: React.FC = () => {
               fontSize={{ base: 28, lg: 40 }}
               fontFamily={"jost"}
               fontWeight={600}
-              mr={{ md: -24, lg: 2, xl: 10, "2xl": 140 }}
+              mr={{ base: 2, sm: 4, md: -24, lg: 2, xl: 10, "2xl": 140 }}
             >
               MUNSHEE
             </Text>
             <HStack
+              display={{ base: "none", sm: "flex", md: "flex" }}
               flex={{ base: 1, sm: 1, md: 0, lg: 0, "2xl": 0 }}
               justifyContent={{ base: "flex-end", sm: "flex-end" }}
             >
@@ -173,6 +275,13 @@ const WelcomeScreen: React.FC = () => {
           </Text>
         </VStack>
         <Flex
+          display={{
+            base: "none",
+            sm: "none",
+            md: "none",
+            lg: "flex",
+            "2xl": "flex",
+          }}
           direction="column"
           justify="space-between"
           align="center"
@@ -187,36 +296,102 @@ const WelcomeScreen: React.FC = () => {
           <UnlockIcon boxSize="20px" color="secondary.200" />
           <StarIcon boxSize="20px" color="secondary.200" />
         </Flex>
-        <HStack position="relative" w="90%" minH="65vh" mt={"-52px"}>
+        <Stack
+          direction={{
+            base: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            "2xl": "row",
+          }}
+          position={{
+            base: "static",
+            sm: "static",
+            md: "relative",
+            lg: "relative",
+            "2xl": "relative",
+          }}
+          w={{
+            base: "calc(100vw - 50px)",
+            sm: "calc(100vw - 100px)",
+            md: "calc(100vw - 200px)",
+            lg: "calc(100vw - 200px)",
+            "2xl": "calc(100vw - 200px)",
+          }}
+          minH={{
+            base: "max-content",
+            sm: "max-content",
+            md: "64vh",
+            lg: "68vh",
+            "2xl": "65vh",
+          }}
+          spacing={{ base: 6, sm: 8 }}
+        >
           <Image
             src={Stocks}
             w={{ md: "450px", lg: "450px", xl: "530px", "2xl": "600px" }}
             alt="stocks screen"
-            position="absolute"
-            left={0}
-            bottom={0}
+            position={{
+              base: "static",
+              sm: "static",
+              md: "absolute",
+              lg: "absolute",
+              "2xl": "absolute",
+            }}
+            left={{ base: "none", sm: "none", md: 0, lg: 0, "2xl": 0 }}
+            bottom={{ base: "none", sm: "none", md: 0, lg: 0, "2xl": 0 }}
             zIndex={2}
           />
           <Image
             src={Product}
             alt="products screen"
             w={{ md: "700px", lg: "850px", xl: "950px", "2xl": "1100px" }}
-            position="absolute"
-            top="50%"
-            left="50%"
-            transform="translate(-50%, -50%)"
+            position={{
+              base: "static",
+              sm: "static",
+              md: "absolute",
+              lg: "absolute",
+              "2xl": "absolute",
+            }}
+            top={{
+              base: "none",
+              sm: "none",
+              md: "50%",
+              lg: "50%",
+              "2xl": "50%",
+            }}
+            left={{
+              base: "none",
+              sm: "none",
+              md: "50%",
+              lg: "50%",
+              "2xl": "50%",
+            }}
+            transform={{
+              base: "none",
+              sm: "none",
+              md: "translate(-50%, -50%)",
+              lg: "translate(-50%, -50%)",
+              "2xl": "translate(-50%, -50%)",
+            }}
             boxShadow="rgba(15, 22, 27, 0.2) 0px 8px 24px"
           />
           <Image
             src={Attendance}
             w={{ lg: "450px", xl: "530px", "2xl": "600px" }}
             alt="attendance screen"
-            position="absolute"
-            right={0}
-            bottom={0}
+            position={{
+              base: "static",
+              sm: "static",
+              md: "absolute",
+              lg: "absolute",
+              "2xl": "absolute",
+            }}
+            right={{ base: "none", sm: "none", md: 0, lg: 0, "2xl": 0 }}
+            bottom={{ base: "none", sm: "none", md: 0, lg: 0, "2xl": 0 }}
             zIndex={2}
           />
-        </HStack>
+        </Stack>
       </VStack>
     </Box>
   );

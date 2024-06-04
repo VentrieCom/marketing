@@ -11,26 +11,32 @@ import OurClient from "./OurClient";
 import Testimonials from "./Testimonials";
 import Subscribe from "./Subscribe";
 import Footer from "./Footer";
-// import FAQ from "./FAQ";
 import FAQs from "./FAQs";
 import QueriesForm from "./QueriesForm";
 import PricePlan from "./PricePlan";
 
 const About: React.FC = () => {
   return (
-    <VStack bgColor={"secondary.900"} w={"full"} mt={20}>
-      <HStack w={"full"} justifyContent={"space-between"} mb={28}>
+    <VStack bgColor={"secondary.900"} w={"full"}>
+      <HStack
+        pos={"relative"}
+        w={"full"}
+        justifyContent={"space-between"}
+        my={20}
+      >
         <Image
+          pos={"absolute"}
+          left={0}
           src={Ellipe}
           w={{
-            sm: "100px",
+            sm: "20px",
             md: "100px",
             lg: "100px",
             xl: "120px",
             "2xl": "150px",
           }}
         />
-        <HStack>
+        <HStack w={"full"} pb={{ "2xl": 24 }}>
           <Text
             textAlign={"center"}
             w={"full"}
@@ -44,9 +50,10 @@ const About: React.FC = () => {
         </HStack>
         <Image
           src={Groups}
+          pos={"absolute"}
+          right={0}
           w={"150px"}
-          marginBottom={"200px"}
-          onClick={() => {}}
+          marginBottom={{ base: 18, sm: 20, "2xl": "200px" }}
         />
       </HStack>
       <Stack
@@ -57,7 +64,7 @@ const About: React.FC = () => {
           xl: "calc(100vw - 200px)",
           "2xl": "calc(100vw - 200px)",
         }}
-        // bgColor={"rebeccapurple"}
+        bgColor={"rebeccapurple"}
         direction={{
           base: "column",
           sm: "column",
@@ -102,7 +109,6 @@ const About: React.FC = () => {
           xl: "calc(100vw - 200px)",
           "2xl": "calc(100vw - 200px)",
         }}
-        // bgColor={"rebeccapurple"}
         direction={{
           base: "column",
           sm: "column",
