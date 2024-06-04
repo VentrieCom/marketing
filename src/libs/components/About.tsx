@@ -17,25 +17,26 @@ import QueriesForm from "./QueriesForm";
 
 const About: React.FC = () => {
   return (
-    <VStack
-      bgColor={"secondary.900"}
-      w={"full"}
-      // h={"full"}
-      // overflowX={"hidden"}
-      // overflow={"clip"}
-    >
-      <HStack w={"full"} justifyContent={"space-between"} mb={28}>
+    <VStack bgColor={"secondary.900"} w={"full"}>
+      <HStack
+        pos={"relative"}
+        w={"full"}
+        justifyContent={"space-between"}
+        my={20}
+      >
         <Image
+          pos={"absolute"}
+          left={0}
           src={Ellipe}
           w={{
-            sm: "100px",
+            sm: "20px",
             md: "100px",
             lg: "100px",
             xl: "120px",
             "2xl": "150px",
           }}
         />
-        <HStack>
+        <HStack w={"full"} pb={{ "2xl": 24 }}>
           <Text
             textAlign={"center"}
             w={"full"}
@@ -47,7 +48,13 @@ const About: React.FC = () => {
             About Us
           </Text>
         </HStack>
-        <Image src={Groups} w={"150px"} marginBottom={"200px"} />
+        <Image
+          src={Groups}
+          pos={"absolute"}
+          right={0}
+          w={"150px"}
+          marginBottom={{ base: 18, sm: 20, "2xl": "200px" }}
+        />
       </HStack>
       <Stack
         w={{
@@ -57,7 +64,7 @@ const About: React.FC = () => {
           xl: "calc(100vw - 200px)",
           "2xl": "calc(100vw - 200px)",
         }}
-        // bgColor={"rebeccapurple"}
+        bgColor={"rebeccapurple"}
         direction={{
           base: "column",
           sm: "column",

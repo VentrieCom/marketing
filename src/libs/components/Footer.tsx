@@ -9,6 +9,9 @@ import {
   Stack,
   Link,
   Center,
+  SimpleGrid,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
@@ -38,17 +41,24 @@ const Footer = () => {
   return (
     <Box w={"full"}>
       <VStack>
-        <Stack
-          py={{ base: 12, "2xl": 22 }}
-          direction={{
-            base: "column",
-            sm: "column",
-            md: "row",
-            lg: "row",
-            "2xl": "row",
+        u
+        <Grid
+          my={{ base: 12, md: 24 }}
+          gap={{ base: 10, lg: 12, "2xl": 24 }}
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            sm: "repeat(1, 1fr)",
+            md: "repeat(3, 1fr)",
+            lg: "repeat(4, 1fr)",
+            xl: "repeat(4, 1fr)",
+            "2xl": "repeat(4, 1fr)",
           }}
-          
-          // flex={1}
+          templateRows={{
+            base: "repeat(4, 1fr)",
+            sm: "repeat(4, 1fr)",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(1, 1fr)",
+          }}
           w={{
             base: "calc(100vw - 50px)",
             sm: "calc(100vw - 100px)",
@@ -56,113 +66,244 @@ const Footer = () => {
             lg: "calc(100vw - 200px)",
             "2xl": "calc(100vw - 200px)",
           }}
-          // spacing={1}
-          justifyContent={"space-evenly"}
         >
-          {/* px={20}spacing={6} */}
-          <VStack  align="start" >
-            <Text fontWeight={600} fontSize={40} fontFamily={"Jost"}>
-              MUNSHEE
-            </Text>
-            <Text
-              w={"400px"}
-              fontSize={16}
-              fontWeight={400}
-              fontFamily={"Poppins"}
-            >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-              maiores rem eveniet veritatis nihil veniam! Labore doloremque
-              optio veritatis autem modi fugit rem incidunt, sint molestiae,
-              magnam accusantium dolores! Consequatur.
-            </Text>
-            <HStack as={FormControl} flex={1}>
-              <HStack dir="row">
-                <form ref={form} id="sendEmail" onSubmit={sendEmail}>
-                  <HStack>
-                    <Input
-                      placeholder="Email Address"
-                      size={"lg"}
-                      name="user_email"
-                    />
-
-                    <Button
-                      px={10}
-                      fontSize={16}
-                      fontWeight={600}
-                      fontFamily={"Poppins"}
-                      form={"sendEmail"}
-                      type="submit"
-                    >
-                      Register
-                    </Button>
-                  </HStack>
-                </form>
+          <GridItem
+            w={"full"}
+            colSpan={{ base: 1, sm: 1, md: 4, lg: 1, "2xl": 1 }}
+          >
+            <VStack align="start" spacing={{ base: 6, "2xl": 10 }}>
+              <Text fontWeight={600} fontSize={40} fontFamily={"Jost"}>
+                MUNSHEE
+              </Text>
+              <Text
+                fontSize={16}
+                textAlign={"justify"}
+                fontWeight={400}
+                fontFamily={"Poppins"}
+              >
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+                maiores rem eveniet veritatis nihil veniam! Labore doloremque
+                optio veritatis autem modi fugit rem incidunt, sint molestiae,
+                magnam accusantium dolores! Consequatur.
+              </Text>
+              <HStack as={FormControl}>
+                <HStack>
+                  <form ref={form} id="sendEmail" onSubmit={sendEmail}>
+                    <HStack>
+                      <Input
+                        placeholder="Email Address"
+                        borderRadius={"var(--chakra-radii-xl)"}
+                        _placeholder={{
+                          color: "primary.100",
+                        }}
+                        size={"lg"}
+                        borderWidth={"2px"}
+                        bgColor={"secondary.700"}
+                        name="user_email"
+                      />
+                      <Button
+                        px={10}
+                        fontSize={16}
+                        fontWeight={600}
+                        fontFamily={"Poppins"}
+                        borderRadius={"var(--chakra-radii-xl)"}
+                        form={"sendEmail"}
+                        type="submit"
+                      >
+                        Register
+                      </Button>
+                    </HStack>
+                  </form>
+                </HStack>
               </HStack>
-            </HStack>
-          </VStack>
-          <VStack px={20} align="start" spacing={5}>
-            <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Categories
-            </Text>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Web / Mobile Application
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Warehouse/ Logistics
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Marketing
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Employee Managment
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Auditing
-            </Link>
-          </VStack>
-          <VStack px={20} align="start" spacing={5}>
-            <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
-              About
-            </Text>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              About US
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Partnerships
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Finance Experts
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Project Managment
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              The Team
-            </Link>
-          </VStack>
-          <VStack px={20} align="start" spacing={5} mt={-10}>
-            <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Follow Us
-            </Text>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Facebook
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Twitter
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              Instagram
-            </Link>
-            <Link fontSize={16} fontWeight={400} fontFamily={"Roboto Slab"}>
-              LinkedIn
-            </Link>
-          </VStack>
-        </Stack>
+            </VStack>
+          </GridItem>
+          <GridItem w={"full"}>
+            <VStack align="start" spacing={{ base: 6, "2xl": 12 }}>
+              <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
+                Categories
+              </Text>
+              <Stack
+                direction={{
+                  base: "column",
+                  sm: "column",
+                  md: "column",
+                  lg: "column",
+                  "2xl": "column",
+                }}
+                spacing={{ base: 3, md: 4, lg: 5, "2xl": 6 }}
+              >
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Web/ Mobile Application
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Warehouse/ Logistics
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Marketing
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Employee Managment
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Auditing
+                </Link>
+              </Stack>
+            </VStack>
+          </GridItem>
+          {/* bgColor={"firebrick"} */}
+          <GridItem w={"full"}>
+            <VStack align={"start"} h={"full"} spacing={{ base: 8, "2xl": 12 }}>
+              <Text
+                fontSize={30}
+                fontWeight={400}
+                fontFamily={"Poppins"}
+                letterSpacing={"4%"}
+              >
+                About
+              </Text>
+              <Stack
+                direction={{
+                  base: "column",
+                  sm: "column",
+                  md: "column",
+                  lg: "column",
+                  "2xl": "column",
+                }}
+                spacing={{ base: 3, md: 4, lg: 5, "2xl": 6 }}
+              >
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  About US
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Partnerships
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Finance Experts
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Project Managment
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  The Team
+                </Link>
+              </Stack>
+            </VStack>
+          </GridItem>
+          <GridItem w={"full"}>
+            <VStack align="start" spacing={{ base: 8, "2xl": 12 }}>
+              <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
+                Follow Us
+              </Text>
+              <Stack
+                direction={{
+                  base: "column",
+                  sm: "column",
+                  md: "column",
+                  lg: "column",
+                  "2xl": "column",
+                }}
+                spacing={{ base: 3, md: 4, lg: 5, "2xl": 6 }}
+              >
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Facebook
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Twitter
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  Instagram
+                </Link>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  fontFamily={"Poppins"}
+                  letterSpacing={"4%"}
+                >
+                  LinkedIn
+                </Link>
+              </Stack>
+            </VStack>
+          </GridItem>
+        </Grid>
       </VStack>
       <Center bgColor={"blue.300"} py={4}>
         <Text
+          textAlign={"center"}
           fontWeight={600}
-          fontSize={20}
+          fontSize={{ base: 18, sm: 20, md: 22, lg: 22 }}
+          w={{
+            base: "calc(100vw - 50px)",
+            sm: "calc(100vw - 100px)",
+            md: "calc(100vw - 200px)",
+            lg: "calc(100vw - 200px)",
+            "2xl": "calc(100vw - 200px)",
+          }}
           fontFamily={"Poppins"}
           color={"secondary.800"}
         >
@@ -174,3 +315,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// colSpan={{ base: 1, sm: 1, md: 1 }}colSpan={{ base: 1, sm: 1, md: 1 }}

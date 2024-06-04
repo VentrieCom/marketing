@@ -19,24 +19,24 @@ const OurClient = () => {
       py={10}
       bgColor={"#0f161b"}
     >
-      <HStack
-        pos={"absolute"}
-        right={0}
-        justifyContent={"end"}
-        mt={{ base: 0, sm: -20, md: -28, lg: -28, "2xl": -28 }}
-      >
-        <Image
-          src={Ellipse}
-          w={{
-            base: "100px",
-            sm: "100px",
-            md: "110px",
-            lg: "130px",
-            "2xl": "150px",
-          }}
-          transform={"rotate(180deg)"}
-        />
-      </HStack>
+    {/* <HStack
+      pos={"absolute"}
+      right={0}
+      justifyContent={"end"}
+      mt={{ base: 0, sm: -20, md: -28, lg: -28, "2xl": -28 }}
+    >
+      <Image
+        src={Ellipse}
+        w={{
+          base: "100px",
+          sm: "100px",
+          md: "110px",
+          lg: "130px",
+          "2xl": "150px",
+        }}
+        transform={"rotate(180deg)"}
+      />
+    </HStack> */}
       <Text
         mt={{ base: 24, sm: 20, md: 20, lg: 32, xl: 42, "2xl": 48 }}
         fontWeight={700}
