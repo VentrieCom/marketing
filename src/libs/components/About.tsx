@@ -11,9 +11,9 @@ import OurClient from "./OurClient";
 import Testimonials from "./Testimonials";
 import Subscribe from "./Subscribe";
 import Footer from "./Footer";
-// import FAQ from "./FAQ";
 import FAQs from "./FAQs";
 import QueriesForm from "./QueriesForm";
+import PricePlan from "./PricePlan";
 
 const About: React.FC = () => {
   return (
@@ -96,6 +96,7 @@ const About: React.FC = () => {
         justifyContent={"space-between"}
         mt={{ sm: 32, md: 36, lg: 36 }}
         spacing={{ md: 10, lg: 14, xl: 20 }}
+        py={40}
       >
         <StockText />
         <StockSec />
@@ -108,7 +109,6 @@ const About: React.FC = () => {
           xl: "calc(100vw - 200px)",
           "2xl": "calc(100vw - 200px)",
         }}
-        // bgColor={"rebeccapurple"}
         direction={{
           base: "column",
           sm: "column",
@@ -119,6 +119,7 @@ const About: React.FC = () => {
         justifyContent={"space-between"}
         spacing={{ md: 10, lg: 14, xl: 20 }}
         mt={{ base: 44 }}
+        py={10}
       >
         <AttendenceSec />
         <AttendenceText />
@@ -126,6 +127,7 @@ const About: React.FC = () => {
       <OurClient />
       <Testimonials />
       <FAQs />
+      <PricePlan />
       <QueriesForm />
       <Subscribe />
       <Footer />

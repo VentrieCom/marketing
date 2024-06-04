@@ -3,7 +3,6 @@ import {
   Button,
   Flex,
   HStack,
-  Heading,
   Image,
   Drawer,
   Text,
@@ -65,7 +64,7 @@ const WelcomeScreen: React.FC = () => {
               md: "space-between",
             }}
           >
-            /*{" "}
+            {/* TODO : CORRECT THESE TSX ERRORS  */}
             <HamburgerIcon
               ref={hamburgerRef}
               cursor={"pointer"}
@@ -252,8 +251,8 @@ const WelcomeScreen: React.FC = () => {
           spacing={{ base: 12, sm: 14 }}
           textAlign="center"
         >
-          <Heading
-            fontFamily="mono"
+          <Text
+            fontFamily="Roboto Slab"
             fontSize={{
               base: "4xl",
               sm: "5xl",
@@ -263,12 +262,16 @@ const WelcomeScreen: React.FC = () => {
               "2xl": "6xl",
             }}
             mt={{ base: 28, sm: 28, md: 24, lg: 14 }}
+            fontWeight={700}
+            w={"550px"}
           >
             Munshee Desktop Application
-          </Heading>
-          <Text fontSize={{ sm: 18, md: 18, lg: 20, xl: 24, "2xl": 24 }}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-            exercitationem id aliquam quae consequatur.
+          </Text>
+          <Text fontSize={{ sm: 18, md: 18, lg: 20, xl: 24, "2xl": 24 }} py={5}>
+            We offers a wide range of services including Web/Mobile Application
+            development, Warehousing/Logistics, Marketing, Employee Management,
+            and Auditing, delivering tailored solutions to enhance your business
+            efficiency and growth.
           </Text>
         </VStack>
         <Flex
@@ -279,7 +282,6 @@ const WelcomeScreen: React.FC = () => {
             lg: "flex",
             "2xl": "flex",
           }}
-          // bgColor={"rebeccapurple"}
           direction="column"
           justify="space-between"
           align="center"
@@ -344,7 +346,6 @@ const WelcomeScreen: React.FC = () => {
             src={Product}
             alt="products screen"
             w={{ md: "700px", lg: "850px", xl: "950px", "2xl": "1100px" }}
-            // position="absolute"
             position={{
               base: "static",
               sm: "static",
@@ -379,7 +380,6 @@ const WelcomeScreen: React.FC = () => {
             src={Attendance}
             w={{ lg: "450px", xl: "530px", "2xl": "600px" }}
             alt="attendance screen"
-            // position="absolute"
             position={{
               base: "static",
               sm: "static",
@@ -398,47 +398,3 @@ const WelcomeScreen: React.FC = () => {
 };
 
 export default WelcomeScreen;
-{
-  /* <HamburgerIcon
-              cursor={"pointer"}
-              onClick={() => console.log(`COSOLED TO THE LOG`)}
-              boxSize={{ base: 6, sm: 6, md: 6, lg: 8 }}
-              display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
-            /> */
-}
-{
-  /* <Menu>
-              <MenuButton
-                boxSize={{ base: 6, sm: 6, md: 6, lg: 8 }}
-                display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
-                bgColor={"transparent"}
-                _hover={{
-                  bgColor: "transparent",
-                }}
-                as={IconButton}
-                aria-label="options"
-                icon={<HamburgerIcon cursor={"pointer"} />}
-              />
-              <MenuList w={"full"}>
-                <MenuItem>Home</MenuItem>
-                <MenuItem>About</MenuItem>
-                <MenuItem>Testimonials</MenuItem>
-                <MenuItem>Contact</MenuItem>
-                <MenuItem display={{ base: "flex", sm: "none", md: "none" }}>
-                  Login
-                </MenuItem>
-                <MenuItem
-                  display={{
-                    base: "flex",
-                    sm: "none",
-                    md: "none",
-                    lg: "none",
-                    xl: "none",
-                    "2xl": "none",
-                  }}
-                >
-                  Sign Up
-                </MenuItem>
-              </MenuList>
-            </Menu> */
-}

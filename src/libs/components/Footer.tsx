@@ -9,7 +9,6 @@ import {
   Stack,
   Link,
   Center,
-  SimpleGrid,
   Grid,
   GridItem,
 } from "@chakra-ui/react";
@@ -315,5 +314,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// colSpan={{ base: 1, sm: 1, md: 1 }}colSpan={{ base: 1, sm: 1, md: 1 }}
