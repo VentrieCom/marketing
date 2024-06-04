@@ -1,8 +1,6 @@
 import { Button, Text, VStack } from "@chakra-ui/react";
 
 const ProductText: React.FC = () => {
-  // ml={"6%"}
-  // ml={40}
   return (
     <VStack
       w={{ md: "full", lg: "40%", "2xl": "40%" }}
@@ -46,4 +44,3 @@ const ProductText: React.FC = () => {
 };
 
 export default ProductText;
-// ml={40}

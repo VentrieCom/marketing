@@ -64,7 +64,6 @@ const About: React.FC = () => {
           xl: "calc(100vw - 200px)",
           "2xl": "calc(100vw - 200px)",
         }}
-        bgColor={"rebeccapurple"}
         direction={{
           base: "column",
           sm: "column",
