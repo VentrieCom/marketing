@@ -23,17 +23,20 @@ const AttendenceText: React.FC = () => {
         fontWeight={400}
         fontFamily={"Poppins"}
       >
-        Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
-        sed odio. Blandit. Lorem ipsum dolor sit amet consectetur. Imperdiet
-        laoreet odio eu elit sed odio. Blandit. Lorem ipsum dolor sit amet
-        consectetur. Imperdiet laoreet odio eu elit sed odio. Blandit. Lorem
-        ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit sed
-        odio. Blandit.
+        Munshee provides a robust Employee Attendance Management service that
+        streamlines workforce operations with automated time tracking, leave
+        management, and real-time attendance analytics. Our user-friendly system
+        ensures accurate tracking, compliance with policies, and detailed
+        reporting, helping you manage employee productivity efficiently and
+        maintain a well-organized, productive workforce.
       </Text>
       <Button
         w={"140px"}
         mt={{ base: 8, sm: 6, md: 2, lg: 2, xl: 5 }}
         textAlign={"center"}
+        fontSize={16}
+        fontWeight={600}
+        fontFamily={"Poppins"}
       >
         Learn More
       </Button>

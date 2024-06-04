@@ -47,7 +47,6 @@ const Footer = () => {
             lg: "row",
             "2xl": "row",
           }}
-          
           // flex={1}
           w={{
             base: "calc(100vw - 50px)",
@@ -57,10 +56,11 @@ const Footer = () => {
             "2xl": "calc(100vw - 200px)",
           }}
           // spacing={1}
-          justifyContent={"space-evenly"}
+          justifyContent={"space-between"}
+          m={20}
         >
           {/* px={20}spacing={6} */}
-          <VStack  align="start" >
+          <VStack align="start">
             <Text fontWeight={600} fontSize={40} fontFamily={"Jost"}>
               MUNSHEE
             </Text>
@@ -140,7 +140,7 @@ const Footer = () => {
               The Team
             </Link>
           </VStack>
-          <VStack px={20} align="start" spacing={5} mt={-10}>
+          <VStack px={20} align="start" spacing={5}>
             <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
               Follow Us
             </Text>

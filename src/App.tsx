@@ -1,23 +1,13 @@
 import Navbar from "./libs/components/Navbar";
-import WelcomeScreen from "./libs/components/overrides/WelcomeSceen";
-import About from "./libs/components/About";
-import { Box } from "@chakra-ui/react";
-import WelcomeBG from "../src/assets/Images/WelcomeBG.png";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRoutes from "./AppRoutes";
 
 function App() {
   return (
-    <>
-      {/* <Box
-        bgImage={`url(${WelcomeBG})`}
-        bgPosition="top"
-        bgRepeat="no-repeat"
-        bgSize="contain"
-        bgColor={"secondary.900"}
-      > */}
-      {/* <Navbar /> */}
-      <WelcomeScreen />
-      <About />
-    </>
+    <Router>
+      <Navbar />
+      <AppRoutes />
+    </Router>
   );
 }
 

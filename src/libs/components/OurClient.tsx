@@ -1,4 +1,4 @@
-import { Card, HStack, Text, Image  } from "@chakra-ui/react";
+import { Card, HStack, Text, Image } from "@chakra-ui/react";
 import Justuno from "./../../assets/Justuno.png";
 import Tekyz from "./../../assets/Tekyz.png";
 import Photo from "./../../assets/Photo.net.png";
@@ -42,6 +42,7 @@ const OurClient = () => {
         fontWeight={700}
         fontFamily={"Roboto-Slab"}
         textAlign={"center"}
+        fontSize={60}
       >
         Our Clients
       </Text>

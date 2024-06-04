@@ -24,17 +24,19 @@ const StockText: React.FC = () => {
         fontFamily={"Poppins"}
         fontWeight={400}
       >
-        Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
-        sed odio. Blandit. Lorem ipsum dolor sit amet consectetur. Imperdiet
-        laoreet odio eu elit sed odio. Blandit. Lorem ipsum dolor sit amet
-        consectetur. Imperdiet laoreet odio eu elit sed odio. Blandit. Lorem
-        ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit sed
-        odio. Blandit.
+        Munshee offers top-tier warehousing services designed to optimize your
+        stock management. Our secure facilities ensure your products are stored
+        safely, with advanced inventory tracking systems providing real-time
+        updates on stock levels. We handle a wide variety of products, ensuring
+        accurate categorization and organization for easy retrieval.
       </Text>
       <Button
         w={"140px"}
         mt={{ base: 8, sm: 6, md: 2, lg: 2, xl: 5 }}
         textAlign={"center"}
+        fontSize={16}
+        fontWeight={600}
+        fontFamily={"Poppins"}
       >
         Learn More
       </Button>

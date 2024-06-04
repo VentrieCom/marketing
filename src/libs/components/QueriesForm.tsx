@@ -216,7 +216,7 @@ const QueriesForm: React.FC = () => {
             flexDir={"column"}
             borderRadius="var(--chakra-radii-2xl)"
           >
-            <HStack mb={2}  borderRadius="var(--chakra-radii-3xl)">
+            <HStack mb={2} borderRadius="var(--chakra-radii-3xl)">
               <Image src={BulbIcon} w={"30px"} h={"25px"} />
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 Support and Maintenance

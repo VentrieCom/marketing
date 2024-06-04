@@ -3,7 +3,6 @@ import {
   Button,
   Flex,
   HStack,
-  Heading,
   Image,
   Text,
   VStack,
@@ -150,7 +149,7 @@ const WelcomeScreen: React.FC = () => {
           spacing={{ base: 12, sm: 14 }}
           textAlign="center"
         >
-          <Heading
+          <Text
             fontFamily="Roboto Slab"
             fontSize={{
               base: "4xl",
@@ -161,12 +160,16 @@ const WelcomeScreen: React.FC = () => {
               "2xl": "6xl",
             }}
             mt={{ base: 28, sm: 28, md: 24, lg: 14 }}
+            fontWeight={700}
+            w={"550px"}
           >
             Munshee Desktop Application
-          </Heading>
-          <Text fontSize={{ sm: 18, md: 18, lg: 20, xl: 24, "2xl": 24 }}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-            exercitationem id aliquam quae consequatur.
+          </Text>
+          <Text fontSize={{ sm: 18, md: 18, lg: 20, xl: 24, "2xl": 24 }} py={5}>
+            We offers a wide range of services including Web/Mobile Application
+            development, Warehousing/Logistics, Marketing, Employee Management,
+            and Auditing, delivering tailored solutions to enhance your business
+            efficiency and growth.
           </Text>
         </VStack>
         <Flex
@@ -184,7 +187,7 @@ const WelcomeScreen: React.FC = () => {
           <UnlockIcon boxSize="20px" color="secondary.200" />
           <StarIcon boxSize="20px" color="secondary.200" />
         </Flex>
-        <HStack position="relative" w="90%" minH="65vh">
+        <HStack position="relative" w="90%" minH="65vh" mt={"-52px"}>
           <Image
             src={Stocks}
             w={{ md: "450px", lg: "450px", xl: "530px", "2xl": "600px" }}

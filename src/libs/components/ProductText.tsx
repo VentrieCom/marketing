@@ -24,18 +24,20 @@ const ProductText: React.FC = () => {
         fontSize={{ xl: 20, "2xl": 24 }}
         fontFamily={"Poppins"}
         fontWeight={400}
+        mr={5}
       >
-        Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
-        sed odio. Blandit. Lorem ipsum dolor sit amet consectetur. Imperdiet
-        laoreet odio eu elit sed odio. Blandit. Lorem ipsum dolor sit amet
-        consectetur. Imperdiet laoreet odio eu elit sed odio. Blandit. Lorem
-        ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit sed
-        odio. Blandit.
+        Munshee offers comprehensive warehouse services, including storage,
+        inventory management, and distribution for a wide range of products. Our
+        efficient solutions ensure your goods are handled with care and
+        delivered on time, streamlining your logistics operations.
       </Text>
       <Button
         w={"140px"}
         mt={{ base: 8, sm: 6, md: 2, lg: 2, xl: 5 }}
         textAlign={"center"}
+        fontSize={16}
+        fontWeight={600}
+        fontFamily={"Poppins"}
       >
         Learn More
       </Button>
