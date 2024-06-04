@@ -14,16 +14,11 @@ import Footer from "./Footer";
 // import FAQ from "./FAQ";
 import FAQs from "./FAQs";
 import QueriesForm from "./QueriesForm";
+import PricePlan from "./PricePlan";
 
 const About: React.FC = () => {
   return (
-    <VStack
-      bgColor={"secondary.900"}
-      w={"full"}
-      // h={"full"}
-      // overflowX={"hidden"}
-      // overflow={"clip"}
-    >
+    <VStack bgColor={"secondary.900"} w={"full"} mt={20}>
       <HStack w={"full"} justifyContent={"space-between"} mb={28}>
         <Image
           src={Ellipe}
@@ -47,7 +42,12 @@ const About: React.FC = () => {
             About Us
           </Text>
         </HStack>
-        <Image src={Groups} w={"150px"} marginBottom={"200px"} />
+        <Image
+          src={Groups}
+          w={"150px"}
+          marginBottom={"200px"}
+          onClick={() => {}}
+        />
       </HStack>
       <Stack
         w={{
@@ -89,6 +89,7 @@ const About: React.FC = () => {
         justifyContent={"space-between"}
         mt={{ sm: 32, md: 36, lg: 36 }}
         spacing={{ md: 10, lg: 14, xl: 20 }}
+        py={40}
       >
         <StockText />
         <StockSec />
@@ -112,6 +113,7 @@ const About: React.FC = () => {
         justifyContent={"space-between"}
         spacing={{ md: 10, lg: 14, xl: 20 }}
         mt={{ base: 44 }}
+        py={10}
       >
         <AttendenceSec />
         <AttendenceText />
@@ -119,6 +121,7 @@ const About: React.FC = () => {
       <OurClient />
       <Testimonials />
       <FAQs />
+      <PricePlan />
       <QueriesForm />
       <Subscribe />
       <Footer />
