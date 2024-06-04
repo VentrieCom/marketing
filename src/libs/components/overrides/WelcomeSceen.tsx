@@ -151,7 +151,7 @@ const WelcomeScreen: React.FC = () => {
           textAlign="center"
         >
           <Heading
-            fontFamily="mono"
+            fontFamily="Roboto Slab"
             fontSize={{
               base: "4xl",
               sm: "5xl",
