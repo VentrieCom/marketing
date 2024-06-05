@@ -70,7 +70,7 @@ const PricePlan = () => {
     <VStack w={"full"} my={{ base: 16, sm: 20, md: 18, lg: 22, "2xl": 24 }}>
       <Text
         fontWeight={700}
-        fontFamily={"Roboto-Slab"}
+        fontFamily={"Roboto Slab"}
         textAlign={"center"}
         fontSize={{ base: 42, sm: 46, "2xl": 60 }}
       >
@@ -235,7 +235,7 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
       <Text
         fontSize={{ base: 23, md: 28, lg: 32, "2xl": 32 }}
         mb={{ base: 4, md: 4, lg: 27 }}
-        fontFamily={"Roboto Condensed"}
+        fontFamily={"Poppins"}
         fontWeight={500}
       >
         {title}
@@ -245,7 +245,7 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
           // my={{ base: 2 }}
           fontSize={{ base: 32, sm: 36, md: 38, lg: 48, "2xl": 48 }}
           fontWeight={400}
-          fontFamily={"Roboto Condensed"}
+          fontFamily={"Poppins"}
         >
           {price}
         </Text>
@@ -253,7 +253,7 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
           mt={{ base: 2, lg: 6 }}
           fontSize={{ base: 14, "2xl": 20 }}
           fontWeight={400}
-          fontFamily={"Roboto Condensed"}
+          fontFamily={"Poppins"}
           color={selectd ? "secondary.900" : "secondary.100"}
         >
           / month / store
@@ -271,7 +271,7 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
       <VStack
         alignItems={"start"}
         mt={{ base: 8, md: 8, lg: 4 }}
-        spacing={{ base: 8, sm: 6, md: 6, lg: 2 }}
+        spacing={{ base: 6, sm: 4, md: 4, lg: 1 }}
       >
         {priceList.map((i) => {
           return (
@@ -285,7 +285,7 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
               <Text
                 fontSize={{ sm: 18, md: 18, lg: 20, "2xl": 20 }}
                 fontWeight={400}
-                fontFamily={"Roboto Condensed"}
+                fontFamily={"Poppins"}
                 ml={{ base: 1, sm: 1, md: 2, lg: 4 }}
               >
                 {i}

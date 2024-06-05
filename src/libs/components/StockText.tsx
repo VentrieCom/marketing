@@ -12,16 +12,15 @@ const StockText: React.FC = () => {
       <Text
         fontSize={40}
         fontWeight={700}
-        fontFamily={"Roboto Condensed"}
+        fontFamily={"Roboto Slab"}
         align={"start"}
         justifyContent={"start"}
       >
         Stocks
       </Text>
       <Text
-        textAlign={"justify"}
         fontSize={{ xl: 20, "2xl": 24 }}
-        fontFamily={"Roboto Condensed"}
+        fontFamily={"Poppins"}
         fontWeight={400}
       >
         Munshee offers top-tier warehousing services designed to optimize your
@@ -36,7 +35,7 @@ const StockText: React.FC = () => {
         textAlign={"center"}
         fontSize={16}
         fontWeight={600}
-        fontFamily={"Roboto Condensed"  }
+        fontFamily={"Poppins"}
       >
         Learn More
       </Button>

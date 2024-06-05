@@ -17,8 +17,11 @@ import {
 } from "@chakra-ui/react";
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 import BulbIcon from "./../../assets/streamline_ai-technology-spark.png";
+import DesignLine from "./../../assets/Design Line.png";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import SupportImg from "./../../assets/Images/Support.png";
+import TroubleshootingImg from "./../../assets/Images/troubleshooting.png";
 
 const customPlaceholderStyle = {
   borderRadius: {
@@ -29,8 +32,8 @@ const customPlaceholderStyle = {
   },
   fontSize: { base: 18, sm: 20, md: 22 },
   "::placeholder": {
-    fontSize: { base: 18, sm: 22 }, // Adjust the size as needed
-    color: "gray.500", // Optional: adjust the color if needed
+    fontSize: { base: 18, sm: 22 },
+    color: "gray.500",
   },
 };
 
@@ -57,10 +60,10 @@ const QueriesForm: React.FC = () => {
 
   return (
     <VStack w={"full"}>
+      <Image src={DesignLine} alt="Design line" left={0} pos={"absolute"} />
       <HStack
         pos={"absolute"}
         zIndex={1}
-        // bgColor={"rebeccapurple"}
         right={0}
         mt={{ base: -12, sm: 18, md: -20 }}
       >
@@ -151,7 +154,7 @@ const QueriesForm: React.FC = () => {
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
-                  mt={{ base: 1, sm: 2, md: 2, lg: 3 }}
+                  mt={{ base: 1, sm: 2, md: 2, lg: 3, "2xl": 6 }}
                 >
                   <EmailIcon
                     color="gray.700"
@@ -174,7 +177,7 @@ const QueriesForm: React.FC = () => {
                   pointerEvents="none"
                   color="gray.700"
                   fontSize="1.3em"
-                  mt={{ base: 1, sm: 2, md: 2, lg: 3 }}
+                  mt={{ base: 1, sm: 2, md: 2, lg: 3, "2xl": 6 }}
                 >
                   <PhoneIcon color="gray.700" ml={2} />
                 </InputLeftElement>
@@ -212,6 +215,7 @@ const QueriesForm: React.FC = () => {
               px={{ base: 6, sm: 6 }}
               py={{ base: 4, sm: 6 }}
               fontFamily={"poppins"}
+              fontWeight={400}
               letterSpacing={2}
             >
               Send Message
@@ -221,7 +225,8 @@ const QueriesForm: React.FC = () => {
         <VStack spacing={4}>
           <Flex
             bgColor={"secondary.400"}
-            p={5}
+            py={8}
+            px={6}
             flexDir={"column"}
             borderRadius="var(--chakra-radii-2xl)"
           >
@@ -236,20 +241,19 @@ const QueriesForm: React.FC = () => {
               fontWeight={400}
               fontFamily={"Poppins"}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
-              aspernatur voluptate mollitia similique ex totam. Laudantium
-              explicabo quaerat sint sequi natus atque quae ut id, in dicta,
-              nemo incidunt necessitatibus!
+              Munshee provides round-the-clock support and maintenance to ensure
+              uninterrupted service and optimal performance.
             </Text>
           </Flex>
           <Flex
             bgColor={"secondary.400"}
-            p={5}
+            py={8}
+            px={6}
             flexDir={"column"}
             borderRadius="var(--chakra-radii-3xl)"
           >
             <HStack mb={2}>
-              <Image src={BulbIcon} w={"30px"} h={"25px"} />
+              <Image src={SupportImg} w={"25px"} h={"25px"} />
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
                 24/7 Chat Support
               </Text>
@@ -259,22 +263,22 @@ const QueriesForm: React.FC = () => {
               fontWeight={400}
               fontFamily={"Poppins"}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
-              aspernatur voluptate mollitia similique ex totam. Laudantium
-              explicabo quaerat sint sequi natus atque quae ut id, in dicta,
-              nemo incidunt necessitatibus!
+              Munshee delivers unwavering 24/7 assistance, ensuring expert
+              support is always accessible, helping your business maintain
+              seamless operations.
             </Text>
           </Flex>
           <Flex
             bgColor={"secondary.400"}
-            p={5}
+            py={8}
+            px={6}
             flexDir={"column"}
             borderRadius="var(--chakra-radii-3xl)"
           >
             <HStack mb={2}>
-              <Image src={BulbIcon} w={"30px"} h={"25px"} />
+              <Image src={TroubleshootingImg} w={"30px"} h={"30px"} />
               <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
-                Support and Maintenance
+                Troubleshooting Guides
               </Text>
             </HStack>
             <Text
@@ -282,10 +286,9 @@ const QueriesForm: React.FC = () => {
               fontWeight={400}
               fontFamily={"Poppins"}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
-              aspernatur voluptate mollitia similique ex totam. Laudantium
-              explicabo quaerat sint sequi natus atque quae ut id, in dicta,
-              nemo incidunt necessitatibus!
+              Munshee provides concise troubleshooting guides, enabling quick
+              resolution of technical issues, ensuring uninterrupted
+              productivity
             </Text>
           </Flex>
         </VStack>

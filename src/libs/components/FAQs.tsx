@@ -15,18 +15,52 @@ import {
 } from "@chakra-ui/react";
 
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
+import DesignImage from "./../../assets/Design Line.png";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 
 const FAQs = () => {
   const [selected, setSelected] = useState(-1);
-
+  const faqsArray = [
+    {
+      question: "How do I reset my password if I forget it?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo dolorum beatae? Numquam adipisci itaque magnam distinctio dolor facere, amet enim! Eos fugit atque culpa dignissimos hic ullam, et minima.",
+    },
+    {
+      question: "Do you offer price matching?",
+      answer:
+        "Yes, we offer price matching for select products. If you find a lower price for the same product elsewhere, please contact our customer support team with the details, and we will do our best to match or beat the price.",
+    },
+    {
+      question: "How do I unsubscribe from your newsletter?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo dolorum beatae? Numquam adipisci itaque magnam distinctio dolor facere, amet enim! Eos fugit atque culpa dignissimos hic ullam, et minima.",
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo dolorum beatae? Numquam adipisci itaque magnam distinctio dolor facere, amet enim! Eos fugit atque culpa dignissimos hic ullam, et minima.",
+    },
+    {
+      question: "How can I contact customer support?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo dolorum beatae? Numquam adipisci itaque magnam distinctio dolor facere, amet enim! Eos fugit atque culpa dignissimos hic ullam, et minima.",
+    },
+  ];
   return (
     <VStack w={"full"} mt={{ base: 14, md: 10 }}>
+      <Image
+        src={DesignImage}
+        alt="design Line"
+        pos={"absolute"}
+        mt={-240}
+        right={0}
+      />
       <Text
         fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}
         fontWeight={700}
-        fontFamily={"Roboto Condensed"}
+        fontFamily={"Roboto Slab"}
         textAlign={"center"}
         mb={{ base: 20, sm: 20, md: 10, lg: 14, "2xl": 20 }}
       >
@@ -60,7 +94,7 @@ const FAQs = () => {
         }}
       >
         <Accordion allowToggle={true}>
-          {[1, 1, 1, 1].map((_, index) => {
+          {faqsArray.map((_, index) => {
             return (
               <AccordionItem
                 w={"full"}
@@ -104,9 +138,9 @@ const FAQs = () => {
                             "2xl": 26,
                           }}
                           fontWeight={400}
-                          fontFamily={"Roboto Condensed"}
+                          fontFamily={"Poppins"}
                         >
-                          Lorem, ipsum dolor sit amet consectetur?
+                          {_.question}
                         </Heading>
                       </AccordionButton>
                     </Flex>
@@ -123,14 +157,10 @@ const FAQs = () => {
                           }}
                           fontSize={{ base: 14, sm: 16, md: 18 }}
                           fontWeight={400}
-                          fontFamily={"Roboto Condensed"}
+                          fontFamily={"Poppins"}
                           w="full"
                         >
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Voluptas explicabo dolorum beatae? Numquam
-                          adipisci itaque magnam distinctio dolor facere, amet
-                          enim! Eos fugit atque culpa dignissimos hic ullam, et
-                          minima.
+                          {_.answer}
                         </Text>
                       </Flex>
                     </AccordionPanel>
@@ -139,151 +169,6 @@ const FAQs = () => {
               </AccordionItem>
             );
           })}
-
-          {/* <AccordionItem
-              style={{
-                border: selected ? "3px solid #38db7d" : "3px solid #2C3B46",
-                borderRadius: "var(--chakra-radii-xl)",
-                backgroundColor: "#202f36",
-                marginBottom: "30px",
-                cursor: "pointer",
-              }}
-            > */}
-          {/* {({ isExpanded }) => (
-                <Card onClick={SelectedColor}>
-                  <Flex textAlign={"left"} w={"full"}>
-                    <AccordionButton>
-                      <Center boxSize={14} mr={8}>
-                        {isExpanded ? (
-                          <MinusIcon boxSize={6} color={"blue.300"} />
-                        ) : (
-                          <AddIcon boxSize={6} color={"blue.300"} />
-                        )}
-                      </Center>
-                      <Heading
-                        alignContent={"center"}
-                        borderRadius={20}
-                        fontSize={20}
-                        fontWeight={400}
-                        fontFamily={"Poppins"}
-                      >
-                        Lorem, ipsum dolor sit amet consectetur?
-                      </Heading>
-                    </AccordionButton>
-                  </Flex>
-                  <AccordionPanel pb={4}>
-                    <Flex>
-                      <Box w={"230px"} />
-                      <Text
-                        fontSize={16}
-                        fontWeight={400}
-                        fontStyle={"Poppins"}
-                        mr={20}
-                      >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptas explicabo dolorum beatae? Numquam adipisci
-                        itaque magnam distinctio dolor facere, amet enim! Eos
-                        fugit atque culpa dignissimos hic ullam, et minima.
-                      </Text>
-                    </Flex>
-                  </AccordionPanel>
-                </Card>
-              )} */}
-          {/* </AccordionItem> */}
-          {/* <AccordionItem
-              style={{
-                border: selected ? "3px solid #38db7d" : "3px solid #2C3B46",
-                borderRadius: "var(--chakra-radii-xl)",
-                backgroundColor: "#202f36",
-                marginBottom: "30px",
-              }}
-            >
-              {({ isExpanded }) => (
-                <Card onClick={SelectedColor}>
-                  <Flex textAlign={"left"} w={"full"}>
-                    <AccordionButton>
-                      <Center boxSize={14} mr={8}>
-                        {isExpanded ? (
-                          <MinusIcon boxSize={6} color={"blue.300"} />
-                        ) : (
-                          <AddIcon boxSize={6} color={"blue.300"} />
-                        )}
-                      </Center>
-                      <Heading
-                        alignContent={"center"}
-                        borderRadius={20}
-                        fontSize={20}
-                        fontWeight={400}
-                        fontFamily={"Poppins"}
-                      >
-                        Lorem, ipsum dolor sit amet consectetur?
-                      </Heading>
-                    </AccordionButton>
-                  </Flex>
-                  <AccordionPanel pb={4}>
-                    <Flex>
-                      <Box w={"230px"} />
-                      <Text
-                        fontSize={16}
-                        fontWeight={400}
-                        fontStyle={"Poppins"}
-                        mr={20}
-                      >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptas explicabo dolorum beatae? Numquam adipisci
-                        itaque magnam distinctio dolor facere, amet enim! Eos
-                        fugit atque culpa dignissimos hic ullam, et minima.
-                      </Text>
-                    </Flex>
-                  </AccordionPanel>
-                </Card>
-              )}
-            </AccordionItem> */}
-          {/* <AccordionItem
-              style={{
-                border: selected ? "3px solid #38db7d" : "3px solid #2C3B46",
-                borderRadius: "var(--chakra-radii-xl)",
-                backgroundColor: "#202f36",
-                marginBottom: "30px",
-              }}
-            >
-              {({ isExpanded }) => (
-                <Card onClick={SelectedColor}>
-                  <Flex textAlign={"left"} w={"full"}>
-                    <AccordionButton>
-                      <Center boxSize={14} mr={8}>
-                        {isExpanded ? (
-                          <MinusIcon boxSize={6} color={"blue.300"} />
-                        ) : (
-                          <AddIcon boxSize={6} color={"blue.300"} />
-                        )}
-                      </Center>
-                      <Heading
-                        alignContent={"center"}
-                        borderRadius={20}
-                        fontSize={20}
-                        fontWeight={400}
-                        fontFamily={"Poppins"}
-                      >
-                        Lorem, ipsum dolor sit amet consectetur?
-                      </Heading>
-                    </AccordionButton>
-                  </Flex>
-                  <AccordionPanel
-                    pb={4}
-                    fontSize={16}
-                    fontWeight={400}
-                    fontStyle={"Poppins"}
-                    ml={"90px"}
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </AccordionPanel>
-                </Card>
-              )}
-            </AccordionItem> */}
         </Accordion>
       </Box>
     </VStack>

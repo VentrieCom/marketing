@@ -1,4 +1,4 @@
-import { Card, HStack, Text, Image } from "@chakra-ui/react";
+import { Card, HStack, Text, Image, Grid, GridItem } from "@chakra-ui/react";
 import Justuno from "./../../assets/Justuno.png";
 import Tekyz from "./../../assets/Tekyz.png";
 import Photo from "./../../assets/Photo.net.png";
@@ -7,7 +7,7 @@ import VV360 from "./../../assets/VV360.png";
 import HireExpert from "./../../assets/HireExpert.png";
 import GreenMedicine from "./../../assets/GreenMedicine.png";
 import Amplify from "./../../assets/Amplify.png";
-import Ellipse from "./../../assets/Ellipse 2008.png";
+// import Ellipse from "./../../assets/Ellipse 2008.png";
 
 const OurClient = () => {
   return (
@@ -38,9 +38,9 @@ const OurClient = () => {
       />
     </HStack> */}
       <Text
-        mt={{ base: 24, sm: 20, md: 20, lg: 32, xl: 42, "2xl": 48 }}
+        mt={{ base: 12, sm: 20, md: 20, lg: 32, xl: 42, "2xl": 28 }}
         fontWeight={700}
-        fontFamily={"Roboto Condensed"}
+        fontFamily={"Roboto Slab"}
         textAlign={"center"}
         fontSize={60}
       >
@@ -51,112 +51,133 @@ const OurClient = () => {
         fontSize={{ base: 14, sm: 18, md: 20, lg: 22 }}
         fontFamily={"Poppins"}
         fontWeight={400}
-        w={{ base: "75%", sm: "75%", md: "75%", lg: "60%", "2xl": "35%" }}
+        w={{ base: "75%", sm: "75%", md: "75%", lg: "60%", "2xl": "40%" }}
         my={{ base: 2, sm: 4, md: 8, lg: 18 }}
       >
-        Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
-        sed odio. Blandit.
+        Discover the distinguished names that have partnered with us - a
+        testament to our commitment to excellence and success.
       </Text>
-      <HStack
-        flexWrap={"wrap"}
+
+      <Grid
+        templateColumns={{
+          base: "repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+          "2xl": "repeat(4, 1fr)",
+        }}
         w={{
           md: "calc(100vw - 200px)",
           lg: "calc(100vw - 200px)",
-          "2xl": "calc(100vw - 200px)",
+          "2xl": "calc(100vw - 360px)",
         }}
-        mt={5}
       >
-        <Image
-          src={Justuno}
-          h={"180px"}
-          objectFit={{
-            sm: "contain",
-            md: "contain",
-            lg: "contain",
-            "2xl": "contain",
-          }}
-          flex={1}
-        />
-        <Image
-          src={Tekyz}
-          h={"180px"}
-          objectFit={{
-            sm: "contain",
-            md: "contain",
-            lg: "contain",
-            "2xl": "contain",
-          }}
-          flex={1}
-        />
-        <Image
-          src={Photo}
-          h={"180px"}
-          objectFit={{
-            sm: "contain",
-            md: "contain",
-            lg: "contain",
-            "2xl": "contain",
-          }}
-          flex={1}
-        />
-        <Image
-          src={Encast}
-          h={"180px"}
-          objectFit={{
-            sm: "contain",
-            md: "contain",
-            lg: "contain",
-            "2xl": "contain",
-          }}
-          flex={1}
-        />
-        <Image
-          src={VV360}
-          h={"180px"}
-          objectFit={{
-            sm: "contain",
-            md: "contain",
-            lg: "contain",
-            "2xl": "contain",
-          }}
-          flex={1}
-        />
-        <Image
-          src={HireExpert}
-          h={"180px"}
-          objectFit={{
-            sm: "contain",
-            md: "contain",
-            lg: "contain",
-            "2xl": "contain",
-          }}
-          flex={1}
-        />
-        <Image
-          src={GreenMedicine}
-          h={"180px"}
-          objectFit={{
-            sm: "contain",
-            md: "contain",
-            lg: "contain",
-            "2xl": "contain",
-          }}
-          flex={1}
-        />
-        <Image
-          src={Amplify}
-          h={"180px"}
-          objectFit={{
-            sm: "contain",
-            md: "contain",
-            lg: "contain",
-            "2xl": "contain",
-          }}
-          flex={1}
-        />
-      </HStack>
+        <GridItem justifySelf={"center"}>
+          <Image
+            src={Justuno}
+            h={{ base: "full", sm: "200px" }}
+            objectFit="contain"
+          />
+        </GridItem>
+        <GridItem justifySelf={"center"}>
+          <Image
+            src={Tekyz}
+            h={{ base: "full", sm: "200px" }}
+            objectFit={{
+              sm: "contain",
+              md: "contain",
+              lg: "contain",
+              "2xl": "contain",
+            }}
+          />
+        </GridItem>
+        <GridItem justifySelf={"center"}>
+          <Image
+            src={Photo}
+            h={{ base: "full", sm: "200px" }}
+            objectFit={{
+              sm: "contain",
+              md: "contain",
+              lg: "contain",
+              "2xl": "contain",
+            }}
+          />
+        </GridItem>
+        <GridItem justifySelf={"center"}>
+          <Image
+            src={Encast}
+            h={{ base: "full", sm: "200px" }}
+            objectFit={{
+              sm: "contain",
+              md: "contain",
+              lg: "contain",
+              "2xl": "contain",
+            }}
+          />
+        </GridItem>
+        <GridItem justifySelf={"center"}>
+          <Image
+            src={VV360}
+            h={{ base: "full", sm: "200px" }}
+            objectFit={{
+              sm: "contain",
+              md: "contain",
+              lg: "contain",
+              "2xl": "contain",
+            }}
+          />
+        </GridItem>
+        <GridItem justifySelf={"center"}>
+          <Image
+            src={HireExpert}
+            h={{ base: "full", sm: "200px" }}
+            objectFit={{
+              sm: "contain",
+              md: "contain",
+              lg: "contain",
+              "2xl": "contain",
+            }}
+          />
+        </GridItem>
+        <GridItem justifySelf={"center"}>
+          <Image
+            src={GreenMedicine}
+            h={{ base: "full", sm: "200px" }}
+            objectFit={{
+              sm: "contain",
+              md: "contain",
+              lg: "contain",
+              "2xl": "contain",
+            }}
+          />
+        </GridItem>
+        <GridItem justifySelf={"center"}>
+          <Image
+            src={Amplify}
+            h={{ base: "full", sm: "200px" }}
+            objectFit={{
+              sm: "contain",
+              md: "contain",
+              lg: "contain",
+              "2xl": "contain",
+            }}
+          />
+        </GridItem>
+      </Grid>
     </Card>
   );
 };
 
 export default OurClient;
+{
+  /* <HStack
+flexWrap={"wrap"}
+w={{
+  md: "calc(100vw - 200px)",
+  lg: "calc(100vw - 200px)",
+  "2xl": "calc(100vw - 360px)",
+}}
+mt={5}
+> */
+}
+{
+  /* </HStack> */
+}

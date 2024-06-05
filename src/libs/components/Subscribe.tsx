@@ -44,7 +44,7 @@ const Subscribe = () => {
           <Text
             flex={1}
             fontSize={{ base: 42, "2xl": 60 }}
-            fontFamily={"Roboto Condensed"}
+            fontFamily={"Roboto Slab"}
             fontWeight={700}
             color={"#0F161B"}
           >
@@ -72,7 +72,7 @@ const Subscribe = () => {
             px={12}
             py={8}
             fontSize={20}
-            fontFamily={"Roboto Condensed"}
+            fontFamily={"Poppins"}
             onClick={() => {}}
           >
             Get Started
@@ -82,14 +82,12 @@ const Subscribe = () => {
           <Text
             w={{ sm: "80%", md: "80%", "2xl": "60%" }}
             fontSize={20}
-            fontFamily={"Roboto Condensed"}
+            fontFamily={"Poppins"}
             fontWeight={400}
             color={"#0F161B"}
           >
-            Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu
-            elit sed odio. Blandit. Lorem ipsum dolor sit amet consectetur
-            Imperdiet laoreet odio eu elit sed odio. Blandit Lorem ipsum dolor
-            sit amet consectetur. Lorem ipsum dolor sit amet consectetur
+            Be the first to know about our newest releases, special promotions,
+            and insider updates by subscribing to our newsletter.
           </Text>
         </HStack>
       </VStack>

@@ -4,23 +4,23 @@ const ProductText: React.FC = () => {
   return (
     <VStack
       w={{ md: "full", lg: "40%", "2xl": "40%" }}
-      mt={{ base: 24, sm: 32, md: 24, lg: -4, xl: -8 }}
+      mt={{ base: 20, sm: 32, md: 24, lg: -4, xl: -8 }}
       alignItems={"flex-start"}
       spacing={{ base: 2, sm: 2, md: 4, lg: 4, xl: 4, "2xl": 10 }}
+      zIndex={3}
     >
       <Text
         fontSize={40}
         fontWeight={700}
-        fontFamily={"Roboto Condensed"}
+        fontFamily={"Roboto Slab"}
         align={"start"}
         justifyContent={"start"}
       >
         Products
       </Text>
       <Text
-        textAlign={"justify"}
         fontSize={{ xl: 20, "2xl": 24 }}
-        fontFamily={"Roboto Condensed"}
+        fontFamily={"Poppins"}
         fontWeight={400}
         mr={5}
       >
@@ -35,7 +35,7 @@ const ProductText: React.FC = () => {
         textAlign={"center"}
         fontSize={16}
         fontWeight={600}
-        fontFamily={"Roboto Condensed"}
+        fontFamily={"Poppins"}
       >
         Learn More
       </Button>
