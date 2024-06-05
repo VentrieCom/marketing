@@ -15,9 +15,15 @@ import FAQs from "./FAQs";
 import QueriesForm from "./QueriesForm";
 import PricePlan from "./PricePlan";
 
+import DesignLine from "./../../assets/Design Line.png";
+
 const About: React.FC = () => {
   return (
-    <VStack bgColor={"secondary.900"} w={"full"}>
+    <VStack
+
+      bgColor={"secondary.900"}
+      w={"full"}
+    >
       <HStack
         pos={"relative"}
         w={"full"}
@@ -37,11 +43,19 @@ const About: React.FC = () => {
             "2xl": "150px",
           }}
         />
+        <Image
+          src={DesignLine}
+          zIndex={2}
+          alt="design line"
+          pos={"absolute"}
+          top={{ md: -44, "2xl": -36 }}
+          right={0}
+        />
         <HStack w={"full"} pb={{ "2xl": 24 }}>
           <Text
             textAlign={"center"}
             w={"full"}
-            fontFamily={"Roboto Condensed"}
+            fontFamily={"Roboto Slab"}
             fontSize={{ base: 32, sm: 38, md: 40, lg: 48, "2xl": 58 }}
             mt={{ md: 0, lg: "10px", "2xl": "60px" }}
             fontWeight={700}
@@ -67,7 +81,6 @@ const About: React.FC = () => {
         />
       </HStack>
       <Stack
-        // bgColor={"darkblue"}
         w={{
           base: "calc(100vw - 100px)",
           sm: "calc(100vw - 100px)",
@@ -89,6 +102,7 @@ const About: React.FC = () => {
         <ProductText />
       </Stack>
       <Stack
+        zIndex={2}
         w={{
           base: "calc(100vw - 100px)",
           sm: "calc(100vw - 100px)",
@@ -105,8 +119,8 @@ const About: React.FC = () => {
         }}
         justifyContent={"space-between"}
         mt={{ sm: 32, md: 36, lg: 36 }}
-        spacing={{ md: 10, lg: 14, xl: 20 }}
-        py={40}
+        spacing={{ base: 12, md: 10, lg: 14, xl: 20 }}
+        py={{ base: 24, md: 40 }}
       >
         <StockText />
         <StockSec />
@@ -128,7 +142,7 @@ const About: React.FC = () => {
         }}
         justifyContent={"space-between"}
         spacing={{ md: 10, lg: 14, xl: 20 }}
-        mt={{ base: 44 }}
+        mt={{ base: 0 }}
         py={10}
       >
         <AttendenceSec />

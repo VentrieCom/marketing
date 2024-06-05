@@ -1,15 +1,12 @@
-// import Navbar from "./libs/components/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
-import AppRoutes from "./AppRoutes";
 import About from "./libs/components/About";
+import WelcomeScreen from "./libs/components/overrides/WelcomeSceen";
 
 function App() {
   return (
-    <Router>
-      {/* <Navbar /> */}
-      <AppRoutes />
+    <>
+      <WelcomeScreen />
       <About />
-    </Router>
+    </>
   );
 }
 
