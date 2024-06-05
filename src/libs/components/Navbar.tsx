@@ -67,13 +67,7 @@ const Navbar: React.FC = () => {
           fontWeight={400}
           color={"#6F7D7F"}
           onClick={() => navigate("about")}
-          variant="solid"
-          color={"secondary.900"}
           px={10}
-          fontFamily={"poppins"}
-          fontSize={16}
-          fontWeight={600}
-          textAlign={"center"}
         >
           Sign Up
         </Button>

@@ -6,6 +6,7 @@ import {
   Text,
   VStack,
   Image,
+  Stack,
 } from "@chakra-ui/react";
 import StarIcon from "./../../assets/Star (1).png";
 // import VectorIcon from "./../../assets/VectorArrow.png";
@@ -66,14 +67,7 @@ const PricePlan = () => {
   ];
 
   return (
-    <Card
-      w={"full"}
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      py={10}
-      bgColor={"#0f161b"}
-    >
+    <VStack w={"full"} my={{ lg: 22, "2xl": 24 }}>
       <Text
         fontWeight={700}
         fontFamily={"Roboto-Slab"}
@@ -83,58 +77,84 @@ const PricePlan = () => {
         Price Plan
       </Text>
       <Text
-        textAlign={"center"}
+        my={{ "2xl": 2 }}
+        fontSize={{ "2xl": 24 }}
         fontFamily={"Poppins"}
         fontWeight={400}
-        letterSpacing={5}
+        letterSpacing={{ "2xl": 4 }}
       >
         Choose a plan tailored to your needs
       </Text>
-      <HStack w={"100%"} mt={10} justifyContent={"space-evenly"}>
+      <Stack
+        direction={{
+          base: "column",
+          sm: "column",
+          md: "column",
+          lg: "row",
+          "2xl": "row",
+        }}
+        // bgColor={"royalblue"}
+        w={{ "2xl": "calc(100vw - 100px)" }}
+        mt={{ "2xl": 40 }}
+        // my={{ "2xl": 20 }}
+        justifyContent={"space-between"}
+      >
         {PriceList.map((i, index) => {
           return (
-            <HStack>
-              <Box
-                onClick={() => SetSelected(index)}
-                mb={selected === index ? 40 : 0}
-              >
-                <PricePlanCard
-                  title={i.title}
-                  price={i.price}
-                  priceList={i.features}
-                  selectd={selected === index}
-                />
-              </Box>
-            </HStack>
+            <Box
+              // bgColor={selected === index ? "royalblue" : "beige"}
+              onClick={() => SetSelected(index)}
+              // mb={selected === index ? 40 : 0}
+              mt={selected === index ? -20 : 0}
+            >
+              <PricePlanCard
+                title={i.title}
+                price={i.price}
+                priceList={i.features}
+                selectd={selected === index}
+              />
+            </Box>
           );
         })}
-      </HStack>
+      </Stack>
       <Text
-        w={"860px"}
-        py={20}
-        fontSize={30}
+        // w={"860px"}
+        // bgColor={"darkblue"}
+        textAlign={"center"}
+        w={{
+          base: "calc(100vw - 50px)",
+          sm: "calc(100vw - 100px)",
+          md: "calc(100vw - 200px)",
+          lg: "calc(100vw - 200px)",
+          "2xl": "60%",
+        }}
+        mt={{ lg: 28, "2xl": 32 }}
+        // py={20}
+        fontSize={{ lg: 28, "2xl": 34 }}
         fontWeight={500}
         fontFamily={"Poppins"}
       >
-        For self hosted and maintained system price 574000. With all the
-        features of{" "}
+        For self hosted and maintained system price{" "}
+        <Text as={"span"} fontWeight={700}>
+          574000.
+        </Text>
+        <br /> With all the features of{" "}
         <Text
           as="span"
-          display="inline"
           fontWeight={500}
           fontSize={30}
           fontFamily={"Poppins"}
           color={"blue.300"}
         >
-          {" "}
           Basic Company Plan
         </Text>
       </Text>
-    </Card>
+    </VStack>
   );
 };
 
 export default PricePlan;
+// bgColor={"#0f161b"}
 
 interface PricePlanCardInterface {
   title: string;

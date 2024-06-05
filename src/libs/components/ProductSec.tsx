@@ -24,21 +24,10 @@ const ProductSec = () => {
         }}
         bgColor={"#38d87d"}
         ml={{ base: "5%", md: "7%", lg: "4.3%", xl: "3%", "2xl": "3.9%" }}
-        // marginTop={"170px"}
       />
-      <Img
-        pos="relative"
-        // top={"85px"}
-        // left={"80px"}
-        src={ProductGrid}
-        w={"900px"}
-      />
+      <Img pos="relative" src={ProductGrid} w={"900px"} />
     </HStack>
   );
 };
 
 export default ProductSec;
-// py={60}
-// w={{ md: "full", lg: "full", "2xl": "full" }}
-// bgColor={"darkblue"}
-//  justifyContent={"space-between"}

@@ -28,7 +28,7 @@ import {
 import React from "react";
 const WelcomeScreen: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const hamburgerRef = React.useRef("null");
+  const hamburgerRef = React.useRef(null);
   return (
     <Box
       bgImage={`url(${WelcomeBG})`}
@@ -64,7 +64,6 @@ const WelcomeScreen: React.FC = () => {
               md: "space-between",
             }}
           >
-            {/* TODO : CORRECT THESE TSX ERRORS  */}
             <HamburgerIcon
               ref={hamburgerRef}
               cursor={"pointer"}
