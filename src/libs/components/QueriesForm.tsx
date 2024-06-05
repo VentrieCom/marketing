@@ -76,7 +76,7 @@ const QueriesForm: React.FC = () => {
         />
       </HStack>
       <VStack
-        mt={44}
+        mt={{ lg: 24, "2xl": 20 }}
         mb={20}
         w={{
           base: "calc(100vw - 50px)",
@@ -90,7 +90,7 @@ const QueriesForm: React.FC = () => {
           textAlign={"center"}
           fontFamily={"Roboto-Slab"}
           fontWeight={700}
-          fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}
+          fontSize={{ base: 40, sm: 44, md: 48, lg: 60 }}
           mb={{ base: 4, md: 2, lg: 3, xl: 4, "2xl": 5 }}
         >
           Got a question or a few?
