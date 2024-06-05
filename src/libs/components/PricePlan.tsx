@@ -67,18 +67,20 @@ const PricePlan = () => {
   ];
 
   return (
-    <VStack w={"full"} my={{ lg: 22, "2xl": 24 }}>
+    <VStack w={"full"} my={{ base: 16, sm: 20, md: 18, lg: 22, "2xl": 24 }}>
       <Text
         fontWeight={700}
         fontFamily={"Roboto-Slab"}
         textAlign={"center"}
-        fontSize={60}
+        fontSize={{ base: 42, sm: 46, "2xl": 60 }}
       >
         Price Plan
       </Text>
       <Text
-        my={{ "2xl": 2 }}
-        fontSize={{ "2xl": 24 }}
+        textAlign={"center"}
+        mx={{ base: 2, sm: 4 }}
+        my={{ base: 6, md: 4, "2xl": 2 }}
+        fontSize={{ base: 16, md: 22, "2xl": 24 }}
         fontFamily={"Poppins"}
         fontWeight={400}
         letterSpacing={{ "2xl": 4 }}
@@ -94,26 +96,49 @@ const PricePlan = () => {
           "2xl": "row",
         }}
         // bgColor={"royalblue"}
-        w={{ "2xl": "calc(100vw - 100px)" }}
-        mt={{ "2xl": 40 }}
-        // my={{ "2xl": 20 }}
-        justifyContent={"space-between"}
+        w={{
+          base: "calc(100vw - 50px)",
+          md: "calc(100vw - 50px)",
+          "2xl": "calc(100vw - 100px)",
+        }}
+        mt={{ base: 18, md: 32, "2xl": 40 }}
+        spacing={{ base: 4, md: 6, "2xl": 12 }}
       >
         {PriceList.map((i, index) => {
           return (
-            <Box
-              // bgColor={selected === index ? "royalblue" : "beige"}
+            <Stack
+              w={"full"}
               onClick={() => SetSelected(index)}
-              // mb={selected === index ? 40 : 0}
-              mt={selected === index ? -20 : 0}
+              mt={{
+                base: 0,
+                sm: 0,
+                md: 0,
+                lg: selected === index ? -20 : 0,
+                "2xl": selected === index ? -20 : 0,
+              }}
+              direction={{
+                base: "row",
+                md: "column",
+                lg: "column",
+                "2xl": "column",
+              }}
             >
+              {/*<Box 
+             display={"flex"}
+               // alignItems={"stretch"}
+               // bgColor={selected === index ? "royalblue" : "beige"}
+               onClick={() => SetSelected(index)}
+               // mb={selected === index ? 40 : 0}
+               mt={selected === index ? -20 : 0}
+             >*/}
               <PricePlanCard
                 title={i.title}
                 price={i.price}
                 priceList={i.features}
                 selectd={selected === index}
               />
-            </Box>
+            </Stack>
+            // </Box>
           );
         })}
       </Stack>
@@ -128,9 +153,8 @@ const PricePlan = () => {
           lg: "calc(100vw - 200px)",
           "2xl": "60%",
         }}
-        mt={{ lg: 28, "2xl": 32 }}
-        // py={20}
-        fontSize={{ lg: 28, "2xl": 34 }}
+        mt={{ base: 20, lg: 28, "2xl": 32 }}
+        fontSize={{ base: 22, lg: 28, "2xl": 34 }}
         fontWeight={500}
         fontFamily={"Poppins"}
       >
@@ -142,7 +166,7 @@ const PricePlan = () => {
         <Text
           as="span"
           fontWeight={500}
-          fontSize={30}
+          fontSize={{ base: 22, md: 30 }}
           fontFamily={"Poppins"}
           color={"blue.300"}
         >
@@ -154,7 +178,6 @@ const PricePlan = () => {
 };
 
 export default PricePlan;
-// bgColor={"#0f161b"}
 
 interface PricePlanCardInterface {
   title: string;
@@ -172,27 +195,36 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
   const textColor = selectd ? "black" : "white";
   return (
     <Card
-      alignItems={"start"}
-      px={7}
-      py={10}
+      w={{ base: "full", sm: "full" }}
+      px={{ base: 4, md: 6, "2xl": 7 }}
+      py={{ base: 6, md: 7, "2xl": 8 }}
       color={textColor}
       bgColor={selectd ? "blue.300" : "#1a262d"}
-      minH={"1200px"}
-      minW="450px"
+      // minH={{ md: "100px", lg: "1200px", "2xl": "1200px" }}
+      // minW="450px"
       border={"2px solid #2C3B46"}
       borderRadius={"12px"}
     >
       {/* <Image src={VectorIcon} w={"100px"} h={"100px"} zIndex={200} /> */}
-      <Text fontSize={25} fontFamily={"Poppins"} fontWeight={500}>
+      <Text
+        fontSize={{ base: 23, "2xl": 25 }}
+        fontFamily={"Poppins"}
+        fontWeight={500}
+      >
         {title}
       </Text>
       <HStack>
-        <Text fontSize={40} fontWeight={400} fontFamily={"Poppins"}>
+        <Text
+          my={{ base: 2 }}
+          fontSize={{ base: 34, "2xl": 40 }}
+          fontWeight={400}
+          fontFamily={"Poppins"}
+        >
           {price}
         </Text>
         <Text
           mt={2}
-          fontSize={16}
+          fontSize={{ base: 14, "2xl": 16 }}
           fontWeight={400}
           fontFamily={"Poppins"}
           color={selectd ? "secondary.900" : "secondary.100"}
@@ -200,18 +232,27 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
           /month/store
         </Text>
       </HStack>
-      <Divider mt={5} border={"1px"} orientation="horizontal" />
+      <Divider
+        mt={{ base: 2, md: 5 }}
+        border={"1px"}
+        orientation="horizontal"
+      />
 
       <VStack alignItems={"start"}>
         {priceList.map((i) => {
           return (
-            <HStack mt={10}>
-              <Image src={StarIcon} w={"20px"} h={"20px"} />
+            <HStack mt={{ base: 6, md: 10 }}>
+              <Image
+                src={StarIcon}
+                mx={{ base: 0, lg: 1 }}
+                w={"20px"}
+                h={"20px"}
+              />
               <Text
                 fontSize={18}
                 fontWeight={400}
                 fontFamily={"Poppins"}
-                ml={5}
+                ml={{ base: 0, md: 2 }}
               >
                 {i}
               </Text>

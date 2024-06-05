@@ -262,7 +262,13 @@ const WelcomeScreen: React.FC = () => {
             }}
             mt={{ base: 28, sm: 28, md: 24, lg: 14 }}
             fontWeight={700}
-            w={"550px"}
+            w={{
+              base: `calc(100vw - 75px)`,
+              sm: `calc(100vw - 200px)`,
+              md: "90%",
+              lg: "75%",
+              "2xl": "70%",
+            }}
           >
             Munshee Desktop Application
           </Text>
