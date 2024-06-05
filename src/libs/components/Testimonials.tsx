@@ -20,7 +20,7 @@ const Testimonials = () => {
       <Text
         fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}
         fontWeight={700}
-        fontFamily={"Roboto-Slab"}
+        fontFamily={"Roboto Condensed"}
         textAlign={"center"}
       >
         Testimonials
@@ -30,7 +30,7 @@ const Testimonials = () => {
         my={{ base: 2, sm: 4, md: 8, lg: 18 }}
         fontSize={{ base: 14, sm: 18, md: 20, lg: 22 }}
         w={{ base: "75%", sm: "75%", md: "75%", lg: "60%", "2xl": "35%" }}
-        fontFamily={"Poppins"}
+        fontFamily={"Roboto Condensed"}
         fontWeight={400}
       >
         Lorem ipsum dolor sit amet consectetur. Imperdiet laoreet odio eu elit
@@ -54,7 +54,7 @@ const Testimonials = () => {
             <Text
               w={"100%"}
               fontSize={20}
-              fontFamily={"Poppins"}
+              fontFamily={"Roboto Condensed"}
               fontWeight={400}
               px={5}
               py={3}
@@ -73,11 +73,11 @@ const Testimonials = () => {
                 color={"#D9D9D9"}
               />
               <VStack spacing={0}>
-                <Text fontFamily={"Poppins"} fontWeight={600} fontSize={24}>
+                <Text fontFamily={"Roboto Condensed"} fontWeight={600} fontSize={24}>
                   Najam Memon
                 </Text>
                 <Text
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   fontWeight={400}
                   fontSize={15}
                   mr={"80px"}

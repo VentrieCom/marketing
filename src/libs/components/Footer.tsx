@@ -78,7 +78,7 @@ const Footer = () => {
                 fontSize={16}
                 textAlign={"justify"}
                 fontWeight={400}
-                fontFamily={"Poppins"}
+                fontFamily={"Roboto Condensed"}
               >
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
                 maiores rem eveniet veritatis nihil veniam! Labore doloremque
@@ -104,7 +104,7 @@ const Footer = () => {
                         px={10}
                         fontSize={16}
                         fontWeight={600}
-                        fontFamily={"Poppins"}
+                        fontFamily={"Roboto Condensed"}
                         borderRadius={"var(--chakra-radii-xl)"}
                         form={"sendEmail"}
                         type="submit"
@@ -119,7 +119,7 @@ const Footer = () => {
           </GridItem>
           <GridItem w={"full"}>
             <VStack align="start" spacing={{ base: 6, "2xl": 12 }}>
-              <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
+              <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Condensed"}>
                 Categories
               </Text>
               <Stack
@@ -135,7 +135,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Web/ Mobile Application
@@ -143,7 +143,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Warehouse/ Logistics
@@ -151,7 +151,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Marketing
@@ -159,7 +159,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Employee Managment
@@ -167,7 +167,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Auditing
@@ -181,7 +181,7 @@ const Footer = () => {
               <Text
                 fontSize={30}
                 fontWeight={400}
-                fontFamily={"Poppins"}
+                fontFamily={"Roboto Condensed"}
                 letterSpacing={"4%"}
               >
                 About
@@ -199,7 +199,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   About US
@@ -207,7 +207,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Partnerships
@@ -215,7 +215,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Finance Experts
@@ -223,7 +223,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Project Managment
@@ -231,7 +231,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   The Team
@@ -241,7 +241,7 @@ const Footer = () => {
           </GridItem>
           <GridItem w={"full"}>
             <VStack align="start" spacing={{ base: 8, "2xl": 12 }}>
-              <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
+              <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Condensed"}>
                 Follow Us
               </Text>
               <Stack
@@ -257,7 +257,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Facebook
@@ -265,7 +265,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Twitter
@@ -273,7 +273,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   Instagram
@@ -281,7 +281,7 @@ const Footer = () => {
                 <Link
                   fontSize={16}
                   fontWeight={400}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Roboto Condensed"}
                   letterSpacing={"4%"}
                 >
                   LinkedIn
@@ -303,7 +303,7 @@ const Footer = () => {
             lg: "calc(100vw - 200px)",
             "2xl": "calc(100vw - 200px)",
           }}
-          fontFamily={"Poppins"}
+          fontFamily={"Roboto Condensed"}
           color={"secondary.800"}
         >
           Copyright @ 2024 All rights reserved Munshee

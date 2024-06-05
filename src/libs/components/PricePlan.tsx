@@ -1,5 +1,4 @@
 import {
-  Box,
   Card,
   Divider,
   HStack,
@@ -9,7 +8,8 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import StarIcon from "./../../assets/Star (1).png";
-// import VectorIcon from "./../../assets/VectorArrow.png";
+import DarkIcon from "./../../assets/Dark Star.svg";
+import VectorIcon from "./../../assets/VectorArrow.png";
 import { useState } from "react";
 
 const PricePlan = () => {
@@ -102,7 +102,7 @@ const PricePlan = () => {
           "2xl": "calc(100vw - 100px)",
         }}
         mt={{ base: 18, md: 32, "2xl": 40 }}
-        spacing={{ base: 4, md: 6, "2xl": 12 }}
+        spacing={{ base: 5, md: 6, "2xl": 12 }}
       >
         {PriceList.map((i, index) => {
           return (
@@ -154,19 +154,23 @@ const PricePlan = () => {
           "2xl": "60%",
         }}
         mt={{ base: 20, lg: 28, "2xl": 32 }}
-        fontSize={{ base: 22, lg: 28, "2xl": 34 }}
+        fontSize={{ base: 20, lg: 28, "2xl": 34 }}
         fontWeight={500}
         fontFamily={"Poppins"}
       >
         For self hosted and maintained system price{" "}
-        <Text as={"span"} fontWeight={700}>
+        <Text
+          as={"span"}
+          fontSize={{ base: 20, lg: 28, "2xl": 34 }}
+          fontWeight={700}
+        >
           574000.
         </Text>
         <br /> With all the features of{" "}
         <Text
           as="span"
           fontWeight={500}
-          fontSize={{ base: 22, md: 30 }}
+          fontSize={{ base: 20, md: 30 }}
           fontFamily={"Poppins"}
           color={"blue.300"}
         >
@@ -196,63 +200,93 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
   return (
     <Card
       w={{ base: "full", sm: "full" }}
-      px={{ base: 4, md: 6, "2xl": 7 }}
-      py={{ base: 6, md: 7, "2xl": 8 }}
+      px={{ base: 6, sm: 4, md: 5, "2xl": 7 }}
+      py={{ base: 8, sm: 6, md: 8, "2xl": 8 }}
       color={textColor}
       bgColor={selectd ? "blue.300" : "#1a262d"}
-      // minH={{ md: "100px", lg: "1200px", "2xl": "1200px" }}
-      // minW="450px"
-      border={"2px solid #2C3B46"}
+      minH={{ base: 0, sm: 0, md: "100px", lg: "1000px", "2xl": "1000px" }}
+      border={selectd ? "none " : "2px solid #2C3B46"}
       borderRadius={"12px"}
     >
-      {/* <Image src={VectorIcon} w={"100px"} h={"100px"} zIndex={200} /> */}
+      {selectd && (
+        <Image
+          src={VectorIcon}
+          pos={"absolute"}
+          top={0}
+          left={0}
+          w={{
+            base: "75px",
+            sm: "100px",
+            md: "150px",
+            lg: "150px",
+            "2xl": "200px",
+          }}
+          h={{
+            base: "75px",
+            sm: "100px",
+            md: "150px",
+            lg: "150px",
+            "2xl": "200px",
+          }}
+          zIndex={10}
+        />
+      )}
+
       <Text
-        fontSize={{ base: 23, "2xl": 25 }}
-        fontFamily={"Poppins"}
+        fontSize={{ base: 23, md: 28, lg: 32, "2xl": 32 }}
+        mb={{ base: 4, md: 4, lg: 27 }}
+        fontFamily={"Roboto Condensed"}
         fontWeight={500}
       >
         {title}
       </Text>
       <HStack>
         <Text
-          my={{ base: 2 }}
-          fontSize={{ base: 34, "2xl": 40 }}
+          // my={{ base: 2 }}
+          fontSize={{ base: 32, sm: 36, md: 38, lg: 48, "2xl": 48 }}
           fontWeight={400}
-          fontFamily={"Poppins"}
+          fontFamily={"Roboto Condensed"}
         >
           {price}
         </Text>
         <Text
-          mt={2}
-          fontSize={{ base: 14, "2xl": 16 }}
+          mt={{ base: 2, lg: 6 }}
+          fontSize={{ base: 14, "2xl": 20 }}
           fontWeight={400}
-          fontFamily={"Poppins"}
+          fontFamily={"Roboto Condensed"}
           color={selectd ? "secondary.900" : "secondary.100"}
         >
-          /month/store
+          / month / store
         </Text>
       </HStack>
       <Divider
-        mt={{ base: 2, md: 5 }}
+        color={"secondary.900"}
+        mt={{ base: 2, md: 3 }}
         border={"1px"}
+        alignSelf={"center"}
+        w={{ base: "94%", lg: "93%" }}
         orientation="horizontal"
       />
 
-      <VStack alignItems={"start"}>
+      <VStack
+        alignItems={"start"}
+        mt={{ base: 8, md: 8, lg: 4 }}
+        spacing={{ base: 8, sm: 6, md: 6, lg: 2 }}
+      >
         {priceList.map((i) => {
           return (
-            <HStack mt={{ base: 6, md: 10 }}>
+            <HStack mt={{ base: 0, md: 0, lg: 4 }}>
               <Image
-                src={StarIcon}
-                mx={{ base: 0, lg: 1 }}
-                w={"20px"}
-                h={"20px"}
+                src={selectd ? DarkIcon : StarIcon}
+                mx={{ base: 0, sm: 3, md: 0, lg: 1 }}
+                w={{ base: "18px", sm: "20px", lg: "24px" }}
+                h={{ base: "18px", sm: "20px", lg: "24px" }}
               />
               <Text
-                fontSize={18}
+                fontSize={{ sm: 18, md: 18, lg: 20, "2xl": 20 }}
                 fontWeight={400}
-                fontFamily={"Poppins"}
-                ml={{ base: 0, md: 2 }}
+                fontFamily={"Roboto Condensed"}
+                ml={{ base: 1, sm: 1, md: 2, lg: 4 }}
               >
                 {i}
               </Text>

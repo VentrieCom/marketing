@@ -3,7 +3,9 @@ import ProductGrid from "./../../assets/Product grid view.png";
 
 const ProductSec = () => {
   return (
-    <HStack w={{ sm: "full", xl: "60%" }}>
+    <HStack 
+    // bgColor={"khaki"} 
+    w={{ sm: "full", xl: "60%" }}>
       <Box
         pos="absolute"
         w={{
@@ -15,11 +17,11 @@ const ProductSec = () => {
           "2xl": "22.7%",
         }}
         h={{
-          base: "2%",
-          sm: "4.0%",
-          md: "5.8%",
+          base: "1.5%",
+          sm: "2.7%",
+          md: "3.9%",
           lg: "5.2%",
-          xl: "6.75%",
+          xl: "6.7%",
           "2xl": "7.5%",
         }}
         bgColor={"#38d87d"}

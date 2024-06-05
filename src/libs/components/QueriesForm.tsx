@@ -92,6 +92,7 @@ const QueriesForm: React.FC = () => {
           fontWeight={700}
           fontSize={{ base: 40, sm: 44, md: 48, lg: 54, "2xl": 60 }}
           mb={{ base: 4, md: 2, lg: 3, xl: 4, "2xl": 5 }}
+          zIndex={4}
         >
           Got a question or a few?
         </Heading>
@@ -142,7 +143,6 @@ const QueriesForm: React.FC = () => {
                 placeholder="Surname"
                 py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                 border={"2px solid #2C3B46"}
-                style={{ paddingLeft: "20px" }}
                 sx={customPlaceholderStyle}
                 color={"blue.300"}
               />
@@ -151,16 +151,19 @@ const QueriesForm: React.FC = () => {
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
-                  mt={{ base: 1, sm: 2, md: 2, lg: 6 }}
+                  mt={{ base: 1, sm: 2, md: 2, lg: 3 }}
                 >
-                  <EmailIcon color="gray.700" fontSize={"1.3em"} ml={2} />
+                  <EmailIcon
+                    color="gray.700"
+                    fontSize={"1.3em"}
+                    ml={{ lg: 2, "2xl": 2 }}
+                  />
                 </InputLeftElement>
                 <Input
                   type="tel"
                   placeholder="Your Email"
-                  py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
+                  py={{ base: 6, sm: 7, md: 4, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
-                  style={{ paddingLeft: "20px" }}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
                   name="user_name"
@@ -171,7 +174,7 @@ const QueriesForm: React.FC = () => {
                   pointerEvents="none"
                   color="gray.700"
                   fontSize="1.3em"
-                  mt={{ base: 1, sm: 2, md: 2, lg: 6 }}
+                  mt={{ base: 1, sm: 2, md: 2, lg: 3 }}
                 >
                   <PhoneIcon color="gray.700" ml={2} />
                 </InputLeftElement>
@@ -179,7 +182,7 @@ const QueriesForm: React.FC = () => {
                   placeholder="Phone Number"
                   py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
-                  style={{ paddingLeft: "20px" }}
+                  // style={{ paddingLeft: "20px" }}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
                   name="description"
@@ -190,13 +193,19 @@ const QueriesForm: React.FC = () => {
                 placeholder="How can we help?"
                 size="lg"
                 border={"2px solid #2C3B46"}
-                // style={{ paddingLeft: "20px" }}
                 py={{ base: 6, sm: 7, md: 6, lg: 8, xl: 10 }}
                 sx={customPlaceholderStyle}
                 color={"blue.300"}
               />
             </VStack>
             <Button
+              w={{
+                base: "full",
+                sm: "full",
+                md: "initial",
+                lg: "initial",
+                "2xl": "initial",
+              }}
               rightIcon={<ArrowForwardIcon ml={3} color={"secondary.400"} />}
               type="submit"
               size={"lg"}

@@ -34,13 +34,15 @@ const WelcomeScreen: React.FC = () => {
       bgImage={`url(${WelcomeBG})`}
       bgPosition={{ sm: "top", md: "top" }}
       bgRepeat="no-repeat"
-      bgSize={{
-        base: "cover",
-        sm: "cover",
-        md: "cover",
-        lg: "100vw auto",
-        "2xl": "contain",
-      }}
+      objectFit={{ base: "cover", sm: "cover", md: "cover", lg: "contain" }}
+      // bgSize={{
+      //   base: "cover",
+      //   md: "contain",
+        //   sm: "cover",
+        //   md: "cover",
+        //   lg: "100vw auto",
+        //   // "2xl": "contain",
+      // }}
       bgColor={"secondary.900"}
     >
       <VStack w={"full"} py={2}>
@@ -87,7 +89,7 @@ const WelcomeScreen: React.FC = () => {
                       _hover={{ bgColor: "" }}
                       variant="link"
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto slab"}
+                      fontFamily={"Roboto Condensed"}
                       fontWeight={400}
                       color={"#6F7D7F"}
                     >
@@ -96,7 +98,7 @@ const WelcomeScreen: React.FC = () => {
                     <Button
                       variant="link"
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto slab"}
+                      fontFamily={"Roboto Condensed"}
                       fontWeight={400}
                       color={"#6F7D7F"}
                     >
@@ -105,7 +107,7 @@ const WelcomeScreen: React.FC = () => {
                     <Button
                       variant="link"
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto slab"}
+                      fontFamily={"Roboto Condensed"}
                       fontWeight={400}
                       color={"#6F7D7F"}
                     >
@@ -114,7 +116,7 @@ const WelcomeScreen: React.FC = () => {
                     <Button
                       variant="link"
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto slab"}
+                      fontFamily={"Roboto Condensed"}
                       fontWeight={400}
                       color={"#6F7D7F"}
                     >
@@ -131,7 +133,7 @@ const WelcomeScreen: React.FC = () => {
                         "2xl": "none",
                       }}
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto slab"}
+                      fontFamily={"Roboto Condensed"}
                       fontWeight={400}
                       color={"#6F7D7F"}
                     >
@@ -148,7 +150,7 @@ const WelcomeScreen: React.FC = () => {
                         "2xl": "none",
                       }}
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto slab"}
+                      fontFamily={"Roboto Condensed"}
                       fontWeight={400}
                       color={"#6F7D7F"}
                     >
@@ -171,7 +173,7 @@ const WelcomeScreen: React.FC = () => {
               <Button
                 variant="link"
                 fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
-                fontFamily={"Roboto slab"}
+                fontFamily={"Roboto Condensed"}
                 fontWeight={400}
                 color={"#6F7D7F"}
               >
@@ -180,7 +182,7 @@ const WelcomeScreen: React.FC = () => {
               <Button
                 variant="link"
                 fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
-                fontFamily={"Roboto slab"}
+                fontFamily={"Roboto Condensed"}
                 fontWeight={400}
                 color={"#6F7D7F"}
               >
@@ -189,7 +191,7 @@ const WelcomeScreen: React.FC = () => {
               <Button
                 variant="link"
                 fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
-                fontFamily={"Roboto slab"}
+                fontFamily={"Roboto Condensed"}
                 fontWeight={400}
                 color={"#6F7D7F"}
               >
@@ -198,7 +200,7 @@ const WelcomeScreen: React.FC = () => {
               <Button
                 variant="link"
                 fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
-                fontFamily={"Roboto slab"}
+                fontFamily={"Roboto Condensed"}
                 fontWeight={400}
                 color={"#6F7D7F"}
               >
@@ -222,7 +224,7 @@ const WelcomeScreen: React.FC = () => {
                 variant="link"
                 px={4}
                 color={"#6F7D7F"}
-                fontFamily={"Roboto slab"}
+                fontFamily={"Roboto Condensed"}
                 fontSize={{ md: 18, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={400}
               >
@@ -247,11 +249,11 @@ const WelcomeScreen: React.FC = () => {
         <VStack
           // bgColor={"rebeccapurple"}
           w={{ base: "80%", sm: "80%", md: "80%", lg: "50%" }}
-          spacing={{ base: 12, sm: 14 }}
+          spacing={{ base: 12, sm: 8 }}
           textAlign="center"
         >
           <Text
-            fontFamily="Roboto Slab"
+            fontFamily="Roboto Condensed"
             fontSize={{
               base: "4xl",
               sm: "5xl",
@@ -302,6 +304,7 @@ const WelcomeScreen: React.FC = () => {
           <StarIcon boxSize="20px" color="secondary.200" />
         </Flex>
         <Stack
+          mt={{ base: 0, sm: 0, md: 0, lg: 18, "2xl": 2 }}
           direction={{
             base: "column",
             sm: "column",
@@ -319,7 +322,7 @@ const WelcomeScreen: React.FC = () => {
           w={{
             base: "calc(100vw - 50px)",
             sm: "calc(100vw - 100px)",
-            md: "calc(100vw - 200px)",
+            md: "calc(100vw - 100px)",
             lg: "calc(100vw - 200px)",
             "2xl": "calc(100vw - 200px)",
           }}
@@ -334,7 +337,7 @@ const WelcomeScreen: React.FC = () => {
         >
           <Image
             src={Stocks}
-            w={{ md: "450px", lg: "450px", xl: "530px", "2xl": "600px" }}
+            w={{ md: "335px", lg: "450px", xl: "530px", "2xl": "600px" }}
             alt="stocks screen"
             position={{
               base: "static",
@@ -350,7 +353,12 @@ const WelcomeScreen: React.FC = () => {
           <Image
             src={Product}
             alt="products screen"
-            w={{ md: "700px", lg: "850px", xl: "950px", "2xl": "1100px" }}
+            w={{
+              md: "650px",
+              lg: "850px",
+              xl: "950px",
+              "2xl": "1100px",
+            }}
             position={{
               base: "static",
               sm: "static",
@@ -383,7 +391,7 @@ const WelcomeScreen: React.FC = () => {
           />
           <Image
             src={Attendance}
-            w={{ lg: "450px", xl: "530px", "2xl": "600px" }}
+            w={{ md: "335px", lg: "450px", xl: "530px", "2xl": "600px" }}
             alt="attendance screen"
             position={{
               base: "static",

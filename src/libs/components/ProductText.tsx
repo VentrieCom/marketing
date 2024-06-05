@@ -11,7 +11,7 @@ const ProductText: React.FC = () => {
       <Text
         fontSize={40}
         fontWeight={700}
-        fontFamily={"Roboto-Slab"}
+        fontFamily={"Roboto Condensed"}
         align={"start"}
         justifyContent={"start"}
       >
@@ -20,7 +20,7 @@ const ProductText: React.FC = () => {
       <Text
         textAlign={"justify"}
         fontSize={{ xl: 20, "2xl": 24 }}
-        fontFamily={"Poppins"}
+        fontFamily={"Roboto Condensed"}
         fontWeight={400}
         mr={5}
       >
@@ -35,7 +35,7 @@ const ProductText: React.FC = () => {
         textAlign={"center"}
         fontSize={16}
         fontWeight={600}
-        fontFamily={"Poppins"}
+        fontFamily={"Roboto Condensed"}
       >
         Learn More
       </Button>

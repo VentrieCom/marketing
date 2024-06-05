@@ -44,7 +44,7 @@ const Subscribe = () => {
           <Text
             flex={1}
             fontSize={{ base: 42, "2xl": 60 }}
-            fontFamily={"Roboto-Slab"}
+            fontFamily={"Roboto Condensed"}
             fontWeight={700}
             color={"#0F161B"}
           >
@@ -72,7 +72,7 @@ const Subscribe = () => {
             px={12}
             py={8}
             fontSize={20}
-            fontFamily={"Poppins"}
+            fontFamily={"Roboto Condensed"}
             onClick={() => {}}
           >
             Get Started
@@ -82,7 +82,7 @@ const Subscribe = () => {
           <Text
             w={{ sm: "80%", md: "80%", "2xl": "60%" }}
             fontSize={20}
-            fontFamily={"Poppins"}
+            fontFamily={"Roboto Condensed"}
             fontWeight={400}
             color={"#0F161B"}
           >
