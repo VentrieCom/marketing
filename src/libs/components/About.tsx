@@ -22,16 +22,17 @@ const About: React.FC = () => {
         pos={"relative"}
         w={"full"}
         justifyContent={"space-between"}
-        my={20}
+        my={{ base: 24, md: 32, lg: 20 }}
       >
         <Image
           pos={"absolute"}
           left={0}
           src={Ellipe}
           w={{
-            sm: "20px",
+            base: "75px",
+            sm: "80px",
             md: "100px",
-            lg: "100px",
+            lg: "120px",
             xl: "120px",
             "2xl": "150px",
           }}
@@ -40,23 +41,33 @@ const About: React.FC = () => {
           <Text
             textAlign={"center"}
             w={"full"}
-            fontFamily={"Roboto-Slab"}
-            fontSize={{ sm: 42, md: 48, lg: 48, "2xl": 58 }}
+            fontFamily={"Roboto Condensed"}
+            fontSize={{ base: 32, sm: 38, md: 40, lg: 48, "2xl": 58 }}
             mt={{ md: 0, lg: "10px", "2xl": "60px" }}
             fontWeight={700}
+            zIndex={12}
           >
             About Us
           </Text>
         </HStack>
         <Image
+          alignSelf={"flex-start"}
           src={Groups}
           pos={"absolute"}
+          top={{ base: -20, sm: -20, md: -12, lg: -4 }}
           right={0}
-          w={"150px"}
-          marginBottom={{ base: 18, sm: 20, "2xl": "200px" }}
+          w={{
+            base: "75px",
+            sm: "90px",
+            md: "100px",
+            lg: "110px",
+            xl: "120px",
+            "2xl": "150px",
+          }}
         />
       </HStack>
       <Stack
+        // bgColor={"darkblue"}
         w={{
           base: "calc(100vw - 100px)",
           sm: "calc(100vw - 100px)",
@@ -72,7 +83,7 @@ const About: React.FC = () => {
           "2xl": "row",
         }}
         justifyContent={"space-between"}
-        spacing={{ md: 10, lg: 14, xl: 20 }}
+        spacing={{ base: 4, md: 10, lg: 14, xl: 20 }}
       >
         <ProductSec />
         <ProductText />

@@ -11,7 +11,7 @@ const AttendenceText: React.FC = () => {
       <Text
         fontSize={40}
         fontWeight={700}
-        fontFamily={"Roboto-Slab"}
+        fontFamily={"Roboto Condensed"}
         align={"start"}
         justifyContent={"start"}
       >
@@ -21,7 +21,7 @@ const AttendenceText: React.FC = () => {
         textAlign={"justify"}
         fontSize={{ xl: 20, "2xl": 24 }}
         fontWeight={400}
-        fontFamily={"Poppins"}
+        fontFamily={"Roboto Condensed"}
       >
         Munshee provides a robust Employee Attendance Management service that
         streamlines workforce operations with automated time tracking, leave
@@ -36,7 +36,7 @@ const AttendenceText: React.FC = () => {
         textAlign={"center"}
         fontSize={16}
         fontWeight={600}
-        fontFamily={"Poppins"}
+        fontFamily={"Roboto Condensed"}
       >
         Learn More
       </Button>

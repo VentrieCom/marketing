@@ -18,7 +18,6 @@ import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 
-// TODO : CORRECT CARD DESCRIPTION  WIDHT//
 const FAQs = () => {
   const [selected, setSelected] = useState(-1);
 
@@ -27,7 +26,7 @@ const FAQs = () => {
       <Text
         fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}
         fontWeight={700}
-        fontFamily={"Roboto-Slab"}
+        fontFamily={"Roboto Condensed"}
         textAlign={"center"}
         mb={{ base: 20, sm: 20, md: 10, lg: 14, "2xl": 20 }}
       >
@@ -105,7 +104,7 @@ const FAQs = () => {
                             "2xl": 26,
                           }}
                           fontWeight={400}
-                          fontFamily={"Poppins"}
+                          fontFamily={"Roboto Condensed"}
                         >
                           Lorem, ipsum dolor sit amet consectetur?
                         </Heading>
@@ -124,7 +123,7 @@ const FAQs = () => {
                           }}
                           fontSize={{ base: 14, sm: 16, md: 18 }}
                           fontWeight={400}
-                          fontFamily={"Poppins"}
+                          fontFamily={"Roboto Condensed"}
                           w="full"
                         >
                           Lorem ipsum dolor sit amet consectetur adipisicing

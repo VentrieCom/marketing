@@ -19,7 +19,7 @@ const OurClient = () => {
       py={10}
       bgColor={"#0f161b"}
     >
-    {/* <HStack
+      {/* <HStack
       pos={"absolute"}
       right={0}
       justifyContent={"end"}
@@ -40,7 +40,7 @@ const OurClient = () => {
       <Text
         mt={{ base: 24, sm: 20, md: 20, lg: 32, xl: 42, "2xl": 48 }}
         fontWeight={700}
-        fontFamily={"Roboto-Slab"}
+        fontFamily={"Roboto Condensed"}
         textAlign={"center"}
         fontSize={60}
       >
@@ -59,7 +59,6 @@ const OurClient = () => {
       </Text>
       <HStack
         flexWrap={"wrap"}
-        //  w={"90%"}
         w={{
           md: "calc(100vw - 200px)",
           lg: "calc(100vw - 200px)",
@@ -161,56 +160,3 @@ const OurClient = () => {
 };
 
 export default OurClient;
-{
-  /* </HStack>
-      <HStack spacing={10}> */
-}
-// w={"300px"}
-{
-  /* <SimpleGrid
-columns={{ base: 1, sm: 1, md: 2, lg: 4 }} // 1 column on small screens, 2 columns on medium screens, 4 columns on large screens
-// spacing={5} // Adjust the spacing between images as needed
-mt={5}
->
-<Image
-  src={Justuno}
-  h="180px"
-  objectFit={{ md: "cover", lg: "scale-down", "2xl": "fill" }}
-/>
-<Image
-  src={Tekyz}
-  h="180px"
-  objectFit={{ md: "cover", lg: "scale-down", "2xl": "fill" }}
-/>
-<Image
-  src={Photo}
-  h="180px"
-  objectFit={{ md: "cover", lg: "scale-down", "2xl": "fill" }}
-/>
-<Image
-  src={Encast}
-  h="180px"
-  objectFit={{ md: "cover", lg: "scale-down", "2xl": "fill" }}
-/>
-<Image
-  src={VV360}
-  h="180px"
-  objectFit={{ md: "cover", lg: "scale-down", "2xl": "fill" }}
-/>
-<Image
-  src={HireExpert}
-  h="180px"
-  objectFit={{ md: "cover", lg: "scale-down", "2xl": "fill" }}
-/>
-<Image
-  src={GreenMedicine}
-  h="180px"
-  objectFit={{ md: "cover", lg: "scale-down", "2xl": "fill" }}
-/>
-<Image
-  src={Amplify}
-  h={"180px"}
-  objectFit={{ md: "cover", lg: "scale-down", "2xl": "fill" }}
-/>
-</SimpleGrid> */
-}
