@@ -23,16 +23,17 @@ import InstagramIcon from "./../../../assets/Images/Instagram Icon.png";
 import LinkedInIcon from "./../../../assets/Images/LinkedIn.png";
 import FacebookIcon from "./../../../assets/Images/Facebook Icon.png";
 
-import {
-  HamburgerIcon,
-  RepeatClockIcon,
-  StarIcon,
-  UnlockIcon,
-} from "@chakra-ui/icons";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import React from "react";
-const WelcomeScreen: React.FC = () => {
+const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const hamburgerRef = React.useRef(null);
+
+  const handleButtonClick = (section: string) => {
+    scrollToSection(section);
+    onClose();
+  };
+
   return (
     <Box
       bgImage={`url(${WelcomeBG})`}
@@ -97,6 +98,7 @@ const WelcomeScreen: React.FC = () => {
                       fontFamily={"Roboto Slab"}
                       fontWeight={400}
                       color={"#6F7D7F"}
+                      onClick={() => handleButtonClick("about")}
                     >
                       About
                     </Button>
@@ -106,6 +108,7 @@ const WelcomeScreen: React.FC = () => {
                       fontFamily={"Roboto Slab"}
                       fontWeight={400}
                       color={"#6F7D7F"}
+                      onClick={() => handleButtonClick("testimonials")}
                     >
                       Testimonials
                     </Button>
@@ -115,6 +118,7 @@ const WelcomeScreen: React.FC = () => {
                       fontFamily={"Roboto Slab"}
                       fontWeight={400}
                       color={"#6F7D7F"}
+                      onClick={() => handleButtonClick("contact")}
                     >
                       Contact
                     </Button>
@@ -181,6 +185,7 @@ const WelcomeScreen: React.FC = () => {
                 fontFamily={"Roboto Slab"}
                 fontWeight={400}
                 color={"#6F7D7F"}
+                onClick={() => scrollToSection("about")}
               >
                 About
               </Button>
@@ -190,6 +195,7 @@ const WelcomeScreen: React.FC = () => {
                 fontFamily={"Roboto Slab"}
                 fontWeight={400}
                 color={"#6F7D7F"}
+                onClick={() => scrollToSection("testimonials")}
               >
                 Testimonials
               </Button>
@@ -199,6 +205,7 @@ const WelcomeScreen: React.FC = () => {
                 fontFamily={"Roboto Slab"}
                 fontWeight={400}
                 color={"#6F7D7F"}
+                onClick={() => scrollToSection("contact")}
               >
                 Contact
               </Button>
