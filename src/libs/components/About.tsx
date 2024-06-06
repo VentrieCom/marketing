@@ -59,6 +59,7 @@ const About: React.FC<MyComponentProps> = ({
         />
         <HStack w={"full"} pb={{ "2xl": 24 }}>
           <Text
+            ref={about}
             textAlign={"center"}
             w={"full"}
             fontFamily={"Roboto Slab"}
