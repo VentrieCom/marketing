@@ -135,4 +135,4 @@ const Testimonials: React.FC<any> = ({ testimonials }) => {
 };
 
 export default Testimonials;
-// px={250}
+

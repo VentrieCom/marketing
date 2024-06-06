@@ -155,7 +155,7 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
-                  mt={{ base: 1, sm: 2, md: 2, lg: 3, "2xl": 6 }}
+                  mt={{ base: 1, sm: 2, md: 2, lg: 4, "2xl": 5 }}
                 >
                   <EmailIcon
                     color="gray.700"
@@ -178,7 +178,7 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
                   pointerEvents="none"
                   color="gray.700"
                   fontSize="1.3em"
-                  mt={{ base: 1, sm: 2, md: 2, lg: 3, "2xl": 6 }}
+                  mt={{ base: 1, sm: 2, md: 2, lg: 4, "2xl": 5 }}
                 >
                   <PhoneIcon color="gray.700" ml={2} />
                 </InputLeftElement>
