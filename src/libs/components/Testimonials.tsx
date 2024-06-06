@@ -51,7 +51,6 @@ const Testimonials: React.FC<any> = ({ testimonials }) => {
       flexDirection="column"
       alignItems="center"
       my={{ sm: 20, md: 24, lg: 20, "2xl": 28 }}
-      // bgColor={"#0f161b"}
       zIndex={2}
     >
       <Text

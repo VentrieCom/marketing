@@ -12,42 +12,16 @@ import {
   Center,
   Heading,
   VStack,
+  OrderedList,
+  ListItem,
+  UnorderedList,
 } from "@chakra-ui/react";
 
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 import DesignImage from "./../../assets/Design Line.png";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
-import { useState } from "react";
 
-const FAQs = () => {
-  const [selected, setSelected] = useState(-1);
-  const faqsArray = [
-    {
-      question: "How do I reset my password if I forget it?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo dolorum beatae? Numquam adipisci itaque magnam distinctio dolor facere, amet enim! Eos fugit atque culpa dignissimos hic ullam, et minima.",
-    },
-    {
-      question: "Do you offer price matching?",
-      answer:
-        "Yes, we offer price matching for select products. If you find a lower price for the same product elsewhere, please contact our customer support team with the details, and we will do our best to match or beat the price.",
-    },
-    {
-      question: "How do I unsubscribe from your newsletter?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo dolorum beatae? Numquam adipisci itaque magnam distinctio dolor facere, amet enim! Eos fugit atque culpa dignissimos hic ullam, et minima.",
-    },
-    {
-      question: "What payment methods do you accept?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo dolorum beatae? Numquam adipisci itaque magnam distinctio dolor facere, amet enim! Eos fugit atque culpa dignissimos hic ullam, et minima.",
-    },
-    {
-      question: "How can I contact customer support?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo dolorum beatae? Numquam adipisci itaque magnam distinctio dolor facere, amet enim! Eos fugit atque culpa dignissimos hic ullam, et minima.",
-    },
-  ];
+const FAQs: React.FC = () => {
   return (
     <VStack w={"full"} mt={{ base: 14, md: 10 }}>
       <Image
@@ -94,81 +68,303 @@ const FAQs = () => {
         }}
       >
         <Accordion allowToggle={true}>
-          {faqsArray.map((_, index) => {
-            return (
-              <AccordionItem
-                w={"full"}
-                mb={{ base: 4, sm: 6, md: 8 }}
-                borderRadius={{ base: "var(--chakra-radii-md)" }}
-                style={{
-                  border:
-                    selected === index
-                      ? "3px solid #38db7d"
-                      : "3px solid #1a262d",
-                  borderRadius: "var(--chakra-radii-3xl)",
-                  backgroundColor: "#202f36",
-                  cursor: "pointer",
-                }}
+          <AccordionItem
+            w={"full"}
+            mb={{ base: 4, sm: 6, md: 8 }}
+            borderRadius={"var(--chakra-radii-3xl)"}
+            bgColor={"#1A262D"}
+            cursor="pointer"
+          >
+            {({ isExpanded }) => (
+              <Card
+                bgColor={"#1A262D"}
+                borderRadius="var(--chakra-radii-3xl)"
+                border={isExpanded ? "3px solid #38db7d" : "3px solid #2C3B46"}
+                zIndex={100}
+                p={{ base: 2, md: 3, lg: 4, "2xl": 6 }}
               >
-                {({ isExpanded }) => (
-                  <Card
-                    zIndex={100}
-                    onClick={() => setSelected(index)}
-                    p={{ base: 2, md: 3, lg: 4, "2xl": 6 }}
-                  >
-                    <Flex textAlign={"left"} w={"full"} align="center">
-                      <AccordionButton as={Flex} align="center" w="full">
-                        <Center
-                          boxSize={{ base: 8, md: 18 }}
-                          mr={{ base: 6, sm: 8, md: 6, lg: 8 }}
-                        >
-                          {isExpanded ? (
-                            <MinusIcon boxSize={6} color={"blue.300"} />
-                          ) : (
-                            <AddIcon boxSize={6} color={"blue.300"} />
-                          )}
-                        </Center>
-                        <Heading
-                          textAlign={"left"}
-                          fontSize={{
-                            base: 20,
-                            sm: 22,
-                            md: 24,
-                            lg: 26,
-                            "2xl": 26,
-                          }}
-                          fontWeight={400}
-                          fontFamily={"Poppins"}
-                        >
-                          {_.question}
-                        </Heading>
-                      </AccordionButton>
-                    </Flex>
-                    <AccordionPanel pb={4}>
-                      <Flex>
-                        <Text
-                          ml={{
-                            base: "50px",
-                            sm: "64px",
-                            md: "42px",
-                            lg: "48px",
-                            xl: "6.4%",
-                            "2xl": "50px",
-                          }}
-                          fontSize={{ base: 14, sm: 16, md: 18 }}
-                          fontWeight={400}
-                          fontFamily={"Poppins"}
-                          w="full"
-                        >
-                          {_.answer}
-                        </Text>
-                      </Flex>
-                    </AccordionPanel>
-                  </Card>
-                )}
-              </AccordionItem>
-            );
-          })}
+                <Flex textAlign={"left"} w={"full"} align="center">
+                  <AccordionButton as={Flex} align="center" w="full">
+                    <Center
+                      boxSize={{ base: 8, md: 18 }}
+                      mr={{ base: 6, sm: 8, md: 6, lg: 8 }}
+                    >
+                      {isExpanded ? (
+                        <MinusIcon boxSize={6} color={"blue.300"} />
+                      ) : (
+                        <AddIcon boxSize={6} color={"blue.300"} />
+                      )}
+                    </Center>
+                    <Heading
+                      textAlign={"left"}
+                      fontSize={{
+                        base: 20,
+                        sm: 22,
+                        md: 24,
+                        lg: 26,
+                        "2xl": 26,
+                      }}
+                      fontWeight={400}
+                      fontFamily={"Poppins"}
+                    >
+                      How do I reset my password if I forget it?
+                    </Heading>
+                  </AccordionButton>
+                </Flex>
+                <AccordionPanel pb={4}>
+                  <Flex>
+                    <Text
+                      ml={{
+                        base: "50px",
+                        sm: "64px",
+                        md: "42px",
+                        lg: "48px",
+                        xl: "6.4%",
+                        "2xl": "50px",
+                      }}
+                      fontSize={{ base: 14, sm: 16, md: 18 }}
+                      fontWeight={400}
+                      fontFamily={"Poppins"}
+                      w="full"
+                    >
+                      To reset your password if you forget it:
+                      <OrderedList spacing={1}>
+                        <ListItem>Go to the login page.</ListItem>
+                        <ListItem>Click "Forgot Password."</ListItem>
+                        <ListItem>Enter your email address.</ListItem>
+                        <ListItem>
+                          Follow the instructions sent to your email to reset
+                          your password.
+                        </ListItem>
+                      </OrderedList>
+                    </Text>
+                  </Flex>
+                </AccordionPanel>
+              </Card>
+            )}
+          </AccordionItem>
+          <AccordionItem
+            w={"full"}
+            mb={{ base: 4, sm: 6, md: 8 }}
+            borderRadius={"var(--chakra-radii-3xl)"}
+            bgColor={"#1A262D"}
+            cursor="pointer"
+          >
+            {({ isExpanded }) => (
+              <Card
+                bgColor={"#1A262D"}
+                borderRadius="var(--chakra-radii-3xl)"
+                border={isExpanded ? "3px solid #38db7d" : "3px solid #2C3B46"}
+                zIndex={100}
+                p={{ base: 2, md: 3, lg: 4, "2xl": 6 }}
+              >
+                <Flex textAlign={"left"} w={"full"} align="center">
+                  <AccordionButton as={Flex} align="center" w="full">
+                    <Center
+                      boxSize={{ base: 8, md: 18 }}
+                      mr={{ base: 6, sm: 8, md: 6, lg: 8 }}
+                    >
+                      {isExpanded ? (
+                        <MinusIcon boxSize={6} color={"blue.300"} />
+                      ) : (
+                        <AddIcon boxSize={6} color={"blue.300"} />
+                      )}
+                    </Center>
+                    <Heading
+                      textAlign={"left"}
+                      fontSize={{
+                        base: 20,
+                        sm: 22,
+                        md: 24,
+                        lg: 26,
+                        "2xl": 26,
+                      }}
+                      fontWeight={400}
+                      fontFamily={"Poppins"}
+                    >
+                      How do I unsubscribe from your newsletter?
+                    </Heading>
+                  </AccordionButton>
+                </Flex>
+                <AccordionPanel pb={4}>
+                  <Flex>
+                    <Text
+                      ml={{
+                        base: "50px",
+                        sm: "64px",
+                        md: "42px",
+                        lg: "48px",
+                        xl: "6.4%",
+                        "2xl": "50px",
+                      }}
+                      fontSize={{ base: 14, sm: 16, md: 18 }}
+                      fontWeight={400}
+                      fontFamily={"Poppins"}
+                      w="full"
+                    >
+                      To unsubscribe from our newsletter:
+                      <OrderedList spacing={1}>
+                        <ListItem>Open a recent newsletter email.</ListItem>
+                        <ListItem>Scroll to the bottom.</ListItem>
+                        <ListItem>Click the unsubscribe link.</ListItem>
+                        <ListItem>Confirm your choice.</ListItem>
+                      </OrderedList>
+                      If you have any issues, contact our support team.
+                    </Text>
+                  </Flex>
+                </AccordionPanel>
+              </Card>
+            )}
+          </AccordionItem>
+          <AccordionItem
+            w={"full"}
+            mb={{ base: 4, sm: 6, md: 8 }}
+            borderRadius={"var(--chakra-radii-3xl)"}
+            bgColor={"#1A262D"}
+            cursor="pointer"
+          >
+            {({ isExpanded }) => (
+              <Card
+                bgColor={"#1A262D"}
+                borderRadius="var(--chakra-radii-3xl)"
+                border={isExpanded ? "3px solid #38db7d" : "3px solid #2C3B46"}
+                zIndex={100}
+                p={{ base: 2, md: 3, lg: 4, "2xl": 6 }}
+              >
+                <Flex textAlign={"left"} w={"full"} align="center">
+                  <AccordionButton as={Flex} align="center" w="full">
+                    <Center
+                      boxSize={{ base: 8, md: 18 }}
+                      mr={{ base: 6, sm: 8, md: 6, lg: 8 }}
+                    >
+                      {isExpanded ? (
+                        <MinusIcon boxSize={6} color={"blue.300"} />
+                      ) : (
+                        <AddIcon boxSize={6} color={"blue.300"} />
+                      )}
+                    </Center>
+                    <Heading
+                      textAlign={"left"}
+                      fontSize={{
+                        base: 20,
+                        sm: 22,
+                        md: 24,
+                        lg: 26,
+                        "2xl": 26,
+                      }}
+                      fontWeight={400}
+                      fontFamily={"Poppins"}
+                    >
+                      What payment methods do you accept?
+                    </Heading>
+                  </AccordionButton>
+                </Flex>
+                <AccordionPanel pb={4}>
+                  <Flex>
+                    <Text
+                      ml={{
+                        base: "50px",
+                        sm: "64px",
+                        md: "42px",
+                        lg: "48px",
+                        xl: "6.4%",
+                        "2xl": "50px",
+                      }}
+                      fontSize={{ base: 14, sm: 16, md: 18 }}
+                      fontWeight={400}
+                      fontFamily={"Poppins"}
+                      w="full"
+                    >
+                      We accept the following payment methods:
+                      <UnorderedList spacing={1}>
+                        <ListItem>
+                          Credit and Debit Cards (Visa, MasterCard, American
+                          Express)
+                        </ListItem>
+                        <ListItem>PayPal</ListItem>
+                        <ListItem>Bank Transfers</ListItem>
+                        <ListItem>Apple Pay</ListItem>
+                        <ListItem>Google Pay</ListItem>
+                      </UnorderedList>
+                    </Text>
+                  </Flex>
+                </AccordionPanel>
+              </Card>
+            )}
+          </AccordionItem>
+          <AccordionItem
+            w={"full"}
+            mb={{ base: 4, sm: 6, md: 8 }}
+            borderRadius={"var(--chakra-radii-3xl)"}
+            bgColor={"#1A262D"}
+            cursor="pointer"
+          >
+            {({ isExpanded }) => (
+              <Card
+                bgColor={"#1A262D"}
+                borderRadius="var(--chakra-radii-3xl)"
+                border={isExpanded ? "3px solid #38db7d" : "3px solid #2C3B46"}
+                zIndex={100}
+                p={{ base: 2, md: 3, lg: 4, "2xl": 6 }}
+              >
+                <Flex textAlign={"left"} w={"full"} align="center">
+                  <AccordionButton as={Flex} align="center" w="full">
+                    <Center
+                      boxSize={{ base: 8, md: 18 }}
+                      mr={{ base: 6, sm: 8, md: 6, lg: 8 }}
+                    >
+                      {isExpanded ? (
+                        <MinusIcon boxSize={6} color={"blue.300"} />
+                      ) : (
+                        <AddIcon boxSize={6} color={"blue.300"} />
+                      )}
+                    </Center>
+                    <Heading
+                      textAlign={"left"}
+                      fontSize={{
+                        base: 20,
+                        sm: 22,
+                        md: 24,
+                        lg: 26,
+                        "2xl": 26,
+                      }}
+                      fontWeight={400}
+                      fontFamily={"Poppins"}
+                    >
+                      How can I contact customer support?
+                    </Heading>
+                  </AccordionButton>
+                </Flex>
+                <AccordionPanel pb={4}>
+                  <Flex>
+                    <Text
+                      ml={{
+                        base: "50px",
+                        sm: "64px",
+                        md: "42px",
+                        lg: "48px",
+                        xl: "6.4%",
+                        "2xl": "50px",
+                      }}
+                      fontSize={{ base: 14, sm: 16, md: 18 }}
+                      fontWeight={400}
+                      fontFamily={"Poppins"}
+                      w="full"
+                    >
+                      You can contact customer support via:
+                      <UnorderedList spacing={1}>
+                        <ListItem>Email: support@munshee.com</ListItem>
+                        <ListItem>Phone: (123) 456-7890</ListItem>
+                        <ListItem>Live Chat: On our website</ListItem>
+                        <ListItem>Contact Form: On our support page</ListItem>
+                      </UnorderedList>
+                      We're here to help!
+                    </Text>
+                  </Flex>
+                </AccordionPanel>
+              </Card>
+            )}
+          </AccordionItem>
         </Accordion>
       </Box>
     </VStack>
@@ -176,61 +372,3 @@ const FAQs = () => {
 };
 
 export default FAQs;
-// justifyContent={"start"}
-// <Card
-//   onClick={() => setSelected(index)}
-//   p={{ base: 2, md: 3, lg: 4, "2xl": 6 }}
-// >
-//   <Flex textAlign={"left"} w={"full"}>
-//     <AccordionButton>
-//       <Center
-//         boxSize={{ base: 8, md: 18 }}
-//         mr={{ base: 6, sm: 8, md: 6, lg: 8 }}
-//       >
-//         {isExpanded ? (
-//           <MinusIcon boxSize={6} color={"blue.300"} />
-//         ) : (
-//           <AddIcon boxSize={6} color={"blue.300"} />
-//         )}
-//       </Center>
-//       <Heading
-//         textAlign={"left"}
-//         // borderRadius={{
-//         //   base: `var(--chakra-radii-sm)`,
-//         //   md: `var(--chakra-radii-lg)`,
-//         //   lg: `var(--chakra-radii-2xl)`,
-//         // }}
-//         fontSize={{
-//           base: 20,
-//           sm: 20,
-//           md: 22,
-//           lg: 24,
-//           "2xl": 26,
-//         }}
-//         fontWeight={400}
-//         fontFamily={"Poppins"}
-//       >
-//         Lorem, ipsum dolor sit amet consectetur?
-//       </Heading>
-//     </AccordionButton>
-//   </Flex>
-//   <AccordionPanel pb={4}>
-//     <Flex>
-//       {/* <Box flex={{ base: 1, sm: 4 }} /> */}
-//       <Text
-//         ml={{ base: "50px", sm: "56px", md: "60px" }}
-//         // w={`calc(100% - 30px)`}
-//         // flex={{ base: 7, sm: 22, md: 8, "2xl": 15 }}
-//         fontSize={{ base: 14, sm: 16, md: 18 }}
-//         fontWeight={400}
-//         fontStyle={"Poppins"}
-//       >
-//         Lorem ipsum dolor sit amet consectetur adipisicing
-//         elit. Voluptas explicabo dolorum beatae? Numquam
-//         adipisci itaque magnam distinctio dolor facere, amet
-//         enim! Eos fugit atque culpa dignissimos hic ullam, et
-//         minima.
-//       </Text>
-//     </Flex>
-//   </AccordionPanel>
-// </Card>

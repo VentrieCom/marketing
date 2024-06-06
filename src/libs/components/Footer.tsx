@@ -79,10 +79,10 @@ const Footer = () => {
                 fontWeight={400}
                 fontFamily={"Poppins"}
               >
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-                maiores rem eveniet veritatis nihil veniam! Labore doloremque
-                optio veritatis autem modi fugit rem incidunt, sint molestiae,
-                magnam accusantium dolores! Consequatur.
+                As your Business Manager, I handle strategic planning,
+                operations, finances, and marketing. I ensure excellent customer
+                relations, team management, and performance monitoring. My goal
+                is to drive efficiency and growth for your business.
               </Text>
               <HStack as={FormControl}>
                 <HStack>
@@ -118,11 +118,7 @@ const Footer = () => {
           </GridItem>
           <GridItem w={"full"}>
             <VStack align="start" spacing={{ base: 6, "2xl": 12 }}>
-              <Text
-                fontSize={30}
-                fontWeight={400}
-                fontFamily={"Poppins"}
-              >
+              <Text fontSize={30} fontWeight={400} fontFamily={"Poppins"}>
                 Categories
               </Text>
               <Stack
@@ -244,11 +240,7 @@ const Footer = () => {
           </GridItem>
           <GridItem w={"full"}>
             <VStack align="start" spacing={{ base: 8, "2xl": 12 }}>
-              <Text
-                fontSize={30}
-                fontWeight={400}
-                fontFamily={"Roboto Slab"}
-              >
+              <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
                 Follow Us
               </Text>
               <Stack

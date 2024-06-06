@@ -19,24 +19,6 @@ const OurClient = () => {
       py={10}
       bgColor={"#0f161b"}
     >
-      {/* <HStack
-      pos={"absolute"}
-      right={0}
-      justifyContent={"end"}
-      mt={{ base: 0, sm: -20, md: -28, lg: -28, "2xl": -28 }}
-    >
-      <Image
-        src={Ellipse}
-        w={{
-          base: "100px",
-          sm: "100px",
-          md: "110px",
-          lg: "130px",
-          "2xl": "150px",
-        }}
-        transform={"rotate(180deg)"}
-      />
-    </HStack> */}
       <Text
         mt={{ base: 12, sm: 20, md: 20, lg: 32, xl: 42, "2xl": 28 }}
         fontWeight={700}
@@ -59,6 +41,7 @@ const OurClient = () => {
       </Text>
 
       <Grid
+        // bgColor={"rebeccapurple"}
         templateColumns={{
           base: "repeat(1, 1fr)",
           md: "repeat(2, 1fr)",
@@ -69,97 +52,31 @@ const OurClient = () => {
           lg: "calc(100vw - 200px)",
           "2xl": "calc(100vw - 360px)",
         }}
+        gap={0}
       >
-        <GridItem justifySelf={"center"}>
-          <Image
-            src={Justuno}
-            h={{ base: "full", sm: "200px" }}
-            objectFit="contain"
-          />
+        <GridItem>
+          <Image src={Justuno} />
+        </GridItem>
+        <GridItem>
+          <Image src={Tekyz} />
+        </GridItem>
+        <GridItem>
+          <Image src={Photo} />
+        </GridItem>
+        <GridItem>
+          <Image src={Encast} />
+        </GridItem>
+        <GridItem>
+          <Image src={VV360} />
         </GridItem>
         <GridItem justifySelf={"center"}>
-          <Image
-            src={Tekyz}
-            h={{ base: "full", sm: "200px" }}
-            objectFit={{
-              sm: "contain",
-              md: "contain",
-              lg: "contain",
-              "2xl": "contain",
-            }}
-          />
+          <Image src={HireExpert} />
         </GridItem>
         <GridItem justifySelf={"center"}>
-          <Image
-            src={Photo}
-            h={{ base: "full", sm: "200px" }}
-            objectFit={{
-              sm: "contain",
-              md: "contain",
-              lg: "contain",
-              "2xl": "contain",
-            }}
-          />
+          <Image src={GreenMedicine} />
         </GridItem>
         <GridItem justifySelf={"center"}>
-          <Image
-            src={Encast}
-            h={{ base: "full", sm: "200px" }}
-            objectFit={{
-              sm: "contain",
-              md: "contain",
-              lg: "contain",
-              "2xl": "contain",
-            }}
-          />
-        </GridItem>
-        <GridItem justifySelf={"center"}>
-          <Image
-            src={VV360}
-            h={{ base: "full", sm: "200px" }}
-            objectFit={{
-              sm: "contain",
-              md: "contain",
-              lg: "contain",
-              "2xl": "contain",
-            }}
-          />
-        </GridItem>
-        <GridItem justifySelf={"center"}>
-          <Image
-            src={HireExpert}
-            h={{ base: "full", sm: "200px" }}
-            objectFit={{
-              sm: "contain",
-              md: "contain",
-              lg: "contain",
-              "2xl": "contain",
-            }}
-          />
-        </GridItem>
-        <GridItem justifySelf={"center"}>
-          <Image
-            src={GreenMedicine}
-            h={{ base: "full", sm: "200px" }}
-            objectFit={{
-              sm: "contain",
-              md: "contain",
-              lg: "contain",
-              "2xl": "contain",
-            }}
-          />
-        </GridItem>
-        <GridItem justifySelf={"center"}>
-          <Image
-            src={Amplify}
-            h={{ base: "full", sm: "200px" }}
-            objectFit={{
-              sm: "contain",
-              md: "contain",
-              lg: "contain",
-              "2xl": "contain",
-            }}
-          />
+          <Image src={Amplify} />
         </GridItem>
       </Grid>
     </Card>
@@ -167,17 +84,10 @@ const OurClient = () => {
 };
 
 export default OurClient;
-{
-  /* <HStack
-flexWrap={"wrap"}
-w={{
-  md: "calc(100vw - 200px)",
-  lg: "calc(100vw - 200px)",
-  "2xl": "calc(100vw - 360px)",
-}}
-mt={5}
-> */
-}
-{
-  /* </HStack> */
-}
+// h={{ base: "full", sm: "200px" }}
+// objectFit={{
+//   sm: "contain",
+//   md: "contain",
+//   lg: "contain",
+//   "2xl": "contain",
+// }}
