@@ -17,13 +17,19 @@ import PricePlan from "./PricePlan";
 
 import DesignLine from "./../../assets/Design Line.png";
 
-const About: React.FC = () => {
-  return (
-    <VStack
+interface MyComponentProps {
+  about: React.RefObject<HTMLDivElement>;
+  testimonials: React.RefObject<HTMLDivElement>;
+  contact: React.RefObject<HTMLDivElement>;
+}
 
-      bgColor={"secondary.900"}
-      w={"full"}
-    >
+const About: React.FC<MyComponentProps> = ({
+  about,
+  testimonials,
+  contact,
+}) => {
+  return (
+    <VStack bgColor={"secondary.900"} w={"full"}>
       <HStack
         pos={"relative"}
         w={"full"}
@@ -149,10 +155,10 @@ const About: React.FC = () => {
         <AttendenceText />
       </Stack>
       <OurClient />
-      <Testimonials />
+      <Testimonials testimonials={testimonials} />
       <FAQs />
       <PricePlan />
-      <QueriesForm />
+      <QueriesForm navTo={contact} />
       <Subscribe />
       <Footer />
     </VStack>

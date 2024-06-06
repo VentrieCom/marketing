@@ -10,8 +10,9 @@ import Ahmed from "./../../assets/Images/Ahmed.png";
 import Kabir from "./../../assets/Images/Kabir Noor.png";
 import Wajeeh from "./../../assets/Images/Wajeeh.png";
 import Waqar from "./../../assets/Images/Waqar.png";
+import React from "react";
 
-const Testimonials = () => {
+const Testimonials: React.FC<any> = ({ testimonials }) => {
   const userReview = [
     {
       userName: "Ahmed Khan",
@@ -44,6 +45,7 @@ const Testimonials = () => {
   ];
   return (
     <VStack
+      ref={testimonials}
       w={"full"}
       display="flex"
       flexDirection="column"

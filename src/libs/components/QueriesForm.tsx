@@ -37,7 +37,7 @@ const customPlaceholderStyle = {
   },
 };
 
-const QueriesForm: React.FC = () => {
+const QueriesForm: React.FC<any> = ({ navTo }) => {
   const form: any = useRef();
 
   const sendEmail = (e: any) => {
@@ -59,7 +59,7 @@ const QueriesForm: React.FC = () => {
   };
 
   return (
-    <VStack w={"full"}>
+    <VStack w={"full"} ref={navTo}>
       <Image src={DesignLine} alt="Design line" left={0} pos={"absolute"} />
       <HStack
         pos={"absolute"}
@@ -165,7 +165,7 @@ const QueriesForm: React.FC = () => {
                 <Input
                   type="tel"
                   placeholder="Your Email"
-                  py={{ base: 6, sm: 7, md: 4, lg: 8, xl: 10 }}
+                  py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
