@@ -73,12 +73,7 @@ const Footer = () => {
               <Text fontWeight={600} fontSize={40} fontFamily={"Jost"}>
                 MUNSHEE
               </Text>
-              <Text
-                fontSize={16}
-                textAlign={"justify"}
-                fontWeight={400}
-                fontFamily={"Poppins"}
-              >
+              <Text fontSize={16} fontWeight={400} fontFamily={"Poppins"}>
                 As your Business Manager, I handle strategic planning,
                 operations, finances, and marketing. I ensure excellent customer
                 relations, team management, and performance monitoring. My goal
