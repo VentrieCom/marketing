@@ -26,13 +26,3 @@ function App() {
 }
 
 export default App;
-// const scrollToAbout = () => {
-//   aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-// };
-
-// const scrollToTestimonials = () => {
-//   TestimonialsRef.current?.scrollIntoView({ behavior: "smooth" });
-// };
-// const scrollToContact = () => {
-//   contactRef.current?.scrollIntoView({ behavior: "smooth" });
-// };

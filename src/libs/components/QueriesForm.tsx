@@ -91,7 +91,7 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
       >
         <Heading
           textAlign={"center"}
-          fontFamily={"Roboto-Slab"}
+          fontFamily={"Roboto Slab"}
           fontWeight={700}
           fontSize={{ base: 40, sm: 44, md: 48, lg: 54, "2xl": 60 }}
           mb={{ base: 4, md: 2, lg: 3, xl: 4, "2xl": 5 }}
@@ -105,6 +105,7 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
           fontSize={{ base: 20, sm: 22, md: "25px", xl: 24 }}
           fontFamily={"Poppins"}
           fontWeight={400}
+          zIndex={2}
           w={{ base: "80%", sm: "80%", md: "60%", lg: "70%" }}
         >
           If you have any question, drop us a note. Fill out the below form and
@@ -122,7 +123,7 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
         }}
         columns={{ base: 1, sm: 1, md: 1, lg: 2, xl: 2, "2xl": 2 }}
       >
-        <VStack>
+        <VStack zIndex={4}>
           <Box w="full" mb={{ sm: 10 }}>
             <Stack
               spacing={5}
