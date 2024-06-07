@@ -23,12 +23,13 @@ import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
 const FAQs: React.FC = () => {
   return (
-    <VStack w={"full"} mt={{ base: 14, md: 10 }}>
+    <VStack w={"full"} mt={{ base: 14, md: 16, lg: 18 }}>
       <Image
         src={DesignImage}
         alt="design Line"
         pos={"absolute"}
-        mt={-240}
+        w={{ base: "380px", sm: "480px", md: "540px", lg: "620px" }}
+        mt={{ base: -120, sm: -240, md: -180, lg: -240 }}
         right={0}
       />
       <Heading

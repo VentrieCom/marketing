@@ -60,7 +60,13 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
 
   return (
     <VStack w={"full"} ref={navTo}>
-      <Image src={DesignLine} alt="Design line" left={0} pos={"absolute"} />
+      <Image
+        src={DesignLine}
+        alt="Design line"
+        w={{ base: "380px", sm: "480px", md: "540px", lg: "620px" }}
+        left={0}
+        pos={"absolute"}
+      />
       <HStack
         pos={"absolute"}
         zIndex={1}

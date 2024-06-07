@@ -40,7 +40,8 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
       bgImage={`url(${WelcomeBG})`}
       bgPosition={{ sm: "top", md: "top" }}
       bgRepeat="no-repeat"
-      objectFit={{ base: "cover", sm: "cover", md: "cover", lg: "contain" }}
+      objectFit={"cover"}
+      // objectFit={{ base: "cover", sm: "cover", md: "cover", lg: "contain" }}
       bgColor={"#0f161b"}
     >
       <VStack w={"full"} py={2}>
@@ -69,7 +70,7 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               cursor={"pointer"}
               onClick={onOpen}
               boxSize={{ base: 6, sm: 6, md: 6, lg: 8 }}
-              display={{ base: "flex", sm: "flex", md: "flex", lg: "none" }}
+              display={{ sm: "flex", md: "none", lg: "none" }}
             />
             <Drawer
               isOpen={isOpen}
@@ -119,55 +120,31 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                     >
                       Contact
                     </Button>
-                    <Button
-                      variant="link"
-                      display={{
-                        base: "flex",
-                        sm: "none",
-                        md: "none",
-                        lg: "none",
-                        xl: "none",
-                        "2xl": "none",
-                      }}
-                      fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontWeight={400}
-                      color={"secondary.200"}
-                    >
-                      Login
-                    </Button>
-                    <Button
-                      variant="link"
-                      display={{
-                        base: "flex",
-                        sm: "none",
-                        md: "none",
-                        lg: "none",
-                        xl: "none",
-                        "2xl": "none",
-                      }}
-                      fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontWeight={400}
-                      color={"secondary.200"}
-                    >
-                      Sign Up
-                    </Button>
                   </Stack>
                 </DrawerBody>
               </DrawerContent>
             </Drawer>
+
+            <Text
+              fontSize={{ base: 28, md: 38, lg: 40 }}
+              fontFamily={"jost"}
+              fontWeight={600}
+            >
+              MUNSHEE
+            </Text>
             <HStack
-              spacing={{ base: 0, lg: 3, xl: 4, "2xl": 6 }}
+              spacing={{ base: 0, md: 3, lg: 3, xl: 4, "2xl": 6 }}
               display={{
                 base: "none",
                 sm: "none",
-                md: "none",
+                md: "flex",
                 lg: "flex",
                 xl: "flex",
               }}
             >
               <Button
                 variant="link"
-                fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
+                fontSize={{ md: 20, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={400}
                 color={"secondary.200"}
               >
@@ -175,7 +152,7 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               </Button>
               <Button
                 variant="link"
-                fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
+                fontSize={{ md: 20, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={400}
                 color={"secondary.200"}
                 onClick={() => scrollToSection("about")}
@@ -184,7 +161,7 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               </Button>
               <Button
                 variant="link"
-                fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
+                fontSize={{ md: 20, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={400}
                 color={"secondary.200"}
                 onClick={() => scrollToSection("testimonials")}
@@ -193,7 +170,7 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               </Button>
               <Button
                 variant="link"
-                fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
+                fontSize={{ md: 20, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={400}
                 color={"secondary.200"}
                 onClick={() => scrollToSection("contact")}
@@ -201,16 +178,8 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                 Contact
               </Button>
             </HStack>
-            <Text
-              fontSize={{ base: 28, lg: 40 }}
-              fontFamily={"jost"}
-              fontWeight={600}
-              mr={{ base: 2, sm: 4, md: -24, lg: 2, xl: 10, "2xl": 140 }}
-            >
-              MUNSHEE
-            </Text>
             <HStack
-              display={{ base: "none", sm: "flex", md: "flex" }}
+              display={{ base: "flex", sm: "flex", md: "flex" }}
               flex={{ base: 1, sm: 1, md: 0, lg: 0, "2xl": 0 }}
               justifyContent={{ base: "flex-end", sm: "flex-end" }}
             >
@@ -218,20 +187,10 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                 variant="link"
                 px={4}
                 color={"secondary.200"}
-                fontSize={{ md: 18, lg: 20, xl: 22, "2xl": 24 }}
+                fontSize={{ sm: 20, md: 20, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={400}
               >
                 Log In
-              </Button>
-              <Button
-                variant="solid"
-                color={"secondary.900"}
-                px={{ base: 2, sm: 3, md: 4, xl: 6, "2xl": 10 }}
-                fontSize={{ md: 18, lg: 20, xl: 22, "2xl": 24 }}
-                fontWeight={600}
-                textAlign={"center"}
-              >
-                Sign Up
               </Button>
             </HStack>
           </HStack>

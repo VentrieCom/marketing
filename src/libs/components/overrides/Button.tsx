@@ -8,6 +8,7 @@ const Button = defineStyleConfig({
   },
   variants: {
     overridable: {},
+
     solid: {
       fontFamily: "body",
       background: "blue.300",
