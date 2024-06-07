@@ -143,25 +143,18 @@ const PricePlan = () => {
           "2xl": "60%",
         }}
         mt={{ base: 20, lg: 28, "2xl": 32 }}
-        fontSize={{ base: 20, lg: 28, "2xl": 34 }}
+        fontSize={{ base: 20, lg: 28, "2xl": 30 }}
         fontWeight={500}
       >
-        For self hosted and maintained system price{" "}
-        <Text
-          as={"span"}
-          fontSize={{ base: 20, lg: 28, "2xl": 34 }}
-          fontWeight={700}
-        >
-          574000.
-        </Text>
-        <br /> With all the features of{" "}
+        For self hosted and maintained system please get in contact with us
+        <br />
         <Text
           as="span"
           fontWeight={500}
-          fontSize={{ base: 20, lg: 28, "2xl": 34 }}
+          fontSize={{ base: 20, lg: 28, "2xl": 32 }}
           color={"blue.300"}
         >
-          Basic Company Plan
+          03001049988, support@munshee.pk
         </Text>
       </Text>
     </VStack>
@@ -280,3 +273,16 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
     </Card>
   );
 };
+
+{
+  /* <Text
+          as={"span"}
+          fontSize={{ base: 20, lg: 28, "2xl": 34 }}
+          fontWeight={700}
+        >
+          574000.
+        </Text> */
+}
+{
+  /* <br /> With all the features of{" "} */
+}

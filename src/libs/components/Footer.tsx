@@ -146,7 +146,7 @@ const Footer = () => {
             </VStack>
           </GridItem>
           <GridItem w={"full"}>
-            <VStack align={"start"} h={"full"} spacing={{ base: 8, "2xl": 12 }}>
+            <VStack align={"start"} h={"full"}>
               <Heading
                 as={"h6"}
                 fontSize={30}

@@ -51,7 +51,7 @@ const Testimonials: React.FC<any> = ({ testimonials }) => {
       display="flex"
       flexDirection="column"
       alignItems="center"
-      my={{ sm: 20, md: 24, lg: 20, "2xl": 28 }}
+      my={{ sm: 20, md: 22, lg: 20, "2xl": 28 }}
       zIndex={2}
     >
       <Heading as={"h2"} fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}>
@@ -90,7 +90,7 @@ const Testimonials: React.FC<any> = ({ testimonials }) => {
             py={6}
             justifyContent={"space-between"}
           >
-            <Text w={"full"} fontSize={{ sm: 20, md: 24 }} px={3}>
+            <Text w={"full"} fontSize={{ sm: 20, md: 22 }} px={3}>
               {_.remarks}
             </Text>
             <HStack mt={2}>
