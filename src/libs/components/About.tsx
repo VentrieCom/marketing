@@ -1,4 +1,4 @@
-import { VStack, HStack, Image, Text, Stack } from "@chakra-ui/react";
+import { VStack, HStack, Image, Stack, Heading } from "@chakra-ui/react";
 import Ellipe from "./../../assets/Ellipse 2008.png";
 import Groups from "./../../assets/Group 6867.png";
 import ProductSec from "./ProductSec";
@@ -58,18 +58,18 @@ const About: React.FC<MyComponentProps> = ({
           right={0}
         />
         <HStack w={"full"} pb={{ "2xl": 24 }}>
-          <Text
+          <Heading
+            as={"h2"}
             ref={about}
             textAlign={"center"}
             w={"full"}
-            fontFamily={"Roboto Slab"}
             fontSize={{ base: 32, sm: 38, md: 40, lg: 48, "2xl": 58 }}
             mt={{ md: 0, lg: "10px", "2xl": "60px" }}
             fontWeight={700}
             zIndex={12}
           >
             About Us
-          </Text>
+          </Heading>
         </HStack>
         <Image
           alignSelf={"flex-start"}
@@ -150,7 +150,7 @@ const About: React.FC<MyComponentProps> = ({
         justifyContent={"space-between"}
         spacing={{ md: 10, lg: 14, xl: 20 }}
         mt={{ base: 0 }}
-        py={10}
+        py={{ sm: 10, "2xl": 24 }}
       >
         <AttendenceSec />
         <AttendenceText />

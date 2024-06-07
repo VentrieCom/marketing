@@ -6,6 +6,7 @@ import {
   VStack,
   Image,
   Stack,
+  Heading,
 } from "@chakra-ui/react";
 import StarIcon from "./../../assets/Star (1).png";
 import DarkIcon from "./../../assets/Dark Star.svg";
@@ -95,7 +96,6 @@ const PricePlan = () => {
           lg: "row",
           "2xl": "row",
         }}
-        // bgColor={"royalblue"}
         w={{
           base: "calc(100vw - 50px)",
           md: "calc(100vw - 50px)",
@@ -123,14 +123,6 @@ const PricePlan = () => {
                 "2xl": "column",
               }}
             >
-              {/*<Box 
-             display={"flex"}
-               // alignItems={"stretch"}
-               // bgColor={selected === index ? "royalblue" : "beige"}
-               onClick={() => SetSelected(index)}
-               // mb={selected === index ? 40 : 0}
-               mt={selected === index ? -20 : 0}
-             >*/}
               <PricePlanCard
                 title={i.title}
                 price={i.price}
@@ -138,13 +130,10 @@ const PricePlan = () => {
                 selectd={selected === index}
               />
             </Stack>
-            // </Box>
           );
         })}
       </Stack>
       <Text
-        // w={"860px"}
-        // bgColor={"darkblue"}
         textAlign={"center"}
         w={{
           base: "calc(100vw - 50px)",
@@ -156,7 +145,6 @@ const PricePlan = () => {
         mt={{ base: 20, lg: 28, "2xl": 32 }}
         fontSize={{ base: 20, lg: 28, "2xl": 34 }}
         fontWeight={500}
-        fontFamily={"Poppins"}
       >
         For self hosted and maintained system price{" "}
         <Text
@@ -170,8 +158,7 @@ const PricePlan = () => {
         <Text
           as="span"
           fontWeight={500}
-          fontSize={{ base: 20, md: 30 }}
-          fontFamily={"Poppins"}
+          fontSize={{ base: 20, lg: 28, "2xl": 34 }}
           color={"blue.300"}
         >
           Basic Company Plan
@@ -232,28 +219,25 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
         />
       )}
 
-      <Text
+      <Heading
+        as={"h5"}
         fontSize={{ base: 23, md: 28, lg: 32, "2xl": 32 }}
         mb={{ base: 4, md: 4, lg: 27 }}
         fontFamily={"Poppins"}
         fontWeight={500}
       >
         {title}
-      </Text>
+      </Heading>
       <HStack>
         <Text
-          // my={{ base: 2 }}
           fontSize={{ base: 32, sm: 36, md: 38, lg: 48, "2xl": 48 }}
           fontWeight={400}
-          fontFamily={"Poppins"}
         >
           {price}
         </Text>
         <Text
           mt={{ base: 2, lg: 6 }}
           fontSize={{ base: 14, "2xl": 20 }}
-          fontWeight={400}
-          fontFamily={"Poppins"}
           color={selectd ? "secondary.900" : "secondary.100"}
         >
           / month / store
@@ -285,7 +269,6 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
               <Text
                 fontSize={{ sm: 18, md: 18, lg: 20, "2xl": 20 }}
                 fontWeight={400}
-                fontFamily={"Poppins"}
                 ml={{ base: 1, sm: 1, md: 2, lg: 4 }}
               >
                 {i}

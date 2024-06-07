@@ -11,6 +11,7 @@ import {
   Center,
   Grid,
   GridItem,
+  Heading,
 } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
@@ -73,7 +74,7 @@ const Footer = () => {
               <Text fontWeight={600} fontSize={40} fontFamily={"Jost"}>
                 MUNSHEE
               </Text>
-              <Text fontSize={16} fontWeight={400} fontFamily={"Poppins"}>
+              <Text fontSize={16} fontWeight={400}>
                 As your Business Manager, I handle strategic planning,
                 operations, finances, and marketing. I ensure excellent customer
                 relations, team management, and performance monitoring. My goal
@@ -113,9 +114,9 @@ const Footer = () => {
           </GridItem>
           <GridItem w={"full"}>
             <VStack align="start" spacing={{ base: 6, "2xl": 12 }}>
-              <Text fontSize={30} fontWeight={400} fontFamily={"Poppins"}>
+              <Heading as={"h6"} fontSize={30} fontWeight={400}>
                 Categories
-              </Text>
+              </Heading>
               <Stack
                 direction={{
                   base: "column",
@@ -126,60 +127,34 @@ const Footer = () => {
                 }}
                 spacing={{ base: 3, md: 4, lg: 5, "2xl": 6 }}
               >
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Web/ Mobile Application
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Warehouse/ Logistics
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Marketing
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Employee Managment
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Auditing
                 </Link>
               </Stack>
             </VStack>
           </GridItem>
-          {/* bgColor={"firebrick"} */}
           <GridItem w={"full"}>
             <VStack align={"start"} h={"full"} spacing={{ base: 8, "2xl": 12 }}>
-              <Text
+              <Heading
+                as={"h6"}
                 fontSize={30}
                 fontWeight={400}
-                fontFamily={"Poppins"}
                 letterSpacing={"4%"}
               >
                 About
-              </Text>
+              </Heading>
               <Stack
                 direction={{
                   base: "column",
@@ -190,44 +165,19 @@ const Footer = () => {
                 }}
                 spacing={{ base: 3, md: 4, lg: 5, "2xl": 6 }}
               >
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   About US
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Partnerships
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Finance Experts
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Project Managment
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   The Team
                 </Link>
               </Stack>
@@ -235,9 +185,9 @@ const Footer = () => {
           </GridItem>
           <GridItem w={"full"}>
             <VStack align="start" spacing={{ base: 8, "2xl": 12 }}>
-              <Text fontSize={30} fontWeight={400} fontFamily={"Roboto Slab"}>
+              <Heading as={"h6"} fontSize={30} fontWeight={400}>
                 Follow Us
-              </Text>
+              </Heading>
               <Stack
                 direction={{
                   base: "column",
@@ -248,36 +198,16 @@ const Footer = () => {
                 }}
                 spacing={{ base: 3, md: 4, lg: 5, "2xl": 6 }}
               >
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Facebook
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Twitter
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Instagram
                 </Link>
-                <Link
-                  fontSize={16}
-                  fontWeight={400}
-                  fontFamily={"Poppins"}
-                  letterSpacing={"4%"}
-                >
+                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   LinkedIn
                 </Link>
               </Stack>
@@ -297,7 +227,6 @@ const Footer = () => {
             lg: "calc(100vw - 200px)",
             "2xl": "calc(100vw - 200px)",
           }}
-          fontFamily={"Poppins"}
           color={"secondary.800"}
         >
           Copyright @ 2024 All rights reserved Munshee

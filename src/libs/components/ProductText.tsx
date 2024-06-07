@@ -1,4 +1,4 @@
-import { Button, Text, VStack } from "@chakra-ui/react";
+import { Button, Heading, Text, VStack } from "@chakra-ui/react";
 
 const ProductText: React.FC = () => {
   return (
@@ -9,33 +9,20 @@ const ProductText: React.FC = () => {
       spacing={{ base: 2, sm: 2, md: 4, lg: 4, xl: 4, "2xl": 10 }}
       zIndex={3}
     >
-      <Text
-        fontSize={40}
-        fontWeight={700}
-        fontFamily={"Roboto Slab"}
-        align={"start"}
-        justifyContent={"start"}
-      >
+      <Heading as={"h3"} fontSize={40} fontWeight={700}>
         Products
-      </Text>
-      <Text
-        fontSize={{ xl: 20, "2xl": 24 }}
-        fontFamily={"Poppins"}
-        fontWeight={400}
-        mr={5}
-      >
+      </Heading>
+      <Text fontSize={{ xl: 20, "2xl": 24 }} fontWeight={400}>
         Munshee offers comprehensive warehouse services, including storage,
         inventory management, and distribution for a wide range of products. Our
         efficient solutions ensure your goods are handled with care and
         delivered on time, streamlining your logistics operations.
       </Text>
       <Button
-        w={"140px"}
+        variant={"solid"}
+        minW={"140px"}
         mt={{ base: 8, sm: 6, md: 2, lg: 2, xl: 5 }}
-        textAlign={"center"}
         fontSize={16}
-        fontWeight={600}
-        fontFamily={"Poppins"}
       >
         Learn More
       </Button>

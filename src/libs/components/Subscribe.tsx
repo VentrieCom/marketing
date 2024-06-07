@@ -1,5 +1,4 @@
 import {
-  Card,
   HStack,
   Text,
   Image,
@@ -7,6 +6,7 @@ import {
   Stack,
   Flex,
   VStack,
+  Heading,
 } from "@chakra-ui/react";
 import Ellipse from "./../../assets/Ellipse 2008.png";
 
@@ -41,15 +41,15 @@ const Subscribe = () => {
           w={"full"}
           justifyContent={"space-between"}
         >
-          <Text
+          <Heading
+            as={"h5"}
             flex={1}
             fontSize={{ base: 42, "2xl": 60 }}
-            fontFamily={"Roboto Slab"}
             fontWeight={700}
-            color={"#0F161B"}
+            color={"secondary.900"}
           >
             Subscribe to get updated
-          </Text>
+          </Heading>
           <Button
             w={{
               base: "full",
@@ -82,9 +82,8 @@ const Subscribe = () => {
           <Text
             w={{ sm: "80%", md: "80%", "2xl": "60%" }}
             fontSize={20}
-            fontFamily={"Poppins"}
             fontWeight={400}
-            color={"#0F161B"}
+            color={"secondary.900"}
           >
             Be the first to know about our newest releases, special promotions,
             and insider updates by subscribing to our newsletter.
@@ -116,15 +115,3 @@ const Subscribe = () => {
 };
 
 export default Subscribe;
-{
-  /* <Card w={"100%"} h={"300px"} borderRadius={5} bgColor={"#38db7d"}> */
-}
-{
-  /* </Card> */
-}
-// alignItems="center"
-// py={4}
-// px={"10%"}
-{
-  /* pos={"relative"} bottom={0} justifyContent={"end"} */
-}

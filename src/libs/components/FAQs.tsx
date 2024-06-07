@@ -31,15 +31,14 @@ const FAQs: React.FC = () => {
         mt={-240}
         right={0}
       />
-      <Text
+      <Heading
+        zIndex={2}
+        as={"h2"}
         fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}
-        fontWeight={700}
-        fontFamily={"Roboto Slab"}
-        textAlign={"center"}
         mb={{ base: 20, sm: 20, md: 10, lg: 14, "2xl": 20 }}
       >
         FAQ's
-      </Text>
+      </Heading>
       <HStack
         pos={"absolute"}
         left={0}
@@ -95,8 +94,7 @@ const FAQs: React.FC = () => {
                         <AddIcon boxSize={6} color={"blue.300"} />
                       )}
                     </Center>
-                    <Heading
-                      textAlign={"left"}
+                    <Text
                       fontSize={{
                         base: 20,
                         sm: 22,
@@ -105,10 +103,9 @@ const FAQs: React.FC = () => {
                         "2xl": 26,
                       }}
                       fontWeight={400}
-                      fontFamily={"Poppins"}
                     >
                       How do I reset my password if I forget it?
-                    </Heading>
+                    </Text>
                   </AccordionButton>
                 </Flex>
                 <AccordionPanel pb={4}>
@@ -123,8 +120,6 @@ const FAQs: React.FC = () => {
                         "2xl": "50px",
                       }}
                       fontSize={{ base: 14, sm: 16, md: 18 }}
-                      fontWeight={400}
-                      fontFamily={"Poppins"}
                       w="full"
                     >
                       To reset your password if you forget it:
@@ -170,8 +165,7 @@ const FAQs: React.FC = () => {
                         <AddIcon boxSize={6} color={"blue.300"} />
                       )}
                     </Center>
-                    <Heading
-                      textAlign={"left"}
+                    <Text
                       fontSize={{
                         base: 20,
                         sm: 22,
@@ -180,10 +174,10 @@ const FAQs: React.FC = () => {
                         "2xl": 26,
                       }}
                       fontWeight={400}
-                      fontFamily={"Poppins"}
+                      // fontFamily={"Poppins"}
                     >
                       How do I unsubscribe from your newsletter?
-                    </Heading>
+                    </Text>
                   </AccordionButton>
                 </Flex>
                 <AccordionPanel pb={4}>
@@ -198,8 +192,6 @@ const FAQs: React.FC = () => {
                         "2xl": "50px",
                       }}
                       fontSize={{ base: 14, sm: 16, md: 18 }}
-                      fontWeight={400}
-                      fontFamily={"Poppins"}
                       w="full"
                     >
                       To unsubscribe from our newsletter:
@@ -243,8 +235,7 @@ const FAQs: React.FC = () => {
                         <AddIcon boxSize={6} color={"blue.300"} />
                       )}
                     </Center>
-                    <Heading
-                      textAlign={"left"}
+                    <Text
                       fontSize={{
                         base: 20,
                         sm: 22,
@@ -253,10 +244,9 @@ const FAQs: React.FC = () => {
                         "2xl": 26,
                       }}
                       fontWeight={400}
-                      fontFamily={"Poppins"}
                     >
                       What payment methods do you accept?
-                    </Heading>
+                    </Text>
                   </AccordionButton>
                 </Flex>
                 <AccordionPanel pb={4}>
@@ -272,7 +262,6 @@ const FAQs: React.FC = () => {
                       }}
                       fontSize={{ base: 14, sm: 16, md: 18 }}
                       fontWeight={400}
-                      fontFamily={"Poppins"}
                       w="full"
                     >
                       We accept the following payment methods:
@@ -319,7 +308,7 @@ const FAQs: React.FC = () => {
                         <AddIcon boxSize={6} color={"blue.300"} />
                       )}
                     </Center>
-                    <Heading
+                    <Text
                       textAlign={"left"}
                       fontSize={{
                         base: 20,
@@ -329,10 +318,9 @@ const FAQs: React.FC = () => {
                         "2xl": 26,
                       }}
                       fontWeight={400}
-                      fontFamily={"Poppins"}
                     >
                       How can I contact customer support?
-                    </Heading>
+                    </Text>
                   </AccordionButton>
                 </Flex>
                 <AccordionPanel pb={4}>

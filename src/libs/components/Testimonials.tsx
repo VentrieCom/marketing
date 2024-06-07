@@ -2,6 +2,7 @@ import {
   Avatar,
   Card,
   HStack,
+  Heading,
   SimpleGrid,
   Text,
   VStack,
@@ -53,21 +54,14 @@ const Testimonials: React.FC<any> = ({ testimonials }) => {
       my={{ sm: 20, md: 24, lg: 20, "2xl": 28 }}
       zIndex={2}
     >
-      <Text
-        fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}
-        fontWeight={700}
-        fontFamily={"Roboto Slab"}
-        textAlign={"center"}
-      >
+      <Heading as={"h2"} fontSize={{ base: 40, sm: 44, md: 48, lg: 52 }}>
         Testimonials
-      </Text>
+      </Heading>
       <Text
         textAlign={"center"}
         my={{ base: 2, sm: 4, md: 8, lg: 18 }}
         fontSize={{ base: 14, sm: 18, md: 20, lg: 22 }}
         w={{ base: "75%", sm: "75%", md: "75%", lg: "60%", "2xl": "55%" }}
-        fontFamily={"Poppins"}
-        fontWeight={400}
       >
         Discover how Munshee has made a difference , our clients share their
         positive feedback and the significant impact our solutions have had on
@@ -96,13 +90,7 @@ const Testimonials: React.FC<any> = ({ testimonials }) => {
             py={6}
             justifyContent={"space-between"}
           >
-            <Text
-              w={"full"}
-              fontSize={24}
-              fontFamily={"Poppins"}
-              fontWeight={400}
-              px={3}
-            >
+            <Text w={"full"} fontSize={{ sm: 20, md: 24 }} px={3}>
               {_.remarks}
             </Text>
             <HStack mt={2}>
@@ -114,15 +102,10 @@ const Testimonials: React.FC<any> = ({ testimonials }) => {
                 color={"#D9D9D9"}
               />
               <VStack spacing={0} alignItems={"flex-start"}>
-                <Text fontFamily={"Poppins"} fontWeight={600} fontSize={24}>
+                <Text fontWeight={600} fontSize={24}>
                   {_.userName}
                 </Text>
-                <Text
-                  fontFamily={"Poppins"}
-                  fontWeight={400}
-                  fontSize={15}
-                  px={1}
-                >
+                <Text fontWeight={400} fontSize={15} px={1}>
                   {_.designation}
                 </Text>
               </VStack>
@@ -135,4 +118,3 @@ const Testimonials: React.FC<any> = ({ testimonials }) => {
 };
 
 export default Testimonials;
-
