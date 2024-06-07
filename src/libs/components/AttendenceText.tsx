@@ -1,4 +1,4 @@
-import { VStack, Button, Text } from "@chakra-ui/react";
+import { VStack, Button, Text, Heading } from "@chakra-ui/react";
 
 const AttendenceText: React.FC = () => {
   return (
@@ -8,20 +8,10 @@ const AttendenceText: React.FC = () => {
       alignItems={"flex-start"}
       spacing={{ base: 2, sm: 2, md: 4, lg: 4, xl: 4, "2xl": 10 }}
     >
-      <Text
-        fontSize={40}
-        fontWeight={700}
-        fontFamily={"Roboto Slab"}
-        align={"start"}
-        justifyContent={"start"}
-      >
+      <Heading as={"h3"} fontSize={40}>
         Attendance
-      </Text>
-      <Text
-        fontSize={{ xl: 20, "2xl": 24 }}
-        fontWeight={400}
-        fontFamily={"Poppins"}
-      >
+      </Heading>
+      <Text fontSize={{ xl: 20, "2xl": 24 }} fontWeight={400}>
         Munshee provides a robust Employee Attendance Management service that
         streamlines workforce operations with automated time tracking, leave
         management, and real-time attendance analytics. Our user-friendly system
@@ -30,12 +20,9 @@ const AttendenceText: React.FC = () => {
         maintain a well-organized, productive workforce.
       </Text>
       <Button
-        w={"140px"}
+        variant={"solid"}
+        minW={"140px"}
         mt={{ base: 8, sm: 6, md: 2, lg: 2, xl: 5 }}
-        textAlign={"center"}
-        fontSize={16}
-        fontWeight={600}
-        fontFamily={"Poppins"}
       >
         Learn More
       </Button>
@@ -44,4 +31,3 @@ const AttendenceText: React.FC = () => {
 };
 
 export default AttendenceText;
-//  w={"140px"} mt={5} textAlign={"center"} ml={40}

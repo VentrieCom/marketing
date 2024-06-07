@@ -90,8 +90,7 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
         }}
       >
         <Heading
-          textAlign={"center"}
-          fontFamily={"Roboto Slab"}
+          as={"h2"}
           fontWeight={700}
           fontSize={{ base: 40, sm: 44, md: 48, lg: 54, "2xl": 60 }}
           mb={{ base: 4, md: 2, lg: 3, xl: 4, "2xl": 5 }}
@@ -103,7 +102,6 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
           textAlign={"center"}
           color={"secondary.200"}
           fontSize={{ base: 20, sm: 22, md: "25px", xl: 24 }}
-          fontFamily={"Poppins"}
           fontWeight={400}
           zIndex={2}
           w={{ base: "80%", sm: "80%", md: "60%", lg: "70%" }}
@@ -186,7 +184,6 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
                   placeholder="Phone Number"
                   py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
-                  // style={{ paddingLeft: "20px" }}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
                   name="description"
@@ -233,15 +230,11 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
           >
             <HStack mb={2} borderRadius="var(--chakra-radii-3xl)">
               <Image src={BulbIcon} w={"30px"} h={"25px"} />
-              <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
+              <Text fontWeight={600} fontSize={18}>
                 Support and Maintenance
               </Text>
             </HStack>
-            <Text
-              fontSize={{ sm: 16, lg: 18 }}
-              fontWeight={400}
-              fontFamily={"Poppins"}
-            >
+            <Text fontSize={{ sm: 16, lg: 18 }} fontWeight={400}>
               Munshee provides round-the-clock support and maintenance to ensure
               uninterrupted service and optimal performance.
             </Text>
@@ -255,15 +248,11 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
           >
             <HStack mb={2}>
               <Image src={SupportImg} w={"25px"} h={"25px"} />
-              <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
+              <Text fontWeight={600} fontSize={18}>
                 24/7 Chat Support
               </Text>
             </HStack>
-            <Text
-              fontSize={{ sm: 16, lg: 18 }}
-              fontWeight={400}
-              fontFamily={"Poppins"}
-            >
+            <Text fontSize={{ sm: 16, lg: 18 }} fontWeight={400}>
               Munshee delivers unwavering 24/7 assistance, ensuring expert
               support is always accessible, helping your business maintain
               seamless operations.
@@ -278,15 +267,11 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
           >
             <HStack mb={2}>
               <Image src={TroubleshootingImg} w={"30px"} h={"30px"} />
-              <Text fontWeight={600} fontSize={18} fontFamily={"Poppins"}>
+              <Text fontWeight={600} fontSize={18}>
                 Troubleshooting Guides
               </Text>
             </HStack>
-            <Text
-              fontSize={{ sm: 16, lg: 18 }}
-              fontWeight={400}
-              fontFamily={"Poppins"}
-            >
+            <Text fontSize={{ sm: 16, lg: 18 }} fontWeight={400}>
               Munshee provides concise troubleshooting guides, enabling quick
               resolution of technical issues, ensuring uninterrupted
               productivity

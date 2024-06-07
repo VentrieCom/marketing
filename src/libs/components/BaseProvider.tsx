@@ -75,8 +75,8 @@ export const BaseTheme = extendTheme({
     },
   },
   fonts: {
+    heading: "'Roboto Slab', slab-serif",
     body: "'Poppins', sans-serif",
-    heading: "'Poppins', sans-serif",
     mono: "monospace",
   },
   components: {

@@ -13,6 +13,7 @@ import {
   DrawerCloseButton,
   DrawerBody,
   Stack,
+  Heading,
 } from "@chakra-ui/react";
 
 import Attendance from "../../../assets/Images/Attendance.png";
@@ -86,18 +87,16 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                       _hover={{ bgColor: "" }}
                       variant="link"
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto Slab"}
                       fontWeight={400}
-                      color={"#6F7D7F"}
+                      color={"secondary.200"}
                     >
                       Home
                     </Button>
                     <Button
                       variant="link"
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto Slab"}
                       fontWeight={400}
-                      color={"#6F7D7F"}
+                      color={"secondary.200"}
                       onClick={() => handleButtonClick("about")}
                     >
                       About
@@ -105,9 +104,8 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                     <Button
                       variant="link"
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto Slab"}
                       fontWeight={400}
-                      color={"#6F7D7F"}
+                      color={"secondary.200"}
                       onClick={() => handleButtonClick("testimonials")}
                     >
                       Testimonials
@@ -115,9 +113,8 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                     <Button
                       variant="link"
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto Slab"}
                       fontWeight={400}
-                      color={"#6F7D7F"}
+                      color={"secondary.200"}
                       onClick={() => handleButtonClick("contact")}
                     >
                       Contact
@@ -133,9 +130,8 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                         "2xl": "none",
                       }}
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto Slab"}
                       fontWeight={400}
-                      color={"#6F7D7F"}
+                      color={"secondary.200"}
                     >
                       Login
                     </Button>
@@ -150,9 +146,8 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                         "2xl": "none",
                       }}
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
-                      fontFamily={"Roboto Slab"}
                       fontWeight={400}
-                      color={"#6F7D7F"}
+                      color={"secondary.200"}
                     >
                       Sign Up
                     </Button>
@@ -173,18 +168,16 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               <Button
                 variant="link"
                 fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
-                fontFamily={"Roboto Slab"}
                 fontWeight={400}
-                color={"#6F7D7F"}
+                color={"secondary.200"}
               >
                 Home
               </Button>
               <Button
                 variant="link"
                 fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
-                fontFamily={"Roboto Slab"}
                 fontWeight={400}
-                color={"#6F7D7F"}
+                color={"secondary.200"}
                 onClick={() => scrollToSection("about")}
               >
                 About
@@ -192,9 +185,8 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               <Button
                 variant="link"
                 fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
-                fontFamily={"Roboto Slab"}
                 fontWeight={400}
-                color={"#6F7D7F"}
+                color={"secondary.200"}
                 onClick={() => scrollToSection("testimonials")}
               >
                 Testimonials
@@ -202,9 +194,8 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               <Button
                 variant="link"
                 fontSize={{ lg: 20, xl: 22, "2xl": 24 }}
-                fontFamily={"Roboto Slab"}
                 fontWeight={400}
-                color={"#6F7D7F"}
+                color={"secondary.200"}
                 onClick={() => scrollToSection("contact")}
               >
                 Contact
@@ -226,8 +217,7 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               <Button
                 variant="link"
                 px={4}
-                color={"#6F7D7F"}
-                fontFamily={"Roboto Slab"}
+                color={"secondary.200"}
                 fontSize={{ md: 18, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={400}
               >
@@ -237,7 +227,6 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                 variant="solid"
                 color={"secondary.900"}
                 px={{ base: 2, sm: 3, md: 4, xl: 6, "2xl": 10 }}
-                fontFamily={"poppins"}
                 fontSize={{ md: 18, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={600}
                 textAlign={"center"}
@@ -254,8 +243,8 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
           spacing={{ base: 12, sm: 8 }}
           textAlign="center"
         >
-          <Text
-            fontFamily="Roboto Slab"
+          <Heading
+            as={"h1"}
             fontSize={{
               base: "4xl",
               sm: "5xl",
@@ -275,10 +264,9 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
             }}
           >
             Munshee Desktop Application
-          </Text>
+          </Heading>
           <Text
             fontSize={{ sm: 18, md: 18, lg: 20, xl: 24, "2xl": 24 }}
-            fontFamily={"Poppins"}
             fontWeight={400}
             py={5}
           >

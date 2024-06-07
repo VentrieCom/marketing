@@ -9,6 +9,7 @@ const Button = defineStyleConfig({
   variants: {
     overridable: {},
     solid: {
+      fontFamily: "body",
       background: "blue.300",
       color: "secondary.900",
       height: 12,
@@ -64,7 +65,7 @@ const Button = defineStyleConfig({
       fontFamily: "heading",
     },
     link: {
-      fontFamily: "mono",
+      fontFamily: "heading",
       fontWeight: "light",
       color: "secondary.200",
       fontSize: "2xl",
