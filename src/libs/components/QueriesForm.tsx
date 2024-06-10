@@ -19,7 +19,7 @@ import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 import BulbIcon from "./../../assets/streamline_ai-technology-spark.png";
 import DesignLine from "./../../assets/Design Line.png";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import SupportImg from "./../../assets/Images/Support.png";
 import TroubleshootingImg from "./../../assets/Images/troubleshooting.png";
 
@@ -38,16 +38,20 @@ const customPlaceholderStyle = {
 };
 
 const QueriesForm: React.FC<any> = ({ navTo }) => {
+  const [customerSupportdata, setCustomerSupportData] = useState({
+    name: "",
+    surName: "",
+    email: "",
+    phoneNumber: "",
+    complain: "",
+  });
   const form: any = useRef();
 
   const sendEmail = (e: any) => {
     emailjs
-      .sendForm(
-        "service_w0egw75",
-        "template_wajqz9i",
-        form.current,
-        "yn6idBxRBXrYjNWpk"
-      )
+      .sendForm("service_w0egw75", "template_wajqz9i", form.current, {  
+        publicKey: "yn6idBxRBXrYjNWpk",
+      })
       .then(
         () => {
           console.log("SUCCESS!");
@@ -56,6 +60,16 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
           console.log("FAILED...", error.text);
         }
       );
+  };
+
+  const handleSubmit = (e: any) => {
+    console.log(customerSupportdata);
+    // sendEmail(customerSupportdata);
+    emailjs
+      .send("service_w0egw75", "template_wajqz9i", customerSupportdata)
+      .then((res) => console.log(res))
+      .catch((err: any) => console.log(err));
+    e.preventDefault();
   };
 
   return (
@@ -128,7 +142,14 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
         columns={{ base: 1, sm: 1, md: 1, lg: 2, xl: 2, "2xl": 2 }}
       >
         <VStack zIndex={4}>
-          <Box w="full" mb={{ sm: 10 }}>
+          <Box
+            ref={form}
+            w="full"
+            as={"form"}
+            onSubmit={sendEmail}
+            // onSubmit={(e: any) => handleSubmit(e)}
+            mb={{ sm: 10 }}
+          >
             <Stack
               spacing={5}
               direction={{
@@ -141,6 +162,14 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
             >
               <Input
                 placeholder="Name"
+                name="name"
+                onChange={(e) =>
+                  setCustomerSupportData({
+                    ...customerSupportdata,
+                    name: e.target.value,
+                  })
+                }
+                value={customerSupportdata.name}
                 py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                 border={"2px solid #2C3B46"}
                 style={{ paddingLeft: "20px" }}
@@ -150,6 +179,14 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
               <Input
                 placeholder="Surname"
                 py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
+                name="SurName"
+                onChange={(e) =>
+                  setCustomerSupportData({
+                    ...customerSupportdata,
+                    surName: e.target.value,
+                  })
+                }
+                value={customerSupportdata.surName}
                 border={"2px solid #2C3B46"}
                 sx={customPlaceholderStyle}
                 color={"blue.300"}
@@ -168,13 +205,20 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
                   />
                 </InputLeftElement>
                 <Input
-                  type="tel"
+                  type="email"
                   placeholder="Your Email"
                   py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
-                  name="user_name"
+                  name="email"
+                  onChange={(e) =>
+                    setCustomerSupportData({
+                      ...customerSupportdata,
+                      email: e.target.value,
+                    })
+                  }
+                  value={customerSupportdata.email}
                 />
               </InputGroup>
               <InputGroup>
@@ -187,22 +231,38 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
                   <PhoneIcon color="gray.700" ml={2} />
                 </InputLeftElement>
                 <Input
+                  type="tel"
                   placeholder="Phone Number"
                   py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
                   border={"2px solid #2C3B46"}
                   sx={customPlaceholderStyle}
                   color={"blue.300"}
-                  name="description"
+                  name="phoneNumber"
+                  onChange={(e) =>
+                    setCustomerSupportData({
+                      ...customerSupportdata,
+                      phoneNumber: e.target.value,
+                    })
+                  }
+                  value={customerSupportdata.phoneNumber}
                 />
               </InputGroup>
               <Textarea
                 h={{ base: "100px", md: "180px" }}
                 placeholder="How can we help?"
                 size="lg"
+                name="complain"
+                onChange={(e) =>
+                  setCustomerSupportData({
+                    ...customerSupportdata,
+                    complain: e.target.value,
+                  })
+                }
                 border={"2px solid #2C3B46"}
+                value={customerSupportdata.complain}
                 py={{ base: 6, sm: 7, md: 6, lg: 8, xl: 10 }}
-                sx={customPlaceholderStyle}
                 color={"blue.300"}
+                sx={customPlaceholderStyle}
               />
             </VStack>
             <Button

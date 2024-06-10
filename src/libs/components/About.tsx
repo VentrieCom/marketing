@@ -16,6 +16,7 @@ import QueriesForm from "./QueriesForm";
 import PricePlan from "./PricePlan";
 
 import DesignLine from "./../../assets/Design Line.png";
+import FeaturesDetails from "./FeaturesDetails";
 
 interface MyComponentProps {
   about: React.RefObject<HTMLDivElement>;
@@ -155,9 +156,10 @@ const About: React.FC<MyComponentProps> = ({
         <AttendenceSec />
         <AttendenceText />
       </Stack>
-      <OurClient />
-      <Testimonials testimonials={testimonials} />
-      <FAQs />
+      {/* <OurClient /> */}
+      <FeaturesDetails />
+      {/* <Testimonials testimonials={testimonials} /> */}
+      {/* <FAQs /> */}
       <PricePlan />
       <QueriesForm navTo={contact} />
       <Subscribe />
