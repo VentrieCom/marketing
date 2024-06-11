@@ -6,7 +6,7 @@ function App() {
   const sectionRefs = {
     about: useRef<HTMLDivElement>(null),
     contact: useRef<HTMLDivElement>(null),
-    testimonials: useRef<HTMLDivElement>(null),
+    features: useRef<HTMLDivElement>(null),
   };
 
   const scrollToSection = (section: keyof typeof sectionRefs) => {
@@ -18,7 +18,7 @@ function App() {
       <WelcomeScreen scrollToSection={scrollToSection} />
       <About
         about={sectionRefs.about}
-        testimonials={sectionRefs.testimonials}
+        features={sectionRefs.features}
         contact={sectionRefs.contact}
       />
     </>

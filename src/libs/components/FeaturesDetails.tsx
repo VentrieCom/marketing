@@ -8,12 +8,50 @@ import {
   OrderedList,
   ListItem,
   Card,
-  HStack,
   Image,
+  List,
+  ListIcon,
 } from "@chakra-ui/react";
 import StarImage from "./../../assets/Star (1).png";
 
-const FeaturesDetails: React.FC = () => {
+const FeaturesDetails: React.FC<any> = ({ navTo }) => {
+  const features = [
+    {
+      heading: "Point of Sale (POS):",
+      description:
+        "Our intuitive POS system makes transactions a breeze, ensuring smooth and efficient checkout processes.",
+    },
+    {
+      heading: "Desktop Application:",
+      description:
+        "Access Munshee offline with our desktop application, ensuring uninterrupted operations even without an internet connection.",
+    },
+    {
+      heading: "Web Access:",
+      description:
+        " Empower your employees and manage your business from anywhere with secure web access to Munshee.",
+    },
+    {
+      heading: "Mobile Apps:",
+      description:
+        "Conduct stock audits, access critical data, and stay connected with your business through our mobile apps for iOS and Android.",
+    },
+    {
+      heading: "Phone and Chat Support:",
+      description:
+        "Our dedicated support team is always ready to assist you via phone or chat, ensuring you get the help you need when you need it.",
+    },
+    {
+      heading: "E-commerce Integration:",
+      description:
+        "Seamlessly manage your online store and sync inventory across channels from within Munshee.",
+    },
+    {
+      heading: "Social Media Management:",
+      description:
+        "Engage with your audience and promote your products on social media platforms, all from one centralized location.",
+    },
+  ];
   const benefits = [
     "Save time and reduce manual errors with automated processes",
     "Gain real-time insights into your business performance",
@@ -23,14 +61,10 @@ const FeaturesDetails: React.FC = () => {
     "Increase online sales through integrated e-commerce and social media management",
     "Scale your business efficiently with a comprehensive, all-in-one solution",
   ];
-  const features = [
-    "At Munshee, we understand the unique challenges faced by retailers. Our software is built with your needs in mind, offering a tailored solution that adapts to your business requirements. With Munshee, you can streamline your operations, make data-driven decisions, and unlock the full potential of your retail business.",
-    "Ready to transform your retail business? Sign up for Munshee today and experience the difference our all-in-one solution can make. Contact our sales team to schedule a demo or to learn more about how Munshee can help your business thrive.",
-  ];
   return (
     <Center>
       <VStack
-        // bgColor={"firebrick"}
+        ref={navTo}
         w={{
           base: "calc(100vw - 100px)",
           sm: "calc(100vw - 100px)",
@@ -44,7 +78,7 @@ const FeaturesDetails: React.FC = () => {
           textAlign={"center"}
           w={"full"}
           fontSize={{ base: 28, sm: 34, md: 38, lg: 44, "2xl": 56 }}
-          mt={{ md: 12, lg: 18, "2xl": 24 }}
+          mt={{ base: 20, sm: 18, md: 12, lg: 18, "2xl": 24 }}
           fontWeight={700}
           zIndex={12}
         >
@@ -62,68 +96,45 @@ const FeaturesDetails: React.FC = () => {
         </Text>
         <Grid
           gap={4}
-          gridTemplateColumns={{
-            base: "repeat(1, 1fr)",
-            sm: "repeat(1, 1fr)",
-            md: "repeat(1, 1fr)",
+          templateColumns={{
+            base: "repeat(auto-fit, minmax(200px, 1fr))",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(2, 1fr)",
             lg: "repeat(2, 1fr)",
           }}
         >
-          <GridItem colSpan={{ base: 2, sm: 2, md: 1 }}>
-            <Card p={8}>
+          <GridItem colSpan={{ base: 2, sm: 2, md: 1 }} w={"full"}>
+            <Card p={8} borderRadius={"var(--chakra-radii-xl)"}>
               <Heading pb={6}>Features</Heading>
               <OrderedList spacing={3}>
-                <ListItem>
-                  Point of Sale (POS): Our intuitive POS system makes
-                  transactions a breeze, ensuring smooth and efficient checkout
-                  processes.
-                </ListItem>
-                <ListItem>
-                  Desktop Application: Access Munshee offline with our desktop
-                  application, ensuring uninterrupted operations even without an
-                  internet connection.
-                </ListItem>
-                <ListItem>
-                  Web Access: Empower your employees and manage your business
-                  from anywhere with secure web access to Munshee.
-                </ListItem>
-                <ListItem>
-                  Mobile Apps: Conduct stock audits, access critical data, and
-                  stay connected with your business through our mobile apps for
-                  iOS and Android.
-                </ListItem>
-                <ListItem>
-                  Phone and Chat Support: Our dedicated support team is always
-                  ready to assist you via phone or chat, ensuring you get the
-                  help you need when you need it.
-                </ListItem>
-                <ListItem>
-                  E-commerce Integration: Seamlessly manage your online store
-                  and sync inventory across channels from within Munshee.
-                </ListItem>
-                <ListItem>
-                  Social Media Management: Engage with your audience and promote
-                  your products on social media platforms, all from one
-                  centralized location.
-                </ListItem>
+                {features.map((feature) => (
+                  <ListItem fontSize={{ sm: 12, md: 16, lg: 18 }}>
+                    <Text fontWeight={"semibold"} as={"span"}>
+                      {feature.heading}
+                    </Text>
+                    {feature.description}
+                  </ListItem>
+                ))}
               </OrderedList>
             </Card>
           </GridItem>
-          <GridItem colSpan={{ base: 2, sm: 2, md: 1 }}>
-            <Card p={8} h={"full"}>
+          <GridItem colSpan={{ base: 2, sm: 2, md: 1 }} w={"full"}>
+            <Card p={8} borderRadius={"var(--chakra-radii-xl)"} h={"full"}>
               <Heading pb={6}>Benefits</Heading>
-              {benefits.map((feature) => (
-                <HStack py={2}>
-                  <Image src={StarImage} boxSize={4} mr={2} />
-                  <Text>{feature}</Text>
-                </HStack>
-              ))}
+              <List>
+                {benefits.map((feature) => (
+                  <ListItem py={2} fontSize={{ sm: 12, md: 16, lg: 18 }}>
+                    <ListIcon as={Image} src={StarImage} alt="star image" />
+                    {feature}
+                  </ListItem>
+                ))}
+              </List>
             </Card>
           </GridItem>
-          <GridItem colSpan={2}>
-            <Card p={8}>
+          <GridItem colSpan={2} w={"full"}>
+            <Card p={8} borderRadius={"var(--chakra-radii-xl)"}>
               <Heading pb={4}>Why Choose Munshee?</Heading>
-              <Text>
+              <Text fontSize={{ sm: 12, md: 16, lg: 18 }}>
                 At Munshee, we understand the unique challenges faced by
                 retailers. Our software is built with your needs in mind,
                 offering a tailored solution that adapts to your business
@@ -134,7 +145,7 @@ const FeaturesDetails: React.FC = () => {
               <Text fontWeight={"semibold"} pt={8} pb={2} fontSize={24}>
                 Get Started Today
               </Text>
-              <Text>
+              <Text fontSize={{ sm: 12, md: 16, lg: 18 }}>
                 At Munshee, we understand the unique challenges faced by
                 retailers. Our software is built with your needs in mind,
                 offering a tailored solution that adapts to your business
