@@ -7,11 +7,8 @@ import StockText from "./StockText";
 import StockSec from "./StockSec";
 import AttendenceSec from "./AttendenceSec";
 import AttendenceText from "./AttendenceText";
-import OurClient from "./OurClient";
-import Testimonials from "./Testimonials";
 import Subscribe from "./Subscribe";
 import Footer from "./Footer";
-import FAQs from "./FAQs";
 import QueriesForm from "./QueriesForm";
 import PricePlan from "./PricePlan";
 
@@ -20,15 +17,11 @@ import FeaturesDetails from "./FeaturesDetails";
 
 interface MyComponentProps {
   about: React.RefObject<HTMLDivElement>;
-  testimonials: React.RefObject<HTMLDivElement>;
+  features: React.RefObject<HTMLDivElement>;
   contact: React.RefObject<HTMLDivElement>;
 }
 
-const About: React.FC<MyComponentProps> = ({
-  about,
-  testimonials,
-  contact,
-}) => {
+const About: React.FC<MyComponentProps> = ({ about, features, contact }) => {
   return (
     <VStack bgColor={"secondary.900"} w={"full"}>
       <HStack
@@ -156,10 +149,7 @@ const About: React.FC<MyComponentProps> = ({
         <AttendenceSec />
         <AttendenceText />
       </Stack>
-      {/* <OurClient /> */}
-      <FeaturesDetails />
-      {/* <Testimonials testimonials={testimonials} /> */}
-      {/* <FAQs /> */}
+      <FeaturesDetails navTo={features} />
       <PricePlan />
       <QueriesForm navTo={contact} />
       <Subscribe />

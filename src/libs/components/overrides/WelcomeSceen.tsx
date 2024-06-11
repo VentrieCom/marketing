@@ -41,7 +41,6 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
       bgPosition={{ sm: "top", md: "top" }}
       bgRepeat="no-repeat"
       objectFit={"cover"}
-      // objectFit={{ base: "cover", sm: "cover", md: "cover", lg: "contain" }}
       bgColor={"#0f161b"}
     >
       <VStack w={"full"} py={2}>
@@ -85,7 +84,6 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                 <DrawerBody>
                   <Stack mt={10} spacing={4}>
                     <Button
-                      _hover={{ bgColor: "" }}
                       variant="link"
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
                       fontWeight={400}
@@ -107,9 +105,9 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                       fontSize={{ base: 26, lg: 20, xl: 22, "2xl": 24 }}
                       fontWeight={400}
                       color={"secondary.200"}
-                      onClick={() => handleButtonClick("testimonials")}
+                      onClick={() => handleButtonClick("features")}
                     >
-                      Testimonials
+                      Features
                     </Button>
                     <Button
                       variant="link"
@@ -164,9 +162,9 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
                 fontSize={{ md: 20, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={400}
                 color={"secondary.200"}
-                onClick={() => scrollToSection("testimonials")}
+                onClick={() => scrollToSection("features")}
               >
-                Testimonials
+                Features
               </Button>
               <Button
                 variant="link"

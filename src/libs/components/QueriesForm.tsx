@@ -49,7 +49,7 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
 
   const sendEmail = (e: any) => {
     emailjs
-      .sendForm("service_w0egw75", "template_wajqz9i", form.current, {  
+      .sendForm("service_w0egw75", "template_wajqz9i", form.current, {
         publicKey: "yn6idBxRBXrYjNWpk",
       })
       .then(
@@ -60,16 +60,6 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
           console.log("FAILED...", error.text);
         }
       );
-  };
-
-  const handleSubmit = (e: any) => {
-    console.log(customerSupportdata);
-    // sendEmail(customerSupportdata);
-    emailjs
-      .send("service_w0egw75", "template_wajqz9i", customerSupportdata)
-      .then((res) => console.log(res))
-      .catch((err: any) => console.log(err));
-    e.preventDefault();
   };
 
   return (
@@ -147,7 +137,6 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
             w="full"
             as={"form"}
             onSubmit={sendEmail}
-            // onSubmit={(e: any) => handleSubmit(e)}
             mb={{ sm: 10 }}
           >
             <Stack
