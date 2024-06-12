@@ -252,7 +252,10 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
           top="7.5%"
           zIndex={100}
         >
-          <Link href="#" isExternal>
+          <Link
+            href="https://www.linkedin.com/showcase/103609724/admin/dashboard/"
+            isExternal
+          >
             <Image src={LinkedInIcon} boxSize={"30px"} />
           </Link>
           <Link href="https://www.facebook.com/officialmunsheeapp" isExternal>
