@@ -13,7 +13,7 @@ import DarkIcon from "./../../assets/Dark Star.svg";
 import VectorIcon from "./../../assets/VectorArrow.png";
 import { useState } from "react";
 
-const PricePlan = () => {
+const PricePlan: React.FC<any> = ({ navTo }) => {
   const [selected, SetSelected] = useState(-1);
   const PriceList = [
     {
@@ -68,7 +68,11 @@ const PricePlan = () => {
   ];
 
   return (
-    <VStack w={"full"} my={{ base: 16, sm: 20, md: 18, lg: 22, "2xl": 24 }}>
+    <VStack
+      w={"full"}
+      ref={navTo}
+      my={{ base: 16, sm: 20, md: 18, lg: 22, "2xl": 24 }}
+    >
       <Text
         fontWeight={700}
         fontFamily={"Roboto Slab"}

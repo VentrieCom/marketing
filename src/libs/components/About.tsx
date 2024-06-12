@@ -1,6 +1,12 @@
-import { VStack, HStack, Image, Stack, Heading } from "@chakra-ui/react";
+import {
+  VStack,
+  HStack,
+  Image,
+  Stack,
+  Heading,
+  Center,
+} from "@chakra-ui/react";
 import Ellipe from "./../../assets/Ellipse 2008.png";
-import Groups from "./../../assets/Group 6867.png";
 import ProductSec from "./ProductSec";
 import ProductText from "./ProductText";
 import StockText from "./StockText";
@@ -14,6 +20,8 @@ import PricePlan from "./PricePlan";
 
 import DesignLine from "./../../assets/Design Line.png";
 import FeaturesDetails from "./FeaturesDetails";
+import { useRef } from "react";
+import { ArrowDownIcon } from "@chakra-ui/icons";
 
 interface MyComponentProps {
   about: React.RefObject<HTMLDivElement>;
@@ -22,6 +30,7 @@ interface MyComponentProps {
 }
 
 const About: React.FC<MyComponentProps> = ({ about, features, contact }) => {
+  const pricePlanRef = useRef<HTMLDivElement>(null);
   return (
     <VStack bgColor={"secondary.900"} w={"full"}>
       <HStack
@@ -65,21 +74,25 @@ const About: React.FC<MyComponentProps> = ({ about, features, contact }) => {
             About Us
           </Heading>
         </HStack>
-        <Image
-          alignSelf={"flex-start"}
-          src={Groups}
-          pos={"absolute"}
-          top={{ base: -20, sm: -20, md: -12, lg: -4 }}
-          right={0}
-          w={{
-            base: "75px",
-            sm: "90px",
-            md: "100px",
-            lg: "110px",
-            xl: "120px",
-            "2xl": "150px",
+        <Center
+          zIndex={20}
+          cursor={"pointer"}
+          onClick={() => {
+            pricePlanRef.current?.scrollIntoView({
+              behavior: "smooth",
+            });
           }}
-        />
+          backgroundColor={"secondary.400"}
+          boxSize={{ base: 8, sm: 10, md: 12, lg: 12, "2xl": 12 }}
+          pos={"absolute"}
+          top={{ base: -16, sm: -14, md: -12, lg: -2 }}
+          right={{ base: 4, sm: 12, lg: 16 }}
+        >
+          <ArrowDownIcon
+            boxSize={{ base: 6, sm: 8, md: 8 }}
+            color={"secondary.200"}
+          />
+        </Center>
       </HStack>
       <Stack
         w={{
@@ -150,7 +163,7 @@ const About: React.FC<MyComponentProps> = ({ about, features, contact }) => {
         <AttendenceText />
       </Stack>
       <FeaturesDetails navTo={features} />
-      <PricePlan />
+      <PricePlan navTo={pricePlanRef} />
       <QueriesForm navTo={contact} />
       <Subscribe />
       <Footer />
