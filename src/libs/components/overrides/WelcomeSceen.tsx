@@ -14,6 +14,7 @@ import {
   DrawerBody,
   Stack,
   Heading,
+  Link,
 } from "@chakra-ui/react";
 
 import Attendance from "../../../assets/Images/Attendance.png";
@@ -81,7 +82,7 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               <DrawerOverlay />
               <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerBody>
+                <DrawerBody bgColor={"secondary.500"}>
                   <Stack mt={10} spacing={4}>
                     <Button
                       variant="link"
@@ -251,9 +252,16 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
           top="7.5%"
           zIndex={100}
         >
-          <Image src={LinkedInIcon} boxSize={"30px"} />
-          <Image src={FacebookIcon} boxSize={"30px"} />
-          <Image src={InstagramIcon} boxSize={"30px"} />
+          <Link href="#" isExternal>
+            <Image src={LinkedInIcon} boxSize={"30px"} />
+          </Link>
+          <Link href="https://www.facebook.com/officialmunsheeapp" isExternal>
+            <Image src={FacebookIcon} boxSize={"30px"} />
+          </Link>
+
+          <Link href="https://www.instagram.com/officialmunsheeapp/" isExternal>
+            <Image src={InstagramIcon} boxSize={"30px"} />
+          </Link>
         </Flex>
         <Stack
           mt={{ base: 0, sm: 0, md: 0, lg: 18, "2xl": 2 }}
