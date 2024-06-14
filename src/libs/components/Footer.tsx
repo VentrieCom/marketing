@@ -146,7 +146,7 @@ const Footer = () => {
             </VStack>
           </GridItem>
           <GridItem w={"full"}>
-            <VStack align={"start"} h={"full"}>
+            <VStack align={"start"} spacing={{ base: 8, "2xl": 12 }} h={"full"}>
               <Heading
                 as={"h6"}
                 fontSize={30}
@@ -198,16 +198,33 @@ const Footer = () => {
                 }}
                 spacing={{ base: 3, md: 4, lg: 5, "2xl": 6 }}
               >
-                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  href="https://www.facebook.com/officialmunsheeapp"
+                  letterSpacing={"4%"}
+                  isExternal
+                >
                   Facebook
                 </Link>
                 <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
                   Twitter
                 </Link>
-                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
+                <Link
+                  fontSize={16}
+                  fontWeight={400}
+                  href="https://www.instagram.com/officialmunsheeapp/"
+                  letterSpacing={"4%"}
+                  isExternal
+                >
                   Instagram
                 </Link>
-                <Link fontSize={16} fontWeight={400} letterSpacing={"4%"}>
+                <Link
+                  fontSize={16}
+                  href="https://www.linkedin.com/showcase/103609724/admin/dashboard/"
+                  fontWeight={400}
+                  letterSpacing={"4%"}
+                >
                   LinkedIn
                 </Link>
               </Stack>

@@ -78,7 +78,7 @@ const FeaturesDetails: React.FC<any> = ({ navTo }) => {
           textAlign={"center"}
           w={"full"}
           fontSize={{ base: 28, sm: 34, md: 38, lg: 44, "2xl": 56 }}
-          mt={{ base: 20, sm: 18, md: 12, lg: 18, "2xl": 24 }}
+          mt={{ base: 20, sm: 18, md: 16, lg: 20, xl: 22, "2xl": 24 }}
           fontWeight={700}
           zIndex={12}
         >

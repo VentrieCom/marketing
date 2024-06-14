@@ -14,6 +14,7 @@ import {
   Image,
   Stack,
   SimpleGrid,
+  useToast,
 } from "@chakra-ui/react";
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 import BulbIcon from "./../../assets/streamline_ai-technology-spark.png";
@@ -38,16 +39,22 @@ const customPlaceholderStyle = {
 };
 
 const QueriesForm: React.FC<any> = ({ navTo }) => {
-  const [customerSupportdata, setCustomerSupportData] = useState({
+  const [isMailSent, setIsMailSent] = useState(false);
+  const toast = useToast();
+  let initCustomerObj = {
     name: "",
     surName: "",
     email: "",
     phoneNumber: "",
     complain: "",
-  });
+  };
+  const [customerSupportdata, setCustomerSupportData] =
+    useState(initCustomerObj);
   const form: any = useRef();
 
   const sendEmail = (e: any) => {
+    setIsMailSent(true);
+    e.preventDefault();
     emailjs
       .sendForm("service_w0egw75", "template_wajqz9i", form.current, {
         publicKey: "yn6idBxRBXrYjNWpk",
@@ -55,9 +62,23 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
       .then(
         () => {
           console.log("SUCCESS!");
+          setIsMailSent(false);
+          setCustomerSupportData(initCustomerObj);
+          toast({
+            title: "Email Sent Successfully",
+            status: "success",
+            duration: 9000,
+          });
         },
         (error) => {
           console.log("FAILED...", error.text);
+          setIsMailSent(false);
+          toast({
+            title: "Email Failed",
+            description: error.text,
+            status: "error",
+            duration: 9000,
+          });
         }
       );
   };
@@ -270,6 +291,7 @@ const QueriesForm: React.FC<any> = ({ navTo }) => {
               fontFamily={"poppins"}
               fontWeight={400}
               letterSpacing={2}
+              isLoading={isMailSent}
             >
               Send Message
             </Button>
