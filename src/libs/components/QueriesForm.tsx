@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ArrowForwardIcon, EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import {
   Heading,
@@ -38,7 +39,7 @@ const customPlaceholderStyle = {
   },
 };
 
-const QueriesForm: React.FC<any> = ({ navTo }) => {
+const QueriesForm: React.FC<{ navTo: any }> = ({ navTo }) => {
   const [isMailSent, setIsMailSent] = useState(false);
   const toast = useToast();
   let initCustomerObj = {
