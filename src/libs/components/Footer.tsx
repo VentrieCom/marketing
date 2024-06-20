@@ -12,29 +12,41 @@ import {
   Grid,
   GridItem,
   Heading,
+  FormErrorMessage,
+  useToast,
 } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
+import { Field, Form, Formik } from "formik";
 import { useRef } from "react";
 
 const Footer = () => {
+  const toast = useToast();
   const form: any = useRef();
 
   const sendEmail = (e: any) => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "service_w0egw75",
-        "template_wajqz9i",
-        form.current,
-        "yn6idBxRBXrYjNWpk"
-      )
+      .sendForm("service_w0egw75", "template_wajqz9i", form.current, {
+        publicKey: "yn6idBxRBXrYjNWpk",
+      })
       .then(
         () => {
           console.log("SUCCESS!");
+          toast({
+            title: "Email Sent Successfully",
+            status: "success",
+            duration: 9000,
+          });
         },
         (error) => {
           console.log("FAILED...", error.text);
+          toast({
+            title: "Email Failed",
+            description: error.text,
+            status: "error",
+            duration: 9000,
+          });
         }
       );
   };
@@ -80,35 +92,67 @@ const Footer = () => {
                 relations, team management, and performance monitoring. My goal
                 is to drive efficiency and growth for your business.
               </Text>
-              <HStack as={FormControl}>
-                <HStack>
-                  <form ref={form} id="sendEmail" onSubmit={sendEmail}>
-                    <HStack>
-                      <Input
-                        placeholder="Email Address"
-                        borderRadius={"var(--chakra-radii-xl)"}
-                        _placeholder={{
-                          color: "primary.100",
-                        }}
-                        size={"lg"}
-                        borderWidth={"2px"}
-                        bgColor={"secondary.700"}
-                        name="user_email"
-                      />
-                      <Button
-                        px={10}
-                        fontSize={16}
-                        fontWeight={600}
-                        fontFamily={"Poppins"}
-                        borderRadius={"var(--chakra-radii-xl)"}
-                        form={"sendEmail"}
-                        type="submit"
-                      >
-                        Register
-                      </Button>
-                    </HStack>
-                  </form>
-                </HStack>
+              <HStack>
+                <Formik
+                  initialValues={{ user_email: "" }}
+                  onSubmit={sendEmail}
+                  validate={(values: any) => {
+                    let errors: any = {};
+                    if (!values.user_email) {
+                      errors.user_email = "Required";
+                    } else if (
+                      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
+                        values.user_email
+                      )
+                    ) {
+                      errors.user_email = "Invalid Email Address";
+                    }
+                    return errors;
+                  }}
+                >
+                  <Form ref={form} id="sendEmail">
+                    <Field name="user_email">
+                      {({ field, form }: any) => {
+                        return (
+                          <FormControl
+                            isInvalid={
+                              form.errors.user_email && form.touched.user_email
+                            }
+                          >
+                            <HStack>
+                              <Input
+                                {...field}
+                                name="user_email"
+                                placeholder="Email Address"
+                                borderRadius={"var(--chakra-radii-xl)"}
+                                _placeholder={{
+                                  color: "primary.100",
+                                }}
+                                size={"lg"}
+                                borderWidth={"2px"}
+                                bgColor={"secondary.700"}
+                              />
+                              <Button
+                                px={10}
+                                fontSize={16}
+                                fontWeight={600}
+                                fontFamily={"Poppins"}
+                                borderRadius={"var(--chakra-radii-xl)"}
+                                form={"sendEmail"}
+                                type="submit"
+                              >
+                                Register
+                              </Button>
+                            </HStack>
+                            <FormErrorMessage>
+                              {form.errors.user_email}
+                            </FormErrorMessage>
+                          </FormControl>
+                        );
+                      }}
+                    </Field>
+                  </Form>
+                </Formik>
               </HStack>
             </VStack>
           </GridItem>

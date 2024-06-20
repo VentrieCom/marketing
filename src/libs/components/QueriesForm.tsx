@@ -7,7 +7,6 @@ import {
   HStack,
   Flex,
   Input,
-  Box,
   InputGroup,
   InputLeftElement,
   Textarea,
@@ -16,6 +15,9 @@ import {
   Stack,
   SimpleGrid,
   useToast,
+  FormControl,
+  FormErrorMessage,
+  Center,
 } from "@chakra-ui/react";
 import EllipseGreen from "./../../assets/EllipseGreen 2010.png";
 import BulbIcon from "./../../assets/streamline_ai-technology-spark.png";
@@ -24,6 +26,7 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import SupportImg from "./../../assets/Images/Support.png";
 import TroubleshootingImg from "./../../assets/Images/troubleshooting.png";
+import { Field, Form, Formik } from "formik";
 
 const customPlaceholderStyle = {
   borderRadius: {
@@ -39,6 +42,14 @@ const customPlaceholderStyle = {
   },
 };
 
+interface CustomerSupportData {
+  name?: string;
+  surName?: string;
+  email?: string;
+  phoneNumber?: string;
+  complain?: string;
+}
+
 const QueriesForm: React.FC<{ navTo: any }> = ({ navTo }) => {
   const [isMailSent, setIsMailSent] = useState(false);
   const toast = useToast();
@@ -49,13 +60,10 @@ const QueriesForm: React.FC<{ navTo: any }> = ({ navTo }) => {
     phoneNumber: "",
     complain: "",
   };
-  const [customerSupportdata, setCustomerSupportData] =
-    useState(initCustomerObj);
   const form: any = useRef();
 
   const sendEmail = (e: any) => {
     setIsMailSent(true);
-    e.preventDefault();
     emailjs
       .sendForm("service_w0egw75", "template_wajqz9i", form.current, {
         publicKey: "yn6idBxRBXrYjNWpk",
@@ -64,7 +72,6 @@ const QueriesForm: React.FC<{ navTo: any }> = ({ navTo }) => {
         () => {
           console.log("SUCCESS!");
           setIsMailSent(false);
-          setCustomerSupportData(initCustomerObj);
           toast({
             title: "Email Sent Successfully",
             status: "success",
@@ -154,149 +161,217 @@ const QueriesForm: React.FC<{ navTo: any }> = ({ navTo }) => {
         columns={{ base: 1, sm: 1, md: 1, lg: 2, xl: 2, "2xl": 2 }}
       >
         <VStack zIndex={4}>
-          <Box
-            ref={form}
-            w="full"
-            as={"form"}
-            onSubmit={sendEmail}
-            mb={{ sm: 10 }}
+          <Formik
+            initialValues={initCustomerObj}
+            onSubmit={(event: CustomerSupportData, { resetForm }) => {
+              sendEmail(event);
+              resetForm();
+            }}
+            validate={(values) => {
+              const errors: any = {};
+              const { name, surName, phoneNumber, complain, email } = values;
+
+              if (!name) {
+                errors.name = "Required";
+              }
+
+              if (!surName) {
+                errors.surName = "Required";
+              }
+
+              if (!complain) {
+                errors.complain = "Required";
+              }
+
+              if (!email) {
+                errors.email = "Required";
+              } else if (
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)
+              ) {
+                errors.email = "Invalid email address";
+              }
+
+              if (!phoneNumber) {
+                errors.phoneNumber = "Required";
+              } else if (
+                !/^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$/i.test(phoneNumber)
+              ) {
+                errors.phoneNumber = "Invalid Phone Number";
+              }
+              return errors;
+            }}
           >
-            <Stack
-              spacing={5}
-              direction={{
-                base: "column",
-                sm: "row",
-                md: "row",
-                lg: "column",
-                xl: "row",
-              }}
-            >
-              <Input
-                placeholder="Name"
-                name="name"
-                onChange={(e) =>
-                  setCustomerSupportData({
-                    ...customerSupportdata,
-                    name: e.target.value,
-                  })
-                }
-                value={customerSupportdata.name}
-                py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
-                border={"2px solid #2C3B46"}
-                style={{ paddingLeft: "20px" }}
-                sx={customPlaceholderStyle}
-                color={"blue.300"}
-              />
-              <Input
-                placeholder="Surname"
-                py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
-                name="SurName"
-                onChange={(e) =>
-                  setCustomerSupportData({
-                    ...customerSupportdata,
-                    surName: e.target.value,
-                  })
-                }
-                value={customerSupportdata.surName}
-                border={"2px solid #2C3B46"}
-                sx={customPlaceholderStyle}
-                color={"blue.300"}
-              />
-            </Stack>
-            <VStack py={5} spacing={5}>
-              <InputGroup>
-                <InputLeftElement
-                  pointerEvents="none"
-                  mt={{ base: 1, sm: 2, md: 2, lg: 4, "2xl": 5 }}
-                >
-                  <EmailIcon
-                    color="gray.700"
-                    fontSize={"1.3em"}
-                    ml={{ lg: 2, "2xl": 2 }}
-                  />
-                </InputLeftElement>
-                <Input
-                  type="email"
-                  placeholder="Your Email"
-                  py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
-                  border={"2px solid #2C3B46"}
-                  sx={customPlaceholderStyle}
-                  color={"blue.300"}
-                  name="email"
-                  onChange={(e) =>
-                    setCustomerSupportData({
-                      ...customerSupportdata,
-                      email: e.target.value,
-                    })
-                  }
-                  value={customerSupportdata.email}
-                />
-              </InputGroup>
-              <InputGroup>
-                <InputLeftElement
-                  pointerEvents="none"
-                  color="gray.700"
-                  fontSize="1.3em"
-                  mt={{ base: 1, sm: 2, md: 2, lg: 4, "2xl": 5 }}
-                >
-                  <PhoneIcon color="gray.700" ml={2} />
-                </InputLeftElement>
-                <Input
-                  type="tel"
-                  placeholder="Phone Number"
-                  py={{ base: 6, sm: 7, md: 7, lg: 8, xl: 10 }}
-                  border={"2px solid #2C3B46"}
-                  sx={customPlaceholderStyle}
-                  color={"blue.300"}
-                  name="phoneNumber"
-                  onChange={(e) =>
-                    setCustomerSupportData({
-                      ...customerSupportdata,
-                      phoneNumber: e.target.value,
-                    })
-                  }
-                  value={customerSupportdata.phoneNumber}
-                />
-              </InputGroup>
-              <Textarea
-                h={{ base: "100px", md: "180px" }}
-                placeholder="How can we help?"
-                size="lg"
-                name="complain"
-                onChange={(e) =>
-                  setCustomerSupportData({
-                    ...customerSupportdata,
-                    complain: e.target.value,
-                  })
-                }
-                border={"2px solid #2C3B46"}
-                value={customerSupportdata.complain}
-                py={{ base: 6, sm: 7, md: 6, lg: 8, xl: 10 }}
-                color={"blue.300"}
-                sx={customPlaceholderStyle}
-              />
-            </VStack>
-            <Button
-              w={{
-                base: "full",
-                sm: "full",
-                md: "initial",
-                lg: "initial",
-                "2xl": "initial",
-              }}
-              rightIcon={<ArrowForwardIcon ml={3} color={"secondary.400"} />}
-              type="submit"
-              size={"lg"}
-              px={{ base: 6, sm: 6 }}
-              py={{ base: 4, sm: 6 }}
-              fontFamily={"poppins"}
-              fontWeight={400}
-              letterSpacing={2}
-              isLoading={isMailSent}
-            >
-              Send Message
-            </Button>
-          </Box>
+            {({ isSubmitting }) => (
+              <Form ref={form}>
+                <Stack spacing={8}>
+                  <Stack
+                    spacing={{ base: 8, sm: 5, lg: 8, xl: 5 }}
+                    direction={{
+                      base: "column",
+                      sm: "row",
+                      md: "row",
+                      lg: "column",
+                      xl: "row",
+                    }}
+                  >
+                    <Field name="name">
+                      {({ field, form }: any) => (
+                        <FormControl
+                          isInvalid={form.errors.name && form.touched.name}
+                        >
+                          <Input
+                            {...field}
+                            py={{ base: 7, lg: 8 }}
+                            border={"2px solid #2C3B46"}
+                            sx={customPlaceholderStyle}
+                            color={"blue.300"}
+                            placeholder="Name"
+                          />
+                          <FormErrorMessage>
+                            {form.errors.name}
+                          </FormErrorMessage>
+                        </FormControl>
+                      )}
+                    </Field>
+                    <Field name="surName">
+                      {({ field, form }: any) => {
+                        console.log(field);
+                        console.log(form.errors.surName);
+
+                        return (
+                          <FormControl
+                            isInvalid={
+                              form.errors.surName && form.touched.surName
+                            }
+                          >
+                            <Input
+                              {...field}
+                              py={{ base: 7, lg: 8 }}
+                              placeholder="Surname"
+                              border={"2px solid #2C3B46"}
+                              sx={customPlaceholderStyle}
+                              color={"blue.300"}
+                            />
+                            <FormErrorMessage>
+                              {form.errors.surName}
+                            </FormErrorMessage>
+                          </FormControl>
+                        );
+                      }}
+                    </Field>
+                  </Stack>
+                  <Field name="email">
+                    {({ field, form }: any) => (
+                      <FormControl
+                        // py={4}
+                        isInvalid={form.errors.email && form.touched.email}
+                      >
+                        <InputGroup>
+                          <InputLeftElement
+                            as={Center}
+                            h={"full"}
+                            pointerEvents="none"
+                          >
+                            <EmailIcon
+                              color="gray.700"
+                              fontSize={"1.2em"}
+                              ml={2}
+                            />
+                          </InputLeftElement>
+                          <Input
+                            {...field}
+                            placeholder="Your Email"
+                            py={{ base: 7, lg: 8 }}
+                            border={"2px solid #2C3B46"}
+                            sx={customPlaceholderStyle}
+                            color={"blue.300"}
+                          />
+                        </InputGroup>
+                        <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="phoneNumber">
+                    {({ field, form }: any) => {
+                      return (
+                        <FormControl
+                          isInvalid={
+                            form.errors.phoneNumber && form.touched.phoneNumber
+                          }
+                        >
+                          <InputGroup>
+                            <InputLeftElement
+                              as={Center}
+                              h={"full"}
+                              pointerEvents="none"
+                            >
+                              <PhoneIcon color="gray.700" ml={2} />
+                            </InputLeftElement>
+                            <Input
+                              py={{ base: 7, lg: 8 }}
+                              {...field}
+                              placeholder="Your Phone Number"
+                              border={"2px solid #2C3B46"}
+                              sx={customPlaceholderStyle}
+                              color={"blue.300"}
+                            />
+                          </InputGroup>
+                          <FormErrorMessage>
+                            {form.errors.phoneNumber}
+                          </FormErrorMessage>
+                        </FormControl>
+                      );
+                    }}
+                  </Field>
+                  <Field name="complain">
+                    {({ field, form }: any) => (
+                      <FormControl
+                        // py={4}
+                        isInvalid={
+                          form.errors.complain && form.touched.complain
+                        }
+                      >
+                        <Textarea
+                          {...field}
+                          h={"160px"}
+                          maxH={"200px"}
+                          placeholder="How can we help?"
+                          border={"2px solid #2C3B46"}
+                          sx={customPlaceholderStyle}
+                          color={"blue.300"}
+                        />
+                        <FormErrorMessage>
+                          {form.errors.complain}
+                        </FormErrorMessage>
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    w={{
+                      base: "full",
+                      sm: "full",
+                      md: "initial",
+                      lg: "initial",
+                      "2xl": "40%",
+                    }}
+                    rightIcon={
+                      <ArrowForwardIcon ml={3} color={"secondary.400"} />
+                    }
+                    px={{ base: 6, sm: 20 }}
+                    py={{ base: 6, sm: 6 }}
+                    fontFamily={"poppins"}
+                    fontWeight={400}
+                    letterSpacing={2}
+                    isLoading={isMailSent}
+                  >
+                    Send Message
+                  </Button>
+                </Stack>
+              </Form>
+            )}
+          </Formik>
         </VStack>
         <VStack spacing={4}>
           <Flex
@@ -304,7 +379,10 @@ const QueriesForm: React.FC<{ navTo: any }> = ({ navTo }) => {
             py={8}
             px={6}
             flexDir={"column"}
-            borderRadius="var(--chakra-radii-2xl)"
+            borderRadius={{
+              base: "var(--chakra-radii-2xl)",
+              md: "var(--chakra-radii-3xl)",
+            }}
           >
             <HStack mb={2} borderRadius="var(--chakra-radii-3xl)">
               <Image src={BulbIcon} w={"30px"} h={"25px"} />
@@ -322,7 +400,10 @@ const QueriesForm: React.FC<{ navTo: any }> = ({ navTo }) => {
             py={8}
             px={6}
             flexDir={"column"}
-            borderRadius="var(--chakra-radii-3xl)"
+            borderRadius={{
+              base: "var(--chakra-radii-2xl)",
+              md: "var(--chakra-radii-3xl)",
+            }}
           >
             <HStack mb={2}>
               <Image src={SupportImg} w={"25px"} h={"25px"} />
@@ -341,7 +422,10 @@ const QueriesForm: React.FC<{ navTo: any }> = ({ navTo }) => {
             py={8}
             px={6}
             flexDir={"column"}
-            borderRadius="var(--chakra-radii-3xl)"
+            borderRadius={{
+              base: "var(--chakra-radii-2xl)",
+              md: "var(--chakra-radii-3xl)",
+            }}
           >
             <HStack mb={2}>
               <Image src={TroubleshootingImg} w={"30px"} h={"30px"} />
