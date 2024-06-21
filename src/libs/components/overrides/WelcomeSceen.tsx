@@ -26,6 +26,7 @@ import LinkedInIcon from "./../../../assets/Images/LinkedIn.png";
 import FacebookIcon from "./../../../assets/Images/Facebook Icon.png";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
+import MunsheeLogo from "./../../components/../../assets/Images/Munshee Icon.png";
 import React from "react";
 const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -124,14 +125,22 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               </DrawerContent>
             </Drawer>
 
-            <Text
-              fontSize={{ base: 28, md: 38, lg: 40 }}
-              fontFamily={"jost"}
-              fontWeight={600}
-            >
-              MUNSHEE
-            </Text>
+            <HStack>
+              <Image
+                src={MunsheeLogo}
+                boxSize={{ base: 10, sm: 12, md: 12 }}
+                alt="munshee logo"
+              />
+              <Text
+                fontSize={{ base: 24, sm: 32, md: 32, lg: 40 }}
+                fontFamily={"jost"}
+                fontWeight={600}
+              >
+                MUNSHEE
+              </Text>
+            </HStack>
             <HStack
+              mr={{ md: 30, lg: 28, "2xl": 32 }}
               spacing={{ base: 0, md: 3, lg: 3, xl: 4, "2xl": 6 }}
               display={{
                 base: "none",
@@ -183,11 +192,14 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               justifyContent={{ base: "flex-end", sm: "flex-end" }}
             >
               <Button
+                as={Link}
+                href="https://munshee.pk/"
                 variant="link"
                 px={4}
                 color={"secondary.200"}
                 fontSize={{ sm: 20, md: 20, lg: 20, xl: 22, "2xl": 24 }}
                 fontWeight={400}
+                isExternal
               >
                 Log In
               </Button>
@@ -208,10 +220,10 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               sm: "5xl",
               md: "5xl",
               lg: "6xl",
-              xl: "6xl",
-              "2xl": "6xl",
+              xl: "7xl",
+              "2xl": "7xl",
             }}
-            mt={{ base: 28, sm: 28, md: 24, lg: 14 }}
+            mt={{ base: 16, sm: 20, md: 24, lg: 14 }}
             fontWeight={700}
             w={{
               base: `calc(100vw - 75px)`,
@@ -221,12 +233,12 @@ const WelcomeScreen: React.FC<any> = ({ scrollToSection }) => {
               "2xl": "75%",
             }}
           >
-            Munshee Desktop Application
+            Munshee
           </Heading>
           <Text
             fontSize={{ sm: 18, md: 18, lg: 20, xl: 24, "2xl": 24 }}
             fontWeight={400}
-            py={5}
+            py={{ base: 1, md: 5 }}
           >
             We offers a wide range of services including Web/Mobile Application
             development, Warehousing/Logistics, Marketing, Employee Management,

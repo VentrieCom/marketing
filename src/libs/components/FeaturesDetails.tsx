@@ -78,7 +78,7 @@ const FeaturesDetails: React.FC<any> = ({ navTo }) => {
           textAlign={"center"}
           w={"full"}
           fontSize={{ base: 28, sm: 34, md: 38, lg: 44, "2xl": 56 }}
-          mt={{ base: 20, sm: 18, md: 12, lg: 18, "2xl": 24 }}
+          mt={{ base: 20, sm: 18, md: 16, lg: 20, xl: 22, "2xl": 24 }}
           fontWeight={700}
           zIndex={12}
         >
@@ -87,7 +87,7 @@ const FeaturesDetails: React.FC<any> = ({ navTo }) => {
         <Text
           textAlign={"center"}
           fontSize={{ base: 16, sm: 16, md: 18, lg: 20, xl: 20, "2xl": 20 }}
-          py={{ base: 4, sm: 4, md: 6, lg: 8, "2xl": 6 }}
+          py={{ base: 8, sm: 8, md: 8, lg: 8, "2xl": 12 }}
         >
           Welcome to Munshee, the comprehensive mini ERP designed specifically
           for retailers. Our powerful software streamlines your business
@@ -108,7 +108,7 @@ const FeaturesDetails: React.FC<any> = ({ navTo }) => {
               <Heading pb={6}>Features</Heading>
               <OrderedList spacing={3}>
                 {features.map((feature) => (
-                  <ListItem fontSize={{ sm: 12, md: 16, lg: 18 }}>
+                  <ListItem fontSize={{ base: 16, md: 16, lg: 18 }}>
                     <Text fontWeight={"semibold"} as={"span"}>
                       {feature.heading}
                     </Text>
@@ -123,7 +123,7 @@ const FeaturesDetails: React.FC<any> = ({ navTo }) => {
               <Heading pb={6}>Benefits</Heading>
               <List>
                 {benefits.map((feature) => (
-                  <ListItem py={2} fontSize={{ sm: 12, md: 16, lg: 18 }}>
+                  <ListItem py={2} fontSize={{  md: 16, lg: 18 }}>
                     <ListIcon as={Image} src={StarImage} alt="star image" />
                     {feature}
                   </ListItem>
@@ -134,7 +134,7 @@ const FeaturesDetails: React.FC<any> = ({ navTo }) => {
           <GridItem colSpan={2} w={"full"}>
             <Card p={8} borderRadius={"var(--chakra-radii-xl)"}>
               <Heading pb={4}>Why Choose Munshee?</Heading>
-              <Text fontSize={{ sm: 12, md: 16, lg: 18 }}>
+              <Text fontSize={{ base: 16, md: 16, lg: 18 }}>
                 At Munshee, we understand the unique challenges faced by
                 retailers. Our software is built with your needs in mind,
                 offering a tailored solution that adapts to your business
@@ -145,7 +145,7 @@ const FeaturesDetails: React.FC<any> = ({ navTo }) => {
               <Text fontWeight={"semibold"} pt={8} pb={2} fontSize={24}>
                 Get Started Today
               </Text>
-              <Text fontSize={{ sm: 12, md: 16, lg: 18 }}>
+              <Text fontSize={{ base: 16, md: 18, lg: 18 }}>
                 At Munshee, we understand the unique challenges faced by
                 retailers. Our software is built with your needs in mind,
                 offering a tailored solution that adapts to your business

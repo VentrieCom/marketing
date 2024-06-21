@@ -111,14 +111,12 @@ const PricePlan: React.FC<any> = ({ navTo }) => {
         {PriceList.map((i, index) => {
           return (
             <Stack
+              transition={"all .25s linear"}
               w={"full"}
               onClick={() => SetSelected(index)}
               mt={{
                 base: 0,
-                sm: 0,
-                md: 0,
                 lg: selected === index ? -20 : 0,
-                "2xl": selected === index ? -20 : 0,
               }}
               direction={{
                 base: "row",
@@ -190,7 +188,7 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
       bgColor={selectd ? "blue.300" : "#1a262d"}
       minH={{ base: 0, sm: 0, md: "100px", lg: "1000px", "2xl": "1000px" }}
       border={selectd ? "none " : "2px solid #2C3B46"}
-      borderRadius={"12px"}
+      borderRadius={{ base: "8px", sm: "12px", lg: "18px" }}
     >
       {selectd && (
         <Image
@@ -212,11 +210,12 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
             lg: "150px",
             "2xl": "200px",
           }}
-          zIndex={10}
+          zIndex={1}
         />
       )}
 
       <Heading
+        zIndex={2}
         as={"h5"}
         fontSize={{ base: 23, md: 28, lg: 32, "2xl": 32 }}
         mb={{ base: 4, md: 4, lg: 27 }}
@@ -225,7 +224,7 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
       >
         {title}
       </Heading>
-      <HStack>
+      <HStack zIndex={2}>
         <Text
           fontSize={{ base: 32, sm: 36, md: 38, lg: 48, "2xl": 48 }}
           fontWeight={400}
@@ -277,16 +276,3 @@ export const PricePlanCard: React.FC<PricePlanCardInterface> = ({
     </Card>
   );
 };
-
-{
-  /* <Text
-          as={"span"}
-          fontSize={{ base: 20, lg: 28, "2xl": 34 }}
-          fontWeight={700}
-        >
-          574000.
-        </Text> */
-}
-{
-  /* <br /> With all the features of{" "} */
-}
